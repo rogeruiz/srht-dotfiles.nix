@@ -1,0 +1,8 @@
+%C(yellow)%C(yellow)%C(yellow)%C(yellow)%C(blue)%C(blue)%C(red)%C(red)%C(reset)
+
+        hash: %C(green)<%h>%C(reset) ~= %C(yellow)%H
+    authored: %C(yellow)<%ar>%C(reset) by %C(green)%an
+       blame: %C(magenta)<%cE>%C(reset) @ %C(green)%cD
+     message: %B
+%C(yellow)%C(yellow)%C(yellow)%C(yellow)%C(blue)%C(blue)%C(red)%C(red)%C(reset)
+

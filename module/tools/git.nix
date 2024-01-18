@@ -9,7 +9,6 @@
   home.file = {
     ".config/git/template".source = ../../config/git/template;
     ".config/git/ignore".source = ../../config/git/ignore;
-
   };
 
   programs.git = {
@@ -50,6 +49,12 @@
       url = "config --local --get-regexp remote\\.\\.\\*\\.url";
       who = "!who() { git log | rg 'Author: ' | rg -i $1 | sort | uniq; }; who";
       wtb = "!wtb() { git br -l | rg '\\*' | awk '{ print $2 }'; }; wtb";
+
+      gist = "log --graph --pretty=format:'${(builtins.readFile ../../config/git/log/short)}'";
+      history = "log --reverse --stat --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
+      catcup = "log FETCH_HEAD...HEAD --reverse --stat --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
+      verbose = "log --stat --patch --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
+      last = "log --patch -1 --stat --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
     };
 
     attributes = [

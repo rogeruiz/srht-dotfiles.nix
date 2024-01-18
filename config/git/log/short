@@ -1,0 +1,4 @@
+%C(red)󱓏 %C(green)%d %C(reset)
+%C(yellow) %C(reset) %C(green)<%h> %C(magenta)<%aE> %C(yellow)<%ar>
+%C(cyan)󰍩 %C(reset) %s
+
