@@ -1,0 +1,75 @@
+#!/bin/zsh
+
+# README: Aqui se usa `/bin/zsh` para el SHEBANG por el uso de `$()` el sub-shell
+# y el uso de `{}` la expressiones abajo. Y la otra razon que uso a `ZSH` y no
+# algo mas portable es porque este escript usa muchas cosas especificas a macOS
+# y macOS usa a `ZSH` como estandard.
+
+# Definimos a `animado` afuera de la comprueba abajo para que todas las
+# capturas son quieto.
+animado=()
+
+# NOTE: Requiere `coreutils` instalado entonces vamos a comprobar
+if type shuf > /dev/null 2>&1
+then
+  if test "$(shuf -i 1-10 -n 1)" -gt 5
+  then
+    animado=("--a" "3")
+  fi
+fi
+
+if [ -z "${LOLCOMMITS_CAPTURE_DISABLED}" ]
+then
+  # PERF: Usando el `system_profiler` de macOS y no la instrucción `lolcommits
+  # --devices` porque es mui despacio. Con el `system_profiler` ahoro casi 2.8
+  # segundos para saber si mi cámara de 1080p esta conectado o no.
+  LOLCOMMITS_DEVICE=$({
+    system_profiler \
+      SPCameraDataType \
+      -json \
+      -detailLevel basic \
+      | jq -r '.SPCameraDataType[]."_name" | select(. | test("C920"))' \
+    } 2>/dev/null)
+
+  # NOTE: Arriba la salida de errores se manda ha `/dev/null` porque Apple en
+  # macOS Sinoma esta alertando a los usarios que utilizan a `system_profiler`
+  # con un aviso que se tiene que usar `AVCaptureDeviceTypeContinuityCamera` y
+  # no `AVCaptureDeviceTypeExternal`. El problema en que me enquentro es que yo
+  # no soy el que esta llamando a esas funciónes. Esto es algo que Apple esta
+  # llamando internamente. Y eso es porque yo esto manadando as ese mensaje al
+  # `/dev/null`.
+  # Ejemplo de el mensaje: 2023-10-11 14:47:46.368
+  # system_profiler[30326:18726474] AVCaptureDeviceTypeExternal is deprecated
+  # for Continuity Cameras. Please use AVCaptureDeviceTypeContinuityCamera and
+  # add NSCameraUseContinuityCameraDeviceType to your Info.plist.
+
+  if [ -z "${LOLCOMMITS_DEVICE}" ]
+  then
+    unset LOLCOMMITS_DEVICE
+  else
+    export LOLCOMMITS_DEVICE
+  fi
+  LANG="en_US.UTF-8" && \
+  PATH="$PATH:/Users/yo/.asdf/installs/ruby/3.2.2/bin:/usr/local/bin" && \
+  if [ ! -d "${GIT_DIR}/rebase-merge" ] && \
+     [ "${LOLCOMMITS_CAPTURE_DISABLED}" != "true" ]
+  then
+    # shellcheck disable=SC2086
+    lolcommits \
+      --capture \
+      ${animado[@]} \
+      --stealth \
+      --delay 3 \
+      --fork > /dev/null 2>&1
+    # NOTE: Arriba, aqui tambien se esta mandando toda la salida estandard a
+    # `/dev/null` porque no me interesa ver ninguna vaina de texto a usar ha
+    # `lolcommits`. Si algo sale raro, es bien facil ver que es el problema de
+    # otras maneras.
+  fi
+fi
+
+# NOTE: Esto muestra el color que corresponde a la última confirmación
+if [ -x "$(which commit-colors)" ]
+then
+  commit-colors "$(git rev-parse HEAD)"
+fi
