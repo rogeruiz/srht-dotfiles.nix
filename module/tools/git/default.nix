@@ -39,7 +39,7 @@
       p = "add --patch";
       pl = "pull";
       pop = "stash pop";
-      ps = "ps";
+      ps = "push";
       s = "status -s";
       save = "stash save";
       some = "!git add $@ && git ci";
