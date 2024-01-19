@@ -35,4 +35,39 @@
   };
 
   security.pam.enableSudoTouchIdAuth = true;
+
+  system = {
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
+    defaults = {
+
+      finder = {
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        CreateDesktop = false;
+        ShowPathbar = true;
+        ShowStatusBar = true;
+      };
+
+      # FIX: I need to figure out how to get my username over here.
+      # loginwindow.autoLoginUser = username;
+
+      menuExtraClock.IsAnalog = true;
+
+      dock = {
+        appswitcher-all-displays = true;
+        autohide = true;
+        autohide-delay = 0.0;
+        launchanim = false;
+        magnification = false;
+        mineffect = "suck";
+        showhidden = true;
+        static-only = true;
+        wvous-br-corner = 5;
+        wvous-tr-corner = 13;
+      };
+    };
+  };
 }

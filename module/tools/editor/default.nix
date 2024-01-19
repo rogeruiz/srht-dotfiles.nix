@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [];
+  home.packages = with pkgs; [ ];
 
   editorconfig = {
     enable = true;
@@ -27,7 +27,7 @@
 
       "*.{txt,md,markdown}" = {
         indent_style = "space";
-        indent_size = 4;
+        indent_size = 2;
       };
     };
   };
