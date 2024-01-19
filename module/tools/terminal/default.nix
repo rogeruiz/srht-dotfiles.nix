@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./bat
+  ];
+
   home.packages = with pkgs; [
-    alacritty
     pv
     gawk
     ranger
@@ -18,5 +21,16 @@
     coreutils
     curl
     wget
+
+    just
+    eza
+    ripgrep
+    jq
+    bat
+    du-dust
+    fd
+    procs
+    sd
+    bottom
   ];
 }
