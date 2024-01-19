@@ -3,9 +3,11 @@
 {
   imports = [
     ./bat
+    ./bottom
   ];
 
   home.packages = with pkgs; [
+    # Some of the tools I like to use in the terminal
     pv
     gawk
     ranger
@@ -18,10 +20,13 @@
     tealdeer
     htop
 
+    # Base terminal tools we all need
     coreutils
     curl
     wget
 
+    # Some Rust tools that I like to use that replace classic tools not written
+    # in Rust
     just
     eza
     ripgrep
@@ -31,7 +36,6 @@
     fd
     procs
     sd
-    bottom
   ];
 
   programs.zsh = {
