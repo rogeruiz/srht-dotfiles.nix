@@ -7,8 +7,8 @@
   ];
 
   home.file = {
-    ".config/git/template".source = ../../config/git/template;
-    ".config/git/ignore".source = ../../config/git/ignore;
+    ".config/git/template".source = ./template;
+    ".config/git/ignore".source = ./ignore;
   };
 
   programs.git = {
@@ -50,11 +50,11 @@
       who = "!who() { git log | rg 'Author: ' | rg -i $1 | sort | uniq; }; who";
       wtb = "!wtb() { git br -l | rg '\\*' | awk '{ print $2 }'; }; wtb";
 
-      gist = "log --graph --pretty=format:'${(builtins.readFile ../../config/git/log/short)}'";
-      history = "log --reverse --stat --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
-      catcup = "log FETCH_HEAD...HEAD --reverse --stat --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
-      verbose = "log --stat --patch --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
-      last = "log --patch -1 --stat --pretty=format:'${(builtins.readFile ../../config/git/log/long)}'";
+      catchup = "log FETCH_HEAD...HEAD --reverse --stat --pretty=format:'${(builtins.readFile ./log/long)}'";
+      gist = "log --graph --pretty=format:'${(builtins.readFile ./log/short)}'";
+      history = "log --reverse --stat --pretty=format:'${(builtins.readFile ./log/long)}'";
+      last = "log --patch -1 --stat --pretty=format:'${(builtins.readFile ./log/long)}'";
+      verbose = "log --stat --patch --pretty=format:'${(builtins.readFile ./log/long)}'";
     };
 
     attributes = [
@@ -97,7 +97,12 @@
       "gpg \"ssh\"" = {
         allowedSignersFile = "~/.ssh/allowed_signers";
       };
-      "commit" = {
+      "filter \"lfs\"" = {
+        clean = "git-lfs clean %f";
+        smudge = "git-lfs smudge %f";
+        required = true;
+      };
+      commit = {
         gpgsign = true;
       };
       tag = {

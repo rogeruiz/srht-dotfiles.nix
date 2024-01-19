@@ -4,7 +4,7 @@
 
   imports = [
     ./tools/terminal.nix
-    ./tools/git.nix
+    ./tools/git
     # ./tools/rust.nix
     # ./tools/neovim.nix
     # ./tools/languages.nix
