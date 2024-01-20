@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   imports = [
     ./tools/terminal
     ./tools/git
@@ -14,28 +13,30 @@
   ];
 
   # add home-manager user settings here
-  home.packages = with pkgs;
-    [
-      neovim
+  home.packages = with pkgs; [
+    yabai
+    sketchybar
 
-      exercism
+    neovim
 
-      # python3
-      nodePackages.typescript
-      nodejs
+    exercism
 
-      universal-ctags
-      tree-sitter
-      lua-language-server
-      nixd
-      yaml-language-server
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      # python311Packages.python-lsp-server
-      # marksman
-      go
-      shellcheck
-      shfmt
-    ];
+    # python3
+    nodePackages.typescript
+    nodejs
+
+    universal-ctags
+    tree-sitter
+    lua-language-server
+    nixd
+    yaml-language-server
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    # python311Packages.python-lsp-server
+    # marksman
+    go
+    shellcheck
+    shfmt
+  ];
   home.stateVersion = "23.11";
 }

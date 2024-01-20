@@ -11,8 +11,8 @@ in
   home.packages = with pkgs; [ bottom ];
 
   xdg.configFile = {
-    "bottom/bottom.toml".source = (config.lib.file.mkOutOfStoreSymlink configFile);
-    "bottom/theme".source = builtins.fetchGit {
+    "bottom/.base.toml".source = (config.lib.file.mkOutOfStoreSymlink configFile);
+    "bottom/catppuccin".source = builtins.fetchGit {
       url = "https://github.com/catppuccin/bottom.git";
       ref = "main";
       rev = "c0efe9025f62f618a407999d89b04a231ba99c92";

@@ -19,7 +19,6 @@
   environment.systemPackages = with pkgs; [
     git
     alacritty
-    tmux
     starship
   ];
 

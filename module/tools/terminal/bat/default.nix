@@ -12,7 +12,7 @@ in
 
   xdg.configFile = {
     "bat/config".source = (config.lib.file.mkOutOfStoreSymlink configFile);
-    "bat/theme".source = builtins.fetchGit {
+    "bat/catppuccin".source = builtins.fetchGit {
       url = "https://github.com/catppuccin/bat.git";
       ref = "main";
       rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";

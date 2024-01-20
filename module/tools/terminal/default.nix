@@ -31,7 +31,6 @@
     eza
     ripgrep
     jq
-    bat
     du-dust
     fd
     procs
@@ -56,12 +55,13 @@
     enableCompletion = true;
     enableAutosuggestions = true;
     defaultKeymap = "viins";
-    initExtraFirst = "eval \"$(starship init zsh)\"";
+    initExtraFirst = (builtins.readFile ./zshrc);
   };
 
   programs.tmux = {
     enable = true;
     keyMode = "vi";
+    historyLimit = 10000;
     plugins = with pkgs.tmuxPlugins; [
       catppuccin
       fuzzback
