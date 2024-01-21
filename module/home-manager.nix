@@ -15,6 +15,8 @@
 
     neovim
 
+    hello
+
     exercism
 
     # python3

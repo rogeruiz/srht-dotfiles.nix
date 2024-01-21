@@ -54,7 +54,7 @@
     };
     enableCompletion = true;
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
     initExtraFirst = (builtins.readFile ./zshrc);
   };
