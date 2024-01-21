@@ -43,7 +43,7 @@
       g = "git";
       nv = "nvim";
       nvd = "nvim -d";
-      "\"-\"" = "cd -";
+      "\"\\-\"" = "cd -";
       ".." = "cd ..";
       "..." = "cd ../..";
       l = "exa -xa";
@@ -54,6 +54,7 @@
     };
     enableCompletion = true;
     enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
     defaultKeymap = "viins";
     initExtraFirst = (builtins.readFile ./zshrc);
   };
