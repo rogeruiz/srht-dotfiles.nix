@@ -65,11 +65,11 @@
     historyLimit = 10000;
     plugins = with pkgs.tmuxPlugins; [
       catppuccin
-      fuzzback
-      jump
-      resurrect
-      sensible
-      tmux-thumbs
+      # fuzzback
+      # jump
+      # resurrect
+      # sensible
+      # tmux-thumbs
     ];
     mouse = true;
     shell = "/etc/profiles/per-user/yo/bin/zsh";

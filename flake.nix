@@ -58,14 +58,16 @@
           {
             options = {
               security.pam.enableSudoTouchIdAuth = mkEnableOption ''
-                Enable sudo authentication with Touch ID
-                When enabled, this option adds the following line to
+                Enable sudo authentication with Touch ID including pam_reattach.
+                This allows for Touch ID to also work with tmux.
+                When enabled, this option adds the following lines to
                 /etc/pam.d/sudo:
                     auth       optional       /usr/local/opt/pam-reattach/lib/pam/pam_reattach.so ignore_ssh 
                     auth       sufficient     pam_tid.so
                 (Note that macOS resets this file when doing a system update. As
                 such, sudo authentication with Touch ID won't work after a system
                 update until the nix-darwin configuration is reapplied.)
+                For more information about pam_reattach, go here: https://github.com/fabianishere/pam_reattach
               '';
             };
 

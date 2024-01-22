@@ -5,7 +5,7 @@
     ./tools/terminal
     ./tools/git
     ./tools/editor
-    # ./tools/neovim.nix
+    ./tools/neovim.nix
     # ./tools/languages.nix
     ./tools/language-servers.nix
   ];
@@ -13,13 +13,9 @@
   # add home-manager user settings here
   home.packages = with pkgs; [
 
-    neovim
-
-    hello
-
     exercism
 
-    # python3
+    python312
     nodePackages.typescript
     nodejs
 
