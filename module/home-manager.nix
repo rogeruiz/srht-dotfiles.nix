@@ -15,10 +15,10 @@
 
     exercism
 
-    python312
-    nodePackages.typescript
-    nodejs
+    # python312
+    # nodejs
 
   ];
   home.stateVersion = "23.11";
+
 }

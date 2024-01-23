@@ -13,6 +13,7 @@ inputs.darwin.lib.darwinSystem {
     {
       services.nix-daemon.enable = true;
       users.users.${username}.home = "/Users/${username}";
+      system.defaults.loginwindow.autoLoginUser = username;
     }
     system-config
 

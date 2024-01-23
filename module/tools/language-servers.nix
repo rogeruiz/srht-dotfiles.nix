@@ -9,8 +9,8 @@
     yaml-language-server
     nodePackages.typescript
     nodePackages.typescript-language-server
-    # python311Packages.python-lsp-server
-    # marksman
+    # python312Packages.python-lsp-server
+    marksman
     go
     shellcheck
     shfmt

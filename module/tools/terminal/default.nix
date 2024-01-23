@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
+let
+  alacrittyFile = "${config.home.homeDirectory}/.files.nix/module/tools/terminal/alacritty.toml";
+in
 {
   imports = [
     ./bat
@@ -36,6 +39,17 @@
     procs
     sd
   ];
+
+  home.file.".inputrc".text = ''
+    set show-all-if-ambiguous on
+    set completion-ignore-case on
+    set mark-directories on
+    set mark-symlinked-directories on
+    set match-hidden-files off
+    set visible-stats on
+    set keymap vi
+    set editing-mode vi-insert
+  '';
 
   programs.zsh = {
     enable = true;
@@ -78,4 +92,7 @@
     tmuxp.enable = true;
   };
 
+  xdg.configFile = {
+    "alacritty/alacritty.toml".source = (config.lib.file.mkOutOfStoreSymlink alacrittyFile);
+  };
 }

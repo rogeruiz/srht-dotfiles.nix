@@ -20,7 +20,11 @@
     git
     alacritty
     starship
+    coreutils
   ];
+
+  # environment.systemPath = [ "/usr/local/bin" ];
+  # environmentpathsToLink = [ "/Applications" ];
 
   programs.zsh.enable = true;
 
@@ -55,9 +59,6 @@
         ShowStatusBar = true;
       };
 
-      # FIX: I need to figure out how to get my username over here.
-      # loginwindow.autoLoginUser = username;
-
       menuExtraClock.IsAnalog = true;
 
       dock = {
@@ -74,4 +75,15 @@
       };
     };
   };
+
+  homebrew = {
+    enable = true;
+    caskArgs.no_quarantine = true;
+    global.brewfile = true;
+    # masApps = {};
+    # casks = [ "cask_name" "cask_name2" ];
+    # taps = [ "example/tap/name" "example/tap/another_name" ];
+    # brews = [ "app_name" "app_name2" ];
+  };
+
 }

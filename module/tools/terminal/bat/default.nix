@@ -5,17 +5,31 @@ let
   # `config` file rather than letting it be relative.
   # NOTE: I want to figure out a way to build this full path so I don't have to
   # remember all these directories.
-  configFile = "${config.home.homeDirectory}/Developer/oss/rogeruiz/srht/.files.nix/module/tools/terminal/bat/config";
+  configFile = "${config.home.homeDirectory}/.files.nix/module/tools/terminal/bat/config";
+
+  themeRepo = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "bat";
+    rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
+    sha256 = "sha256-6WVKQErGdaqb++oaXnY3i6/GuH2FhTgK0v4TN4Y0Wbw=";
+  };
 in
 {
-  home.packages = with pkgs; [ bat ];
+  programs.bat = {
+    enable = true;
+    themes = {
+      catppuccin-latte = {
+        src = themeRepo;
+        file = "Catppuccin-latte.tmTheme";
+      };
+      catppuccin-mocha = {
+        src = themeRepo;
+        file = "Catppuccin-mocha.tmTheme";
+      };
+    };
+  };
 
   xdg.configFile = {
     "bat/config".source = (config.lib.file.mkOutOfStoreSymlink configFile);
-    "bat/catppuccin".source = builtins.fetchGit {
-      url = "https://github.com/catppuccin/bat.git";
-      ref = "main";
-      rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
-    };
   };
 }
