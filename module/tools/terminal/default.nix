@@ -7,6 +7,10 @@ in
   imports = [
     ./bat
     ./bottom
+
+    # NOTE: Esto se configura aquí pero se activo en `module/configuration.nix`
+    # como un servicio
+    ../sketchybar
   ];
 
   home.packages = with pkgs; [
@@ -16,17 +20,21 @@ in
     ranger
     httpie
     direnv
+    unar
     blahaj
     entr
     catimg
     lynx
-    tealdeer
     htop
 
     # Base terminal tools we all need
+    cmake
     coreutils
     curl
     wget
+    reattach-to-user-namespace
+    pam-reattach
+    zoxide
 
     # Some Rust tools that I like to use that replace classic tools not written
     # in Rust
@@ -38,6 +46,11 @@ in
     fd
     procs
     sd
+    grex
+    tealdeer
+
+    keychain
+    _1password
   ];
 
   home.file.".inputrc".text = ''

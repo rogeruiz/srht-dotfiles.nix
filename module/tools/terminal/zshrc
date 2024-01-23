@@ -1,38 +1,32 @@
 # ZSH Completions
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select
-autoload -Uz compinit
-compinit
-fpath=(/Users/yo/Developer/oss/zsh-completions/src $fpath)
+# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+# zstyle ':completion:*' menu select
+# autoload -Uz compinit
+# compinit
+# fpath=(/Users/yo/Developer/oss/zsh-completions/src $fpath)
 
-eval "$(nodenv init -)"
+# eval "$(nodenv init -)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 eval "$(op completion zsh)"; compdef _op op
-
-# TODO: This doesn't work right now
-# Disable Alacritty Dock bouncing for non-focused windows
-# https://github.com/alacritty/alacritty/issues/2950#issuecomment-706610878
-# printf "\e[?1042l"
-
+#
 # ZSH History saving
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt share_history
-
+# HISTFILE=~/.zsh_history
+# HISTSIZE=10000
+# SAVEHIST=10000
+# setopt share_history
+#
 # ZSH disable bell
-unsetopt beep
+# unsetopt beep
 
 # ZSH Auto Suggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ZSH Syntax Highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Example aliases
-alias zshconfig="$EDITOR ~/.zshrc"
 
 unsetopt correct_all
 export VISUAL=nvim
@@ -64,7 +58,7 @@ export PATH="$HOME/.rvm/bin:$PATH"
 
 export PATH="/usr/local/bin:$PATH"
 
-source /usr/local/opt/asdf/libexec/asdf.sh
+# source /usr/local/opt/asdf/libexec/asdf.sh
 
 export GOPATH=${GOPATH:-$(go env GOPATH)}
 

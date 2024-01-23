@@ -28,6 +28,15 @@
       };
 
       darwinModules = {
+        # NOTE: This only sets up TouchID on non-tmux shells. For that you'll
+        # need to use `pam_reattach` which is installed as a package in
+        # `module/tools/terminal/default.nix`. This means you'll need to edit
+        # that file manually and run the following code to symlink it manually.
+        # ```sh
+        # ln -s $(nix eval 'nixpkgs#pam-reattach.outPath') /usr/local/lib/pam/pam_reattach.so
+        # ```
+        # For more information about pam_reattach, go here:
+        # https://github.com/fabianishere/pam_reattach
         security-pam = { config, lib, pkgs, ... }:
           with lib;
           let
@@ -42,7 +51,6 @@
                   # Enable sudo Touch ID authentication, if not already enabled
                   if ! grep 'pam_id.so' ${file} > /dev/null; then
                     sed -i "" '2i\
-                  auth       optional       /usr/local/opt/pam-reattach/lib/pam/pam_reattach.so ignore_ssh # nix-darwin: ${option}
                   auth       sufficient     pam_tid.so # nix-darwin: ${option}
                     ' ${file}
                   fi
@@ -58,16 +66,13 @@
           {
             options = {
               security.pam.enableSudoTouchIdAuth = mkEnableOption ''
-                Enable sudo authentication with Touch ID including pam_reattach.
-                This allows for Touch ID to also work with tmux.
+                Enable sudo authentication with Touch ID.
                 When enabled, this option adds the following lines to
                 /etc/pam.d/sudo:
-                    auth       optional       /usr/local/opt/pam-reattach/lib/pam/pam_reattach.so ignore_ssh 
                     auth       sufficient     pam_tid.so
                 (Note that macOS resets this file when doing a system update. As
                 such, sudo authentication with Touch ID won't work after a system
                 update until the nix-darwin configuration is reapplied.)
-                For more information about pam_reattach, go here: https://github.com/fabianishere/pam_reattach
               '';
             };
 

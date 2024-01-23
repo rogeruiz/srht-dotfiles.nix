@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./tools/yabai
+    ./tools/skhd
+  ];
+
   # add more system settings here
   nix = {
     settings = {
@@ -14,6 +19,10 @@
       trusted-users = [ "@wheel" ];
       warn-dirty = false;
     };
+  };
+
+  nixpkgs.config = {
+    allowUnfree = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -32,7 +41,6 @@
 
   # NOTE: Eso se tiene que hacer a nivel de sistema y no de hogar. Por ahora,
   # no voy hacer la configuración aqui pero se puede hacer.
-  services.yabai.enable = true;
   services.sketchybar.enable = true;
 
   fonts = {
@@ -81,9 +89,42 @@
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     # masApps = {};
-    # casks = [ "cask_name" "cask_name2" ];
-    # taps = [ "example/tap/name" "example/tap/another_name" ];
-    # brews = [ "app_name" "app_name2" ];
+    casks = [
+      # "1password"
+      "adobe-creative-cloud"
+      "anki"
+      "audacity"
+      "aws-vault"
+      "docker"
+      "dropbox"
+      "firefox"
+      "flux"
+      "handbrake"
+      "hot"
+      "imageoptim"
+      "iterm2"
+      "keybase"
+      # "launchbar"
+      "lagrange"
+      "postman"
+      "rar"
+      # "slack"
+      "soulver"
+      "spotify"
+      "time-out"
+      "transmission"
+      "virtualbox"
+      "visual-studio-code"
+      "wireshark"
+      "writer"
+      "zoom"
+    ];
+    taps = [
+      # "sparkbox/commit-colors"
+    ];
+    brews = [
+      # "sparkbox/commit-colors/commit-colors"
+    ];
   };
 
 }

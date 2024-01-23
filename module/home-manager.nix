@@ -15,9 +15,10 @@
 
     exercism
 
-    # python312
-    # nodejs
+    zstd
 
+    ffmpeg
+    imagemagick
   ];
   home.stateVersion = "23.11";
 
