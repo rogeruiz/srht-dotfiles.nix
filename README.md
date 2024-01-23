@@ -25,3 +25,9 @@ Manager and are documented separately.
 This project also houses the Nix Shell configurations for various projects. Some
 of these Nix files are also saved in another repository, but I keep copies here
 as both a backup but to also continue learning, testing, and improving them.
+
+## Impurity in this Flake
+
+There is some basic impurities in this Flake. Some of the configuration files
+are local to `~/.files.nix` & expects this path to exist for the user to link
+these values rather than us the `/nix/store` derivations.
