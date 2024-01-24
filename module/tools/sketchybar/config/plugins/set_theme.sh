@@ -181,8 +181,6 @@ sketchybar \
 	icon.color="$(color mauve)" \
 	label.color="$(color subtext0)" \
 
-~/.local/bin/darwin/current_visual_mode
-
 # set the yabai colours as well
 yabai \
 	-m config active_window_border_color "$(color pink)" \

@@ -1,7 +1,10 @@
 { pkgs, config, ... }:
 
 let
-  alacrittyFile = "${config.home.homeDirectory}/.files.nix/module/tools/terminal/alacritty.toml";
+  terminalPath = "${config.home.homeDirectory}/.files.nix/module/tools/terminal";
+  alacrittyFile = "${terminalPath}/alacritty.toml";
+  starshipFile = "${terminalPath}/starship.toml";
+  link = config.lib.file.mkOutOfStoreSymlink;
 in
 {
   imports = [
@@ -106,6 +109,7 @@ in
   };
 
   xdg.configFile = {
-    "alacritty/alacritty.toml".source = (config.lib.file.mkOutOfStoreSymlink alacrittyFile);
+    "alacritty/alacritty.toml".source = (link alacrittyFile);
+    "starship.toml".source = (link starshipFile);
   };
 }

@@ -1,0 +1,205 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$time$git_branch$git_commit$git_state$git_metrics$git_status
+$battery$directory
+$aws\
+[ 󰟀  ](bg:sky fg:surface0)$package$python$rust$nodejs$golang$terraform$ruby$nix_shell[](fg:sky)
+$jobs$cmd_duration$character"""
+
+palette = "light"
+
+# 
+# 
+# 
+# 
+# 
+# 
+
+[character]
+success_symbol = "[   ](bg:green fg:base)[](fg:green)"
+error_symbol = "[    ](bg:red fg:base)[  ](fg:red)"
+vimcmd_symbol = "[   ](bg:mauve fg:base)[](fg:mauve)"
+format = "$symbol   "
+
+[cmd_duration]
+min_time = 5_000
+format = "[   ](bg:yellow fg:surface0)[ $duration ](italic bg:surface0 fg:yellow)"
+
+[ruby]
+symbol = " "
+format = "[ $symbol ](bg:red fg:surface0)[ $version ](italic bg:surface0 fg:red)"
+
+[python]
+symbol = " "
+format = "[ $symbol ](bg:yellow fg:surface0)[ $version ](italic bg:surface0 fg:yellow)"
+
+[nodejs]
+symbol = "󰎙 "
+format = "[ $symbol ](bg:green fg:surface0)[ $version ](italic bg:surface0 fg:green)"
+
+[golang]
+symbol = " "
+format = "[ $symbol](bg:sapphire fg:surface0)[ $version ](italic bg:surface0 fg:sapphire)"
+
+[rust]
+symbol = " "
+format = "[ $symbol ](bg:overlay2 fg:surface0)[ $version ](italic bg:surface0 fg:overlay2)"
+
+[terraform]
+symbol = "  "
+detect_files = [".terraform-version"]
+format = "[ $symbol ](bg:mauve fg:surface0)[ $version ](italic bg:surface0 fg:mauve)"
+
+[nix_shell]
+symbol = "󱄅 "
+impure_msg = '[  ](bold bg:surface0 fg:red)'
+pure_msg = '[  ](bold bg:surface0 fg:green)'
+unknown_msg = '[  ](bold bg:surface0 fg:yellow)'
+format = "[ $symbol ](bg:sky fg:surface0)[ $state $name ](italic bg:surface0 fg:sky)"
+
+[aws]
+symbol = "  "
+expiration_symbol = ""
+format = "[   ](bg:#ff9900 fg:surface0)[ $symbol](fg:#ff9900 bg:base)[ $profile ](bg:surface0 fg:sapphire)[$region ](bg:surface0 fg:sapphire) [$duration](italic fg:#ff9900) [ ](bg:#ff9900)"
+
+[aws.region_aliases]
+us-gov-west-1 = "    us-gov-west-1"
+us-gov-east-1 = "    us-gov-east-1"
+
+# [aws.profile_aliases]
+# transcom-gov-dev = "    nonato/dev"
+# transcom-gov-milmove-demo = "  蠟 nonato/demo"
+# transcom-gov-milmove-exp = "    nonato/exp"
+# transcom-gov-milmove-loadtest = "    nonato/loadtest"
+# transcom-gov-milmove-stg = "撚   ato/stg"
+# transcom-gov-milmove-prd = "撚 嘆 ato/prd"
+# transcom-gov-org-root = "    org-root"
+
+[package]
+symbol = " "
+display_private = true
+format = "[ $symbol ](bg:peach fg:surface0)[ $version ](italic bg:surface0 fg:peach)"
+
+[git_branch]
+symbol = "  "
+format = "[$symbol](bg:#f14e32 fg:surface0)[ $branch(:$remote_branch) ](italic bg:surface0 fg:#f14e32)[](fg:#f14e32) "
+
+[git_status]
+format = "([](#f14e32) [$all_status$ahead_behind]($style) )" # NOTE: This is Git orange
+modified = "[](blue) "
+staged = "[](green) "
+deleted = "[](red) "
+renamed = "[](peach) "
+untracked = "[󰡯](yellow) "
+diverged = "[](maroon)"
+ahead = "[](green) "
+behind = "[](flamingo) "
+conflicted = "[](yellow) "
+stashed = "[󰘓](magenta) "
+
+[git_metrics]
+format = " ([ $added]($added_style) )([ $deleted]($deleted_style) )"
+disabled = false
+
+[git_commit]
+commit_hash_length = 7
+only_detached = false
+format = "[＃](bg:flamingo fg:surface0)[ $hash$tag ](italic bg:surface0 fg:flamingo)[](fg:flamingo) "
+
+[directory]
+truncation_length = 5
+truncation_symbol = "  "
+home_symbol = "~"
+style = "bold bg:surface0 fg:green"
+
+# 
+# 
+
+repo_root_style = "bold fg:#f14e32 bg:surface0" # NOTE: This is Git orange
+
+read_only = "  "
+read_only_style = "bg:pink fg:crust"
+
+truncate_to_repo = true
+format = "[   ](bg:green fg:crust bold)[ $path ]($style)[$read_only]($read_only_style)[](fg:green)"
+repo_root_format = "[   ](bg:green fg:crust)[ $before_root_path]($repo_root_style)[$repo_root[$path](dimmed fg:sky bg:surface0)[ ](bg:surface0)]($repo_root_style)[$read_only]($read_only_style)[](fg:green)"
+
+[jobs]
+symbol = " "
+style = "bg:pink fg:surface1"
+format = "[ $symbol ]($style)[$number](bg:surface0 fg:subtext1)"
+
+[time]
+disabled = false
+time_format = "%T"
+format = "[ 󰥔  ](bg:yellow fg:crust)[ $time ](italic bg:surface0 fg:yellow)[](fg:yellow) "
+utc_time_offset = "local"
+
+# [custom.git_spark]
+# command = "current_git_activity"
+# symbol = " "
+# when = """ git rev-parse --is-inside-work-tree """
+# style = "white dimmed"
+
+
+# [custom.git_color]
+# command = 'current_git_color'
+# when = """ git rev-parse --is-inside-work-tree """
+# description = "The current hexidecimal color based on the current Git SHA at HEAD."
+
+[palettes.light]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+
+[palettes.dark]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

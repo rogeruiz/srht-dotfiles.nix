@@ -50,7 +50,9 @@
     ];
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.enableSudoTouchIdAuthPatch = true;
+  security.pam.enablePamReattach = true;
+
 
   system = {
     keyboard = {
