@@ -7,8 +7,9 @@ with lib; let
   cfg = config.security.pam;
 in
 {
-  # WARN: This file only exists here because the following PR is not merged upstream
-  # https://github.com/LnL7/nix-darwin/pull/662
+  # WARN: This file only exists here because the following PR is not merged
+  # upstream: https://github.com/LnL7/nix-darwin/pull/662. Once they do exist,
+  # I'll be removing this file from my configuration.
   options = {
     security.pam = {
       # README: Renamed here to include the `Patch` suffix to avoid collision with
@@ -60,7 +61,7 @@ in
           +++ b/etc/pam.d/sudo
           @@ -1,4 +1,6 @@
            # sudo: auth account password session
-          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so
+          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
           +auth       sufficient     pam_tid.so
            auth       sufficient     pam_smartcard.so
            auth       required       pam_opendirectory.so
@@ -87,7 +88,7 @@ in
           +++ b/etc/pam.d/sudo
           @@ -1,4 +1,5 @@
            # sudo: auth account password session
-          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so
+          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
            auth       sufficient     pam_smartcard.so
            auth       required       pam_opendirectory.so
            account    required       pam_permit.so

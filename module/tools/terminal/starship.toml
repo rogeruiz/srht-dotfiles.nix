@@ -7,7 +7,7 @@ $aws\
 [ 󰟀  ](bg:sky fg:surface0)$package$python$rust$nodejs$golang$terraform$ruby$nix_shell[](fg:sky)
 $jobs$cmd_duration$character"""
 
-palette = "light"
+palette = "dark"
 
 # 
 # 
@@ -53,10 +53,10 @@ format = "[ $symbol ](bg:mauve fg:surface0)[ $version ](italic bg:surface0 fg:ma
 
 [nix_shell]
 symbol = "󱄅 "
-impure_msg = '[  ](bold bg:surface0 fg:red)'
-pure_msg = '[  ](bold bg:surface0 fg:green)'
-unknown_msg = '[  ](bold bg:surface0 fg:yellow)'
-format = "[ $symbol ](bg:sky fg:surface0)[ $state $name ](italic bg:surface0 fg:sky)"
+impure_msg = '[](bold bg:surface0 fg:red)'
+pure_msg = '[](bold bg:surface0 fg:green)'
+unknown_msg = '[](bold bg:surface0 fg:yellow)'
+format = "[ $symbol ](bg:sky fg:surface0)[ $state  $name ](italic bg:surface0 fg:sky)"
 
 [aws]
 symbol = "  "

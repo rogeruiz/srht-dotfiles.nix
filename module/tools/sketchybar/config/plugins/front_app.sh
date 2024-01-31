@@ -24,9 +24,9 @@ case $INFO in
   "Calendario" | "Calendar") INFO="󰧒" ;;
   "Catálogo Tipográfico" | "Font Book") INFO="" ;;
   "Centro de control") INFO="󰕮" ;;
-  "Configuración del Sistema" | "System Settings") INFO="" ;;
+  "Configuración del Sistema" | "System Settings" | "CoreUIAgent") INFO="" ;;
   "Creative Cloud") INFO="" ;;
-  "Docker") INFO="󰡨" ;;
+  "Docker" | "Docker Desktop") INFO="󰡨" ;;
   "Dropbox") INFO="" ;;
   "DiskImages UI Agent") INFO="󰨣" ;;
   "Discord") INFO="󰙯" ;;
@@ -42,7 +42,7 @@ case $INFO in
   "Instapaper") INFO="󰬐" ;;
   "Keybase") INFO="󱕵" ;;
   "KeyCastr") INFO="" ;;
-  "Kindle Classic") INFO="" ;;
+  "Kindle Classic" | "Kindle") INFO="" ;;
   "LaunchBar") INFO="󰌓" ;;
   "loginwindow") INFO="󰍂" ;;
   "Mail") INFO="󰛮" ;;

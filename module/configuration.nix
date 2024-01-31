@@ -25,12 +25,19 @@
     allowUnfree = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    alacritty
-    starship
-    coreutils
-  ];
+  environment = {
+    etc."pam.d/sudo_local".text = ''
+      # Managed by Nix Darwin
+      auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
+      auth       sufficient     pam_tid.so
+    '';
+    systemPackages = with pkgs; [
+      git
+      alacritty
+      starship
+      coreutils
+    ];
+  };
 
   # environment.systemPath = [ "/usr/local/bin" ];
   # environmentpathsToLink = [ "/Applications" ];
@@ -49,10 +56,6 @@
       (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     ];
   };
-
-  security.pam.enableSudoTouchIdAuthPatch = true;
-  security.pam.enablePamReattach = true;
-
 
   system = {
     keyboard = {
