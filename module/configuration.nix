@@ -74,6 +74,11 @@
 
       menuExtraClock.IsAnalog = true;
 
+      NSGlobalDomain = {
+        InitialKeyRepeat = 15;
+        KeyRepeat = 2;
+      };
+
       dock = {
         appswitcher-all-displays = true;
         autohide = true;

@@ -40,23 +40,7 @@ in
       mouse_follows_focus = "off";
       focus_follows_mouse = "autoraise";
     };
-    extraConfig = ''
-      yabai -m rule --add app="^Due" manage=off
-      yabai -m rule --add app="^Música" manage=off
-      yabai -m rule --add app="^Photo Booth" manage=off
-      yabai -m rule --add app="^Configuración del Sistema" manage=off
-      yabai -m rule --add app="^DiskImages UI Agent" manage=off
-
-      # NOTE: Desactivar la gestión de la ventana de Copiar del Finder porque es demasiado
-      # pequeñia y efímera.
-      yabai -m rule --add app="^Finder" title="Copiar" manage=off
-      yabai -m rule --add app="^Finder" title="Configuración del Finder" manage=off
-
-      yabai -m rule --add app="^Safari" title="^(General|Pestañas|Autorelleno|Contraseñas|Buscar|Seguridad|Privacidad|Sitios|Perfiles|Extensiones|Avanzado|Desarrollador|Interruptores de funciones)$" manage=off
-
-
-      yabai -m rule --add app="^iA Writer" title="^(General|Cuentas|Documentos|Biblioteca|Editor|Autores|Plantillas|Markdown)$" manage=off
-    '';
+    extraConfig = (builtins.readFile ./yabairc);
   };
 }
 
