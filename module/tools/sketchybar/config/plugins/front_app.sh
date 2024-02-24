@@ -25,6 +25,7 @@ case $INFO in
   "Catálogo Tipográfico" | "Font Book") INFO="" ;;
   "Centro de control") INFO="󰕮" ;;
   "Configuración del Sistema" | "System Settings" | "CoreUIAgent") INFO="" ;;
+  "Compartir Pantalla") INFO="󱒃" ;;
   "Creative Cloud") INFO="" ;;
   "Docker" | "Docker Desktop") INFO="󰡨" ;;
   "Dropbox") INFO="" ;;
