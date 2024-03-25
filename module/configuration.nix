@@ -126,6 +126,7 @@
       "time-out"
       "transmission"
       "virtualbox"
+      "visual-studio"
       "visual-studio-code"
       "wireshark"
       "writer"
@@ -133,6 +134,9 @@
     ];
     taps = [
       # "sparkbox/commit-colors"
+
+      # para `visual-studio` en `casks = [] de arriba`
+      "homebrew/cask-versions"
     ];
     brews = [
       # "sparkbox/commit-colors/commit-colors"
