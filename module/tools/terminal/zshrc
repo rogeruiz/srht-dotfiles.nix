@@ -38,10 +38,10 @@ bindkey -M vicmd ' ' edit-command-line
 bindkey '^[[Z' reverse-menu-complete
 
 # Include Enviroment Variables
-source $HOME/Developer/.variables
+# source $HOME/Developer/.variables
 
 # Include Custom Aliases
-source $HOME/Developer/.aliases
+# source $HOME/Developer/.aliases
 
 ulimit -n 10000
 
