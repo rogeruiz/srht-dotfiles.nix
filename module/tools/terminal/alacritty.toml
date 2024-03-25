@@ -71,7 +71,7 @@ program = "/bin/zsh"
 
 [window]
 decorations = "buttonless"
-opacity = 0.88
+opacity = 0.86
 startup_mode = "Windowed"
 title = "te vez bien hoy"
 
