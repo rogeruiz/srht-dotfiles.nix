@@ -10,6 +10,7 @@ in
   imports = [
     ./bat
     ./bottom
+    ./tmux
 
     # NOTE: Esto se configura aquí pero se activo en `module/configuration.nix`
     # como un servicio
@@ -87,28 +88,6 @@ in
     syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
     initExtraFirst = (builtins.readFile ./zshrc);
-  };
-
-  programs.tmux = {
-    enable = true;
-    keyMode = "vi";
-    historyLimit = 10000;
-    plugins = with pkgs.tmuxPlugins; [
-      {
-        plugin = catppuccin;
-        extraConfig = builtins.readFile ./tmux/plugins/catppuccin.config;
-      }
-      # fuzzback
-      # jump
-      # resurrect
-      # sensible
-      # tmux-thumbs
-    ];
-    mouse = true;
-    shell = "/etc/profiles/per-user/yo/bin/zsh";
-    shortcut = "b";
-    terminal = "tmux-256color";
-    tmuxp.enable = true;
   };
 
   xdg.configFile = {
