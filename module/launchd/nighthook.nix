@@ -58,12 +58,9 @@ in
                 ~/.config/nvim/lua/custom/plugins/catppuccin.lua
 
               # NOTE: Tmux
-              sed -E \
-                -i "" \
-                "s/^(set -g @catppuccin_flavour ).+$/\1'$FLAVOR'/" \
-                ~/.tmux.conf
+              ${pkgs.tmux}/bin/tmux set -g "@catppuccin_flavour" $FLAVOR
+              ${pkgs.tmux}/bin/tmux run ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
 
-              tmux source-file ~/.config/tmux/tmux.conf > /dev/null 2>&1 &
             }
 
             cambia_tema $@

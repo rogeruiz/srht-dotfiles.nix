@@ -94,7 +94,10 @@ in
     keyMode = "vi";
     historyLimit = 10000;
     plugins = with pkgs.tmuxPlugins; [
-      catppuccin
+      {
+        plugin = catppuccin;
+        extraConfig = builtins.readFile ./tmux/plugins/catppuccin.config;
+      }
       # fuzzback
       # jump
       # resurrect
