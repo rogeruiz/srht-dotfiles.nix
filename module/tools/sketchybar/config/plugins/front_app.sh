@@ -45,6 +45,7 @@ case $INFO in
   "KeyCastr") INFO="" ;;
   "Kindle Classic" | "Kindle") INFO="" ;;
   "LaunchBar") INFO="󰌓" ;;
+  "Lagrange") INFO="󰪁" ;;
   "loginwindow") INFO="󰍂" ;;
   "Mail") INFO="󰛮" ;;
   "Mapas" | "Maps") INFO="" ;;
