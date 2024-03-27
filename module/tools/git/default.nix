@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  skylight-include-file = ".config/git/includes/skylight.inc";
+in
 {
   home.packages = with pkgs; [
     git
@@ -9,6 +12,7 @@
   home.file = {
     ".config/git/template".source = ./template;
     ".config/git/ignore".source = ./ignore;
+    "${skylight-include-file}".source = ./includes/skylight.inc;
   };
 
   programs.git = {
@@ -62,6 +66,13 @@
       "flake.lock -diff"
       "package-lock.json -diff"
       "yarn.lock -diff"
+    ];
+
+    includes = [
+      {
+        path = "~/${skylight-include-file}";
+        condition = "gitdir:~/Developer/skylight/";
+      }
     ];
 
     extraConfig = {
