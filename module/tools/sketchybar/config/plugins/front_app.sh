@@ -60,6 +60,7 @@ case $INFO in
   "osascript") INFO="󰯁" ;;
   "Pages") INFO="" ;;
   "Photo Booth") INFO="" ;;
+  "QuickTime Player") INFO="󱜅" ;;
   "Reloj" | "Clock") INFO="󱉊" ;;
   "Safari") INFO="󰀹" ;;
   "ScreenSaverEngine") INFO="" ;;
