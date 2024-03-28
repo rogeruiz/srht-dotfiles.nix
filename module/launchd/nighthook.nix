@@ -52,10 +52,17 @@ in
                 > ~/.config/bottom/bottom.toml
 
               # NOTE: Nvim
-              sed -E \
-                -i "" \
-                "s/(vim.o.background = ).+$/\1\"$MODE\"/" \
-                ~/.config/nvim/lua/custom/plugins/catppuccin.lua
+              # Para Neovim, es mejor ver si ya esta selecionado el tema y no
+              # cambiar el archivo si el tema no ha cambiado
+              if ! ${pkgs.ripgrep}/bin/rg "vim.o.background = \"$MODE\"" \
+                ~/.config/nvim/lua/custom/plugins/catppuccin.lua \
+                >/dev/null 2>&1
+              then
+                sed -E \
+                  -i "" \
+                  "s/(vim.o.background = ).+$/\1\"$MODE\"/" \
+                  ~/.config/nvim/lua/custom/plugins/catppuccin.lua
+              fi
 
               # NOTE: Tmux
               ${pkgs.tmux}/bin/tmux set -g "@catppuccin_flavour" $FLAVOR
