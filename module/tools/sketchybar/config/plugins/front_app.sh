@@ -19,6 +19,7 @@ case $INFO in
   "Backblaze") INFO="" ;;
   "bzbmenu") INFO="󰈸" ;;
   "Bitdefender Endpoint Security Tools") INFO="󰒃" ;;
+  "Bolsa") INFO="" ;;
   "Calculadora" | "Calculator") INFO="󰪚" ;;
   "calibre") INFO="󱉟" ;;
   "Calendario" | "Calendar") INFO="󰧒" ;;
@@ -53,10 +54,11 @@ case $INFO in
   "Mensajes" | "Messages") INFO="󰍡" ;;
   "Miro") INFO="󱁉" ;;
   "Música" | "Music") INFO="" ;;
-  "Monitor de Actividad" | "Activity Monitor") INFO="" ;;
+  "Monitor de Actividad" | "Activity Monitor") INFO="󱎴" ;;
   "Microsoft Teams (work or school)" | "Microsoft Teams") INFO="󰊻" ;;
   "News") INFO="󰎕" ;;
   "Notational Velocity") INFO="" ;;
+  "Numbers") INFO="" ;;
   "osascript") INFO="󰯁" ;;
   "Pages") INFO="" ;;
   "Photo Booth") INFO="" ;;
