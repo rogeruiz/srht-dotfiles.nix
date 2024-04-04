@@ -60,7 +60,7 @@ case $INFO in
   "Notational Velocity") INFO="" ;;
   "Numbers") INFO="" ;;
   "osascript") INFO="󰯁" ;;
-  "Pages") INFO="" ;;
+  "Pages") INFO="󱔗" ;;
   "Photo Booth") INFO="" ;;
   "QuickTime Player") INFO="󱜅" ;;
   "Reloj" | "Clock") INFO="󱉊" ;;
