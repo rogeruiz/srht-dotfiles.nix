@@ -4,7 +4,7 @@
 format = """$time$git_branch$git_commit$git_state$git_metrics$git_status
 $battery$directory
 $aws\
-[ 󰟀  ](bg:sky fg:surface0)$package$python$rust$nodejs$golang$terraform$ruby$nix_shell[](fg:sky)
+[ 󰟀  ](bg:sky fg:surface0)$package$python$rust$nodejs$golang$terraform$ruby$nix_shell[█](fg:sky)
 $jobs$cmd_duration$character"""
 
 palette = "dark"
@@ -15,11 +15,13 @@ palette = "dark"
 # 
 # 
 # 
+# █
+# █ 
 
 [character]
-success_symbol = "[   ](bg:green fg:base)[](fg:green)"
+success_symbol = "[   ](bg:green fg:base)[█](fg:green)"
 error_symbol = "[    ](bg:red fg:base)[  ](fg:red)"
-vimcmd_symbol = "[   ](bg:mauve fg:base)[](fg:mauve)"
+vimcmd_symbol = "[   ](bg:mauve fg:base)[█](fg:mauve)"
 format = "$symbol   "
 
 [cmd_duration]
@@ -83,7 +85,7 @@ format = "[ $symbol ](bg:peach fg:surface0)[ $version ](italic bg:surface0 fg:pe
 
 [git_branch]
 symbol = "  "
-format = "[$symbol](bg:#f14e32 fg:surface0)[ $branch(:$remote_branch) ](italic bg:surface0 fg:#f14e32)[](fg:#f14e32) "
+format = "[$symbol](bg:#f14e32 fg:surface0)[ $branch(:$remote_branch) ](italic bg:surface0 fg:#f14e32)[█](fg:#f14e32) "
 
 [git_status]
 format = "([](#f14e32) [$all_status$ahead_behind]($style) )" # NOTE: This is Git orange
@@ -105,7 +107,7 @@ disabled = false
 [git_commit]
 commit_hash_length = 7
 only_detached = false
-format = "[＃](bg:flamingo fg:surface0)[ $hash$tag ](italic bg:surface0 fg:flamingo)[](fg:flamingo) "
+format = "[＃](bg:flamingo fg:surface0)[ $hash$tag ](italic bg:surface0 fg:flamingo)[█](fg:flamingo) "
 
 [directory]
 truncation_length = 5
@@ -122,8 +124,8 @@ read_only = "  "
 read_only_style = "bg:pink fg:crust"
 
 truncate_to_repo = true
-format = "[   ](bg:green fg:crust bold)[ $path ]($style)[$read_only]($read_only_style)[](fg:green)"
-repo_root_format = "[   ](bg:green fg:crust)[ $before_root_path]($repo_root_style)[$repo_root[$path](dimmed fg:sky bg:surface0)[ ](bg:surface0)]($repo_root_style)[$read_only]($read_only_style)[](fg:green)"
+format = "[   ](bg:green fg:crust bold)[ $path ]($style)[$read_only]($read_only_style)[█](fg:green)"
+repo_root_format = "[   ](bg:green fg:crust)[ $before_root_path]($repo_root_style)[$repo_root[$path](dimmed fg:sky bg:surface0)[ ](bg:surface0)]($repo_root_style)[$read_only]($read_only_style)[█](fg:green)"
 
 [jobs]
 symbol = " "
@@ -133,7 +135,7 @@ format = "[ $symbol ]($style)[$number](bg:surface0 fg:subtext1)"
 [time]
 disabled = false
 time_format = "%T"
-format = "[ 󰥔  ](bg:yellow fg:crust)[ $time ](italic bg:surface0 fg:yellow)[](fg:yellow) "
+format = "[ 󰥔  ](bg:yellow fg:crust)[ $time ](italic bg:surface0 fg:yellow)[█](fg:yellow) "
 utc_time_offset = "local"
 
 # [custom.git_spark]
