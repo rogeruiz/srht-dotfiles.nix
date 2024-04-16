@@ -178,6 +178,7 @@ sketchybar \
   background.color="$(color crust)" \
 	label.color="$(color subtext0)" \
 	--set clock \
+  background.color="$(color base)" \
 	icon.color="$(color mauve)" \
 	label.color="$(color subtext0)" \
 
