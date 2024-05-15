@@ -68,6 +68,12 @@ in
               ${pkgs.tmux}/bin/tmux set -g "@catppuccin_flavour" $FLAVOR
               ${pkgs.tmux}/bin/tmux run ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
 
+              # NOTE: LS_COLORS
+              sed -E \
+                -i "" \
+                "s/(catppuccin-)[a-z]+/\1$FLAVOR/" \
+                $DIR/variables.sh
+
             }
 
             cambia_tema $@

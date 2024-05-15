@@ -4,6 +4,7 @@ let
   terminalPath = "${config.home.homeDirectory}/.files.nix/module/tools/terminal";
   alacrittyFile = "${terminalPath}/alacritty.toml";
   starshipFile = "${terminalPath}/starship.toml";
+  variablesFile = "${terminalPath}/variables.sh";
   link = config.lib.file.mkOutOfStoreSymlink;
 in
 {
@@ -42,6 +43,7 @@ in
 
     # Some Rust tools that I like to use that replace classic tools not written
     # in Rust
+    vivid
     just
     eza
     ripgrep
@@ -94,4 +96,6 @@ in
     "alacritty/alacritty.toml".source = (link alacrittyFile);
     "starship.toml".source = (link starshipFile);
   };
+
+  home.file.".local/share/rstrz/.variables".source = (link variablesFile);
 }
