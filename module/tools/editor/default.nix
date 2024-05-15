@@ -22,6 +22,11 @@
         trim_trailing_whitespace = true;
       };
 
+      "*.dsl" = {
+        indent_style = "space";
+        indent_size = 4;
+      };
+
       "*.cs" = {
         indent_style = "space";
         indent_size = 4;
