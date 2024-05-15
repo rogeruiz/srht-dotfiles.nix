@@ -18,14 +18,17 @@ case $INFO in
   "App Store") INFO="" ;;
   "Backblaze") INFO="" ;;
   "bzbmenu") INFO="󰈸" ;;
-  "Bitdefender Endpoint Security Tools") INFO="󰒃" ;;
+  "Bitdefender Endpoint Security Tools" | "SecurityAgent") INFO="󰒃" ;;
   "Bolsa") INFO="" ;;
   "Calculadora" | "Calculator") INFO="󰪚" ;;
+  "coreautha") INFO="󱅞" ;;
   "calibre") INFO="󱉟" ;;
   "Calendario" | "Calendar") INFO="󰧒" ;;
   "Catálogo Tipográfico" | "Font Book") INFO="" ;;
   "Centro de control") INFO="󰕮" ;;
+  "Centro de notificaciones") INFO="󰕮" ;;
   "Configuración del Sistema" | "System Settings" | "CoreUIAgent") INFO="" ;;
+  "Consola" | "Console") INFO="" ;;
   "Compartir Pantalla") INFO="󱒃" ;;
   "Creative Cloud") INFO="" ;;
   "Docker" | "Docker Desktop") INFO="󰡨" ;;
@@ -62,6 +65,7 @@ case $INFO in
   "osascript") INFO="󰯁" ;;
   "Pages") INFO="󱔗" ;;
   "Photo Booth") INFO="" ;;
+  "Postman") INFO="󱂛" ;;
   "QuickTime Player") INFO="󱜅" ;;
   "Reloj" | "Clock") INFO="󱉊" ;;
   "Safari") INFO="󰀹" ;;
@@ -72,7 +76,7 @@ case $INFO in
   "TV") INFO="" ;;
   "Velja") INFO="󰄛" ;;
   "Vista Previa" | "Preview") INFO="" ;;
-  "zoom.us") INFO="󰨜" ;;
+  "zoom.us" | "ZoomAutoUpdater") INFO="󰨜" ;;
   "UserNotificationCenter") INFO="" ;;
   "Compilador de problemas") INFO="" ;;
   *)

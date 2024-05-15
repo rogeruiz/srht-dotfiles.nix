@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  margins = 20;
+  margins = 10;
   bar_height = 40;
   bar_y_offset = 24;
   top_padding = margins + bar_height + bar_y_offset;
@@ -33,7 +33,7 @@ in
       window_gap = margins;
       top_padding = top_padding;
       layout = "bsp";
-      mouse_modifier = "shift";
+      mouse_modifier = "fn";
       mouse_action1 = "move";
       mouse_action2 = "resize";
       mouse_drop_action = "swap";
@@ -43,4 +43,3 @@ in
     extraConfig = (builtins.readFile ./yabairc);
   };
 }
-
