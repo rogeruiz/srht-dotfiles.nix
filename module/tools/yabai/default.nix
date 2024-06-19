@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  margins = 10;
+  margins = 22;
   bar_height = 40;
   bar_y_offset = 24;
   top_padding = margins + bar_height + bar_y_offset;
@@ -37,7 +37,7 @@ in
       mouse_action1 = "move";
       mouse_action2 = "resize";
       mouse_drop_action = "swap";
-      mouse_follows_focus = "off";
+      mouse_follows_focus = "on";
       focus_follows_mouse = "autoraise";
     };
     extraConfig = (builtins.readFile ./yabairc);

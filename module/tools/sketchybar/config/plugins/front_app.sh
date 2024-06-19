@@ -27,6 +27,7 @@ case $INFO in
   "Catálogo Tipográfico" | "Font Book") INFO="" ;;
   "Centro de control") INFO="󰕮" ;;
   "Centro de notificaciones") INFO="󰕮" ;;
+  "Citrix Viewer") INFO="󰨡" ;;
   "Configuración del Sistema" | "System Settings" | "CoreUIAgent") INFO="" ;;
   "Consola" | "Console") INFO="" ;;
   "Compartir Pantalla") INFO="󱒃" ;;
@@ -66,14 +67,17 @@ case $INFO in
   "Pages") INFO="󱔗" ;;
   "Photo Booth") INFO="" ;;
   "Postman") INFO="󱂛" ;;
+  "Pocket Sync") INFO="󱎓" ;;
   "QuickTime Player") INFO="󱜅" ;;
   "Reloj" | "Clock") INFO="󱉊" ;;
+  "RetroArch") INFO="󰯉" ;;
   "Safari") INFO="󰀹" ;;
   "ScreenSaverEngine") INFO="" ;;
   "Slack") INFO="󰒱" ;;
   "Spotify") INFO="󰓇" ;;
   "Thunderbird") INFO="󰴃" ;;
   "TV") INFO="" ;;
+  "Transmission") INFO="󰴾" ;;
   "Velja") INFO="󰄛" ;;
   "Vista Previa" | "Preview") INFO="" ;;
   "zoom.us" | "ZoomAutoUpdater") INFO="󰨜" ;;

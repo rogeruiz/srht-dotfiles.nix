@@ -81,6 +81,7 @@ in
       "..." = "cd ../..";
       l = "exa -xa";
       ll = "exa -lah --git";
+      lll = "exa -lah --git -T --git-ignore";
       _ = "sudo";
       pls = "sudo";
       please = "sudo";
@@ -90,6 +91,7 @@ in
     syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
     initExtraFirst = (builtins.readFile ./zshrc);
+    autocd = true;
   };
 
   xdg.configFile = {
