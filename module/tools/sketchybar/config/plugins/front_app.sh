@@ -28,6 +28,7 @@ case $INFO in
   "Centro de control") INFO="󰕮" ;;
   "Centro de notificaciones") INFO="󰕮" ;;
   "Citrix Viewer") INFO="󰨡" ;;
+  "Clima") INFO="󰖐" ;;
   "Configuración del Sistema" | "System Settings" | "CoreUIAgent") INFO="" ;;
   "Consola" | "Console") INFO="" ;;
   "Compartir Pantalla") INFO="󱒃" ;;
@@ -69,6 +70,7 @@ case $INFO in
   "Postman") INFO="󱂛" ;;
   "Pocket Sync") INFO="󱎓" ;;
   "QuickTime Player") INFO="󱜅" ;;
+  "Recordatorios") INFO="󰢌" ;;
   "Reloj" | "Clock") INFO="󱉊" ;;
   "RetroArch") INFO="󰯉" ;;
   "Safari") INFO="󰀹" ;;
