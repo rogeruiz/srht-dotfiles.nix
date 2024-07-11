@@ -1,4 +1,4 @@
-LS_COLORS=$(vivid generate catppuccin-latte);
+LS_COLORS=$(vivid generate catppuccin-mocha);
 
 export LS_COLORS;
 

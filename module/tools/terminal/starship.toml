@@ -7,7 +7,7 @@ $aws\
 [ 󰟀  ](bg:sky fg:surface0)$package$python$rust$nodejs$golang$terraform$ruby$nix_shell[█](fg:sky)
 $jobs$cmd_duration$character"""
 
-palette = "light"
+palette = "dark"
 
 # 
 # 
