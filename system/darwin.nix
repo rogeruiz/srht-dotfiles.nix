@@ -6,12 +6,14 @@ let
   system-config = import ../module/configuration.nix;
   home-manager-config = import ../module/home-manager.nix;
   security-config = import ../module/security/pam.nix;
-  nighthook-config = import ../module/launchd/nighthook.nix;
+  nighthook-config = import ../module/launchd/nighthook;
+  lorri-config = import ../module/launchd/lorri.nix;
 in
 inputs.darwin.lib.darwinSystem {
   inherit system;
   # modules: allows for reusable code
   modules = [
+    lorri-config
     nighthook-config
     {
       services.nix-daemon.enable = true;

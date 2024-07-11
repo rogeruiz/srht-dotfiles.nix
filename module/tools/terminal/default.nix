@@ -25,6 +25,7 @@ in
     ranger
     httpie
     direnv
+    lorri
     unar
     blahaj
     entr

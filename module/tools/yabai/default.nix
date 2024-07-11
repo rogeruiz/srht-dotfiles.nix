@@ -37,8 +37,8 @@ in
       mouse_action1 = "move";
       mouse_action2 = "resize";
       mouse_drop_action = "swap";
-      mouse_follows_focus = "on";
-      focus_follows_mouse = "autoraise";
+      mouse_follows_focus = "off";
+      focus_follows_mouse = "off";
     };
     extraConfig = (builtins.readFile ./yabairc);
   };
