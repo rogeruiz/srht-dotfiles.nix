@@ -86,6 +86,9 @@ in
       _ = "sudo";
       pls = "sudo";
       please = "sudo";
+      # PERF: Un alias para tener una manera facil pa' matar el proceso de
+      # `legacyScreenSaver` porque tomar muchos recursos de la computadora.
+      killscreen = "kill -9 $(ps aux | rg -v rg | rg legacyScreenSaver | awk '{ print $2 }')";
     };
     enableCompletion = true;
     enableAutosuggestions = true;
