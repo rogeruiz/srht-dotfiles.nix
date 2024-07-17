@@ -58,6 +58,7 @@ case $INFO in
   "Menú de Kandji") INFO="󰾡" ;;
   "Mensajes" | "Messages") INFO="󰍡" ;;
   "Miro") INFO="󱁉" ;;
+  "Mirror") INFO="" ;;
   "Música" | "Music") INFO="" ;;
   "Monitor de Actividad" | "Activity Monitor") INFO="󱎴" ;;
   "Microsoft Teams (work or school)" | "Microsoft Teams") INFO="󰊻" ;;

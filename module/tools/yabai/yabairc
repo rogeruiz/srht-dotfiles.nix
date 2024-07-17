@@ -1,3 +1,5 @@
+# vi:set ft=sh
+
 yabai -m rule --add app="^Due" manage=off
 yabai -m rule --add app="^Música" manage=off
 yabai -m rule --add app="^Adobe Photoshop" manage=off
@@ -13,6 +15,6 @@ yabai -m rule --add app="^Finder" title="Configuración del Finder" manage=off
 
 yabai -m rule --add app="^Safari" title="^(General|Pestañas|Autorelleno|Contraseñas|Buscar|Seguridad|Privacidad|Sitios|Perfiles|Extensiones|Avanzado|Desarrollador|Interruptores de funciones)$" manage=off
 
-
 yabai -m rule --add app="^iA Writer" title="^(General|Cuentas|Documentos|Biblioteca|Editor|Autores|Plantillas|Markdown)$" manage=off
 
+yabai -m rule --add app="^Mirror" manage=off
