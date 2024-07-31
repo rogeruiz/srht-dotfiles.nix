@@ -17,4 +17,6 @@ yabai -m rule --add app="^Safari" title="^(General|Pestañas|Autorelleno|Contras
 
 yabai -m rule --add app="^iA Writer" title="^(General|Cuentas|Documentos|Biblioteca|Editor|Autores|Plantillas|Markdown)$" manage=off
 
+yabai -m rule --add app="^1Password" manage=off
 yabai -m rule --add app="^Mirror" manage=off
+yabai -m rule --add app="^Mensajes" manage=off

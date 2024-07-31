@@ -9,7 +9,7 @@ if [[ -z "$DEVICES" ]]
 then
   sketchybar --set $NAME icon.drawing=off label.drawing=off
 else
-  if [[ "${DEVICES}" == "Scissors Pro" ]]
+  if [[ "${DEVICES}" == "Scissors Pro" || "${DEVICES}" == "tijeras studio pro" ]]
   then
     DEVICES=$APPLE_LOGO
   else

@@ -18,10 +18,12 @@ sketchybar --bar height=$altura \
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
+# icon.font="FantasqueSansM Nerd Font:Regular:15.5" \
+# label.font="FantasqueSansM Nerd Font:Regular:15.5" \
 sketchybar --default updates=when_shown \
   drawing=on \
-  icon.font="FantasqueSansM Nerd Font:Regular:15.5" \
-  label.font="FantasqueSansM Nerd Font:Regular:15.5" \
+  icon.font="RecMonoCasual Nerd Font:Regular:15.5" \
+  label.font="RecMonoCasual Nerd Font:Regular:15.5" \
   label.padding_left=4 \
   label.padding_right=4 \
   icon.padding_left=4 \
@@ -38,8 +40,8 @@ for i in "${!SPACE_ICONS[@]}"; do
   sid=$((i + 1))
   sketchybar --add space space.$sid left \
     --set space.$sid associated_space=$sid \
-    icon.font="FantasqueSansM Nerd Font:Regular:18.0" \
-    label.font="FantasqueSansM Nerd Font:Regular:18.0" \
+    icon.font="RecMonoCasual Nerd Font:Regular:18.0" \
+    label.font="RecMonoCasual Nerd Font:Regular:18.0" \
     icon="${SPACE_ICONS[i]}" \
     icon.padding_left=0 \
     icon.padding_right=0 \
@@ -62,7 +64,7 @@ sketchybar --add item front_app left \
   background.padding_right=0 \
   icon.drawing=off \
   label.padding_left=10 \
-  label.font="FantasqueSansM Nerd Font:Regular:18.0" \
+  label.font="RecMonoCasual Nerd Font:Regular:18.0" \
   label.padding_right=10 \
   updates=when_shown \
   --subscribe front_app front_app_switched

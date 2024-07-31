@@ -39,6 +39,7 @@ case $INFO in
   "Discord") INFO="󰙯" ;;
   "Due") INFO="" ;;
   "FaceTime") INFO="" ;;
+  "Familia") INFO="󱘎" ;;
   "Finder") INFO="󰀶" ;;
   "Firefox") INFO="󰈹" ;;
   "Fotos") INFO="" ;;

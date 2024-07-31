@@ -91,7 +91,7 @@ in
       killscreen = "kill -9 $(ps aux | rg -v rg | rg legacyScreenSaver | awk '{ print $2 }')";
     };
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
     initExtraFirst = (builtins.readFile ./zshrc);

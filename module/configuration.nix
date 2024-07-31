@@ -53,11 +53,20 @@
   services.sketchybar.enable = true;
 
   fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    packages = with pkgs; [
+      (nerdfonts.override {
+        fonts = [
+          "FantasqueSansMono"
+          "Recursive"
+        ];
+      })
     ];
   };
+
+  # FIX: No se donde esta vaina se tiene que poner.
+  # Este es el comando que estoy usando por ahora: `defaults write -g
+  # ApplePressAndHoldEnabled -bool false`
+  # targets.darwin.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
 
   system = {
     keyboard = {
