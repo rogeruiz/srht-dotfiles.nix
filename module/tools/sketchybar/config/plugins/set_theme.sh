@@ -124,66 +124,65 @@ LIGHT_THEME="latte"
 DARK_THEME="mocha"
 
 # check wether or not macOS is in dark mode
-if defaults read -g AppleInterfaceStyle &>/dev/null
-then
+if defaults read -g AppleInterfaceStyle &>/dev/null; then
   theme=$DARK_THEME
 else
-	theme=$LIGHT_THEME
+  theme=$LIGHT_THEME
 fi
 
 function color() {
-	alpha=${2:-255}
-	color="$1"
+  alpha=${2:-255}
+  color="$1"
 
-	printf -v alpha "%02x" "$alpha"
+  printf -v alpha "%02x" "$alpha"
   selected_color="${theme}_${color}"
-	echo "0x${alpha}${!selected_color}"
+  echo "0x${alpha}${!selected_color}"
 }
 
 sketchybar \
-	--bar \
-	color="$(color base)" \
-	--default \
-	icon.color="$(color subtext0)" \
-	label.color="$(color subtext1)" \
-	--set /space\./ \
-	icon.color="$(color mauve)" \
-	icon.highlight_color="$(color green)" \
-	--set front_app \
+  --bar \
+  color="$(color base)" \
+  --default \
+  icon.color="$(color subtext0)" \
+  label.color="$(color subtext1)" \
+  --set /space\./ \
+  icon.color="$(color mauve)" \
+  icon.highlight_color="$(color green)" \
+  --set front_app \
   background.color="$(color green)" \
-	icon.color="$(color mantle)" \
+  icon.color="$(color mantle)" \
   label.color="$(color mantle)" \
-	--set music \
+  --set music \
   background.color="$(color mauve)" \
-	label.color="$(color crust)" \
+  label.color="$(color crust)" \
   --set mic \
   background.color="$(color base)" \
   icon.color="$(color red)" \
   icon.highlight_color="$(color green)" \
   --set sound \
   background.color="$(color crust)" \
-	icon.color="$(color green)" \
-	label.color="$(color subtext1)" \
-	icon.highlight_color="$(color red)" \
-	label.highlight_color="$(color red)" \
+  icon.color="$(color green)" \
+  label.color="$(color subtext1)" \
+  icon.highlight_color="$(color red)" \
+  label.highlight_color="$(color red)" \
   --set headphones \
   background.color="$(color crust)" \
-	icon.color="$(color sapphire)" \
-	label.color="$(color subtext1)" \
+  icon.color="$(color sapphire)" \
+  label.color="$(color subtext1)" \
   --set wifi \
   background.color="$(color mantle)" \
-	icon.color="$(color flamingo)" \
+  icon.color="$(color flamingo)" \
   label.color="$(color subtext1)" \
   --set battery \
   background.color="$(color crust)" \
-	label.color="$(color subtext0)" \
-	--set clock \
+  label.color="$(color subtext0)" \
+  --set clock \
   background.color="$(color base)" \
-	icon.color="$(color mauve)" \
-	label.color="$(color subtext0)" \
+  icon.color="$(color mauve)" \
+  label.color="$(color subtext0)"
 
 # set the yabai colours as well
 yabai \
-	-m config active_window_border_color "$(color pink)" \
-	-m config normal_window_border_color "$(color mauve)" \
-	-m config heedback_color "$(color pink)"
+  -m config active_window_border_color "$(color pink)" \
+  -m config normal_window_border_color "$(color mauve)" \
+  -m config heedback_color "$(color pink)"

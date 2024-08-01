@@ -18,8 +18,6 @@ sketchybar --bar height=$altura \
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
-# icon.font="FantasqueSansM Nerd Font:Regular:15.5" \
-# label.font="FantasqueSansM Nerd Font:Regular:15.5" \
 sketchybar --default updates=when_shown \
   drawing=on \
   icon.font="RecMonoCasual Nerd Font:Regular:15.5" \
@@ -53,7 +51,6 @@ for i in "${!SPACE_ICONS[@]}"; do
     label.drawing=off \
     script="$PLUGIN_DIR/space.sh" \
     --subscribe space.$sid system_woke
-  # click_script="yabai -m space --focus $sid" \
 done
 
 # Current application section

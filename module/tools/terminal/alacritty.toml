@@ -19,10 +19,9 @@ TERM = "xterm-256color"
 
 [font]
 builtin_box_drawing = true
-size = 18
+size = 19
 
 [font.bold]
-# family = "FantasqueSansM Nerd Font"
 family = "RecMonoCasual Nerd Font"
 style = "Bold"
 
@@ -31,12 +30,10 @@ x = 0
 y = 0
 
 [font.italic]
-# family = "FantasqueSansM Nerd Font"
 family = "RecMonoCasual Nerd Font"
 style = "Italic"
 
 [font.normal]
-# family = "FantasqueSansM Nerd Font"
 family = "RecMonoCasual Nerd Font"
 style = "Regular"
 
