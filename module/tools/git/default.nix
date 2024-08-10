@@ -24,15 +24,15 @@ in
     aliases = {
       all = "!git add . && git ci";
       alt = "!alt() { nvim -p $(git s | awk '{ print $2 }'); }; alt";
-      amend = "ci -amend";
+      amend = "ci --amend";
       br = "branch";
-      ch = "diff --cached --";
+      ch = "diff --ws-error-highlight=all --cached --";
       ci = "commit -v";
       cin = "ci --no-verify";
       co = "checkout";
       conflicts = "!con() { nvim -p $(git s | rg 'U[UAD]' | awk '{ print $2 }'); }; con";
       continue = "!git add . && git rebase --continue";
-      df = "diff";
+      df = "diff --ws-error-highlight=all";
       discard = "checkout --";
       fall = "fetch --all";
       local = "br --list";
