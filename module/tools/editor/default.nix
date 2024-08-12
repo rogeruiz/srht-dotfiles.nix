@@ -27,6 +27,11 @@
         indent_size = 4;
       };
 
+      "{*justfile,Makefile}" = {
+        indent_style = "tab";
+        indent_size = 4;
+      };
+
       "*.cs" = {
         indent_style = "space";
         indent_size = 4;
