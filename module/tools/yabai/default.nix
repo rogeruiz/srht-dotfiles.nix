@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  margins = 22;
+  margins = 10;
   bar_height = 40;
   bar_y_offset = 24;
   top_padding = margins + bar_height + bar_y_offset;

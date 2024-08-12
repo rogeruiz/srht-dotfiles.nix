@@ -2,7 +2,7 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
 # WARN: Estos variables tiene que ser el mismo de ~/.yabairc con el mismo
 # nombre.
-margins=22
+margins=10
 altura=40
 bar_yoffset=24
 
