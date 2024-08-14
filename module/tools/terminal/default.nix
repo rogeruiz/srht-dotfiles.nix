@@ -44,6 +44,7 @@ in
 
     # Some Rust tools that I like to use that replace classic tools not written
     # in Rust
+    choose
     vivid
     just
     eza
