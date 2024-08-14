@@ -57,6 +57,7 @@ in
     sd
     grex
     tealdeer
+    tokei
 
     keychain
     _1password
