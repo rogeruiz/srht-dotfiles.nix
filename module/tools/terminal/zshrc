@@ -1,32 +1,8 @@
-# ZSH Completions
-# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-# zstyle ':completion:*' menu select
-# autoload -Uz compinit
-# compinit
-# fpath=(/Users/yo/Developer/oss/zsh-completions/src $fpath)
-
 # eval "$(nodenv init -)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 eval "$(op completion zsh)"; compdef _op op
-#
-# ZSH History saving
-# HISTFILE=~/.zsh_history
-# HISTSIZE=10000
-# SAVEHIST=10000
-# setopt share_history
-#
-# ZSH disable bell
-# unsetopt beep
-
-# ZSH Auto Suggestions
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# ZSH Syntax Highlighting
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Example aliases
 
 unsetopt correct_all
 export VISUAL=nvim
@@ -37,48 +13,22 @@ bindkey "\e[1;5C" forward-word
 bindkey -M vicmd ' ' edit-command-line
 bindkey '^[[Z' reverse-menu-complete
 
-# Include Enviroment Variables
-# source $HOME/Developer/.variables
-
-# Include Custom Aliases
-# source $HOME/Developer/.aliases
-
 ulimit -n 10000
 
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
-# GPG related activities
-# LIFE=28800
-# export GPG_AGENT_INFO="~/.gnupg/S.gpg-agent:$(pgrep gpg-agent):1"
-# eval `keychain --noask --eval --agents gpg,ssh --inherit any --timeout $LIFE id_rsa`
-# export GPG_TTY=`tty`
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$HOME/.rvm/bin:$PATH"
-
 export PATH="/usr/local/bin:$PATH"
-
-# source /usr/local/opt/asdf/libexec/asdf.sh
 
 export GOPATH=${GOPATH:-$(go env GOPATH)}
 
 export PATH=$(go env GOPATH)/bin:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# bun completions
-[ -s "/Users/yo/.bun/_bun" ] && source "/Users/yo/.bun/_bun"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun completions
 [ -s "/Users/yo/.bun/_bun" ] && source "/Users/yo/.bun/_bun"
 
-. "$HOME/.cargo/env"
+[ -s "/Users/yo/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # Para que los comandos de `gh` se vean bien
 # So that commands in `gh` output colors correctly
