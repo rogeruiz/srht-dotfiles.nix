@@ -66,6 +66,7 @@ in
       "flake.lock -diff"
       "package-lock.json -diff"
       "yarn.lock -diff"
+      "workspace.json -diff"
     ];
 
     includes = [
