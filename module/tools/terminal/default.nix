@@ -5,6 +5,7 @@ let
   alacrittyFile = "${terminalPath}/alacritty.toml";
   starshipFile = "${terminalPath}/starship.toml";
   variablesFile = "${terminalPath}/variables.sh";
+  functionsFile = "${terminalPath}/functions.sh";
   link = config.lib.file.mkOutOfStoreSymlink;
 in
 {
@@ -105,4 +106,5 @@ in
   };
 
   home.file.".local/share/rstrz/.variables".source = (link variablesFile);
+  home.file.".local/share/rstrz/.functions".source = (link functionsFile);
 }

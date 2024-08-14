@@ -84,4 +84,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # So that commands in `gh` output colors correctly
 export COLORFGBG="1;15"
 
-. "$HOME/.local/share/rstrz/.variables"
+source "$HOME/.local/share/rstrz/.variables"
+source "$HOME/.local/share/rstrz/.functions"
