@@ -53,3 +53,21 @@ colores-git() {
     echo
   fi
 }
+
+#  _____     _           _ _
+# | __  |___| |___ ___ _| |_|___ ___
+# |    -| -_| | . | .'| . | |   | . |
+# |__|__|___|_|___|__,|___|_|_|_|_  |
+#                               |___|
+#              _     _   _            ___            _____ _       _ _
+#  _ _ ___ ___|_|___| |_| |___ ___   |  _|___ ___   |   __| |_ ___| | |
+# | | | .'|  _| | .'| . | | -_|_ -|  |  _| . |  _|  |__   |   | -_| | |
+#  \_/|__,|_| |_|__,|___|_|___|___|  |_| |___|_|    |_____|_|_|___|_|_|
+# _reload-vars es una función pa' facilitar los cambios de los variables de mi
+# Shell
+# NOTE:
+# ejemplo: `_reload-vars`
+_reload-vars() {
+  echo "Sourcing ~/.local/share/rstrz/.variables"
+  source /Users/yo/.local/share/rstrz/.variables
+}

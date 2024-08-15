@@ -52,11 +52,21 @@ cambia_tema() {
   "$TMUX_BIN" set -g "@catppuccin_flavour" "$FLAVOR"
   "$TMUX_BIN" run "$CATPPUCCIN_TMUX"
 
-  # NOTE: LS_COLORS
+  # NOTE: LS_COLORS (exa, fd, rg)
   sed -E \
     -i "" \
     "s/(catppuccin-)[a-z]+/\1$FLAVOR/" \
     "${DIR}"/variables.sh
+
+  # NOTE: COLORFGBG (gh)
+  sed -E \
+    -i "" \
+    "s/(export COLORFGBG=)\".*\"/\1\"\"/" \
+    "${DIR}"/variables.sh
+
+  # shellcheck disable=SC1091
+  source "${DIR}/variables.sh"
+
 }
 
 cambia_tema "$@"

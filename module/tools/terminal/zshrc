@@ -30,9 +30,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 [ -s "/Users/yo/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# Para que los comandos de `gh` se vean bien
-# So that commands in `gh` output colors correctly
-export COLORFGBG="1;15"
-
 source "$HOME/.local/share/rstrz/.variables"
 source "$HOME/.local/share/rstrz/.functions"
