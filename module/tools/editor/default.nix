@@ -27,7 +27,12 @@
         indent_size = 4;
       };
 
-      "{*justfile,Makefile}" = {
+      "*justfile" = {
+        indent_style = "space";
+        indent_size = 4;
+      };
+
+      "Makefile" = {
         indent_style = "tab";
         indent_size = 4;
       };
