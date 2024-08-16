@@ -20,3 +20,4 @@ yabai -m rule --add app="^iA Writer" title="^(General|Cuentas|Documentos|Bibliot
 yabai -m rule --add app="^1Password" manage=off
 yabai -m rule --add app="^Mirror" manage=off
 yabai -m rule --add app="^Mensajes" manage=off
+yabai -m rule --add app="^The Archive" manage=off

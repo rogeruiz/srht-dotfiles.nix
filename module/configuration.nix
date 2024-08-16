@@ -68,6 +68,9 @@
   # ApplePressAndHoldEnabled -bool false`
   # targets.darwin.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
 
+  # FIX: Integrar este comando en Nix
+  # defaults write -g NSWindowShouldDragOnGesture YES
+
   system = {
     keyboard = {
       enableKeyMapping = true;
@@ -111,7 +114,6 @@
     global.brewfile = true;
     # masApps = {};
     casks = [
-      # "1password"
       "adobe-creative-cloud"
       "anki"
       "audacity"
@@ -125,11 +127,9 @@
       "imageoptim"
       "iterm2"
       "keybase"
-      # "launchbar"
       "lagrange"
       "postman"
       "rar"
-      # "slack"
       "soulver"
       "spotify"
       "time-out"
@@ -140,11 +140,16 @@
       "wireshark"
       "writer"
       "zoom"
+      # WARN: Estas aplicaciones estan instaladas fuera de Homebrew
+      # "1password"
+      # "launchbar"
+      # "slack"
+      # "the-archive"
     ];
     taps = [
       # "sparkbox/commit-colors"
 
-      # para `visual-studio` en `casks = [] de arriba`
+      # INFO: para `visual-studio` en `casks = [] de arriba`
       "homebrew/cask-versions"
     ];
     brews = [

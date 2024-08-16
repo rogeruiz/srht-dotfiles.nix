@@ -64,7 +64,7 @@ case $INFO in
   "Monitor de Actividad" | "Activity Monitor") INFO="󱎴" ;;
   "Microsoft Teams (work or school)" | "Microsoft Teams") INFO="󰊻" ;;
   "News") INFO="󰎕" ;;
-  "Notational Velocity") INFO="" ;;
+  "The Archive") INFO="" ;;
   "Numbers") INFO="" ;;
   "osascript") INFO="󰯁" ;;
   "Pages") INFO="󱔗" ;;
