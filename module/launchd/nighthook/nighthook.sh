@@ -1,9 +1,11 @@
 if defaults read -g AppleInterfaceStyle &>/dev/null; then
   MODE="dark"
   FLAVOR="mocha"
+  COLORFGBG_VALUE=""
 else
   MODE="light"
   FLAVOR="latte"
+  COLORFGBG_VALUE="1;15"
 fi
 
 cambia_tema() {
@@ -61,7 +63,7 @@ cambia_tema() {
   # NOTE: COLORFGBG (gh)
   sed -E \
     -i "" \
-    "s/(export COLORFGBG=)\".*\"/\1\"\"/" \
+    "s/(export COLORFGBG=)\".*\"/\1\"$COLORFGBG_VALUE\"/" \
     "${DIR}"/variables.sh
 
   # shellcheck disable=SC1091
