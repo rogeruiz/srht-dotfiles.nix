@@ -120,6 +120,7 @@
       "aws-vault"
       "docker"
       "dropbox"
+      "equinox"
       "firefox"
       "flux"
       "handbrake"
