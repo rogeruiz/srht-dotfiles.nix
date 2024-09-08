@@ -216,7 +216,7 @@ sketchybar \
   --set battery "${battery_styles[@]}" \
   --set clock "${clock_styles[@]}"
 
-# set the yabai colours as well
+# set the yabai colors as well
 yabai \
   -m config active_window_border_color "$(color mauve)" \
   -m config normal_window_border_color "$(color base)" \
