@@ -10,10 +10,10 @@ source "${VARIABLES_DIR}/margins.sh"
 source "${ITEM_DIR}/bar.sh"
 source "${ITEM_DIR}/default.sh"
 
+source "${ITEM_DIR}/spaces.sh"
 source "${ITEM_DIR}/front_app.sh"
 source "${ITEM_DIR}/clock.sh"
 
-# source "${ITEM_DIR}/spaces.sh"
 source "${ITEM_DIR}/headphones.sh"
 source "${ITEM_DIR}/music.sh"
 
