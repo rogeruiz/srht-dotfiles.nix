@@ -1,20 +1,19 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """$package$python$rust$nodejs$golang$terraform$ruby$nix_shell
-$battery$directory$git_branch$git_commit$git_state$git_metrics$git_status
-$aws\
-$jobs$cmd_duration$character$shell"""
+format = ''' $package$python$rust$nodejs$golang$terraform$ruby$nix_shell
+$battery$directory$git_branch${custom.git_color}$git_commit$git_metrics$git_status$git_state
+$aws$jobs$cmd_duration$character$shell '''
 
-right_format = """$time"""
+right_format = ''' ${custom.tick_icon}${custom.tick_name}${custom.tick_timer} '''
 
 palette = "dark"
 
 [character]
 success_symbol = "[   ](fg:green)"
 error_symbol = "[   ](fg:red)"
-vimcmd_symbol = "[   ](fg:mauve)"
-format = "[$symbol](fg:rosewater)"
+vimcmd_symbol = "[   ](fg:blue)"
+format = "[$symbol](fg:mauve)"
 
 [cmd_duration]
 min_time = 5_000
@@ -61,7 +60,7 @@ format = "[ $symbol](fg:sky)[$state]()[ $name ](italic fg:sky)"
 powershell_indicator = ''
 nu_indicator = ''
 zsh_indicator = ''
-format = "[ $indicator ](fg:rosewater) "
+format = "[ $indicator ](fg:mauve) "
 disabled = false
 
 [aws]
@@ -104,9 +103,9 @@ format = " ([ $added]($added_style) )([ $deleted]($deleted_style) )"
 disabled = false
 
 [git_commit]
-commit_hash_length = 7
+commit_hash_length = 6
 only_detached = false
-format = "[#](fg:flamingo)[$hash$tag ](italic fg:flamingo)"
+format = "[#](fg:rosewater)[$hash$tag ](italic fg:rosewater)"
 
 [directory]
 truncation_length = 5
@@ -139,14 +138,33 @@ utc_time_offset = "local"
 # [custom.git_spark]
 # command = "current_git_activity"
 # symbol = " "
-# when = """ git rev-parse --is-inside-work-tree """
+# when = ''' git rev-parse --is-inside-work-tree '''
 # style = "white dimmed"
 
 
-# [custom.git_color]
-# command = 'current_git_color'
-# when = """ git rev-parse --is-inside-work-tree """
-# description = "The current hexidecimal color based on the current Git SHA at HEAD."
+[custom.git_color]
+command = ''' perl -e 'foreach $a(@ARGV){print "\e[48;2;".join(";",unpack("C*",pack("H*",$a)))."m  \e[49m"};' $(git rev-parse HEAD | head -c 6) 2>/dev/null '''
+when = 'git rev-parse --is-inside-work-tree'
+description = "The current hexidecimal color based on the current Git SHA at HEAD."
+unsafe_no_escape = true
+
+[custom.tick_icon]
+command = 'echo "󱫤 "'
+when = 'tick -v status | rg "NOW"'
+description ='Icon for the cuttent timer running with `tick`.'
+style = 'bg:mantle fg:subtext0'
+
+[custom.tick_name]
+command = 'tick -v status | rg "NOW" | rg "\[ (\w+) \]" -or "\$1" && echo " "'
+when = 'tick -v status | rg "NOW"'
+description = "Name of the current timer running with `tick`."
+style = "italic fg:subtext0 bg:mantle"
+
+[custom.tick_timer]
+command = 'tick status | rg "\d{2}:?+" -o'
+when = 'tick -v status | rg "NOW"'
+description = "Value of the current timer running with `tick`."
+style = "italic underline bg:mantle fg:subtext0"
 
 [palettes.light]
 rosewater = "#dc8a78"
