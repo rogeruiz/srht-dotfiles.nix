@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
-
 icons=(
   "I"
   "II"
@@ -21,11 +19,8 @@ icons=(
 )
 
 styles=(
-  # icon.font="RecMonoCasual Nerd Font:Regular:18.0"
-  # label.font="RecMonoCasual Nerd Font:Regular:18.0"
-  # background.drawing=off
-  icon.padding_left=5
-  icon.padding_right=5
+  icon.padding_left=$((margins / 2))
+  icon.padding_right=$((margins / 2))
   label.drawing=off
   script="$PLUGIN_DIR/space.sh"
 )
@@ -45,9 +40,6 @@ done
 
 bg_styles=(
   background.drawing=on
-  background.padding_left=10
-  background.padding_right=10
-  # background.border_width=1
 )
 
 sketchybar --add bracket spaces '/space\..*/' \

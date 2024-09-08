@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
-
 config=(
   drawing=off
   script="$PLUGIN_DIR/set_theme.sh"

@@ -158,7 +158,7 @@ space_styles=(
 )
 spaces_styles=(
   background.border_color="$(color blue)"
-  background.color="$(color blue 51)"
+  background.color="$(color sapphire 51)"
 )
 mic_styles=(
   background.color="$(color mantle)"
@@ -166,9 +166,9 @@ mic_styles=(
   icon.highlight_color="$(color green)"
 )
 headphones_styles=(
-  background.border_color="$(color sapphire)"
-  background.color="$(color sapphire 51)"
-  icon.color="$(color sapphire)"
+  background.border_color="$(color maroon)"
+  background.color="$(color maroon 51)"
+  icon.color="$(color maroon)"
   label.color="$(color text)"
 )
 sound_styles=(

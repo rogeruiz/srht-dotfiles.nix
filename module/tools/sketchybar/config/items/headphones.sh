@@ -1,13 +1,7 @@
 #!/bin/bash
 
 properties=(
-  # background.border_width=1
-  # background.corner_radius=1
-  background.padding_left=0
-  background.padding_right=0
-  icon.padding_left=10
   icon=󰋋
-  label.padding_right=10
   script="$PLUGIN_DIR/ble_headset.sh"
 )
 events=(
