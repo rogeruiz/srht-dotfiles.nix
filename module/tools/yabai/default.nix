@@ -1,10 +1,10 @@
 { ... }:
 
 let
-  margins = 10;
+  gaps = 10;
   bar_height = 40;
   bar_y_offset = 24;
-  top_padding = margins + bar_height + bar_y_offset;
+  top_padding = gaps + bar_height + bar_y_offset;
 in
 {
   services.yabai = {
@@ -27,10 +27,10 @@ in
       split_ratio = 0.50;
       split_type = "auto";
       auto_balance = "off";
-      bottom_padding = margins;
-      right_padding = margins;
-      left_padding = margins;
-      window_gap = margins;
+      bottom_padding = gaps;
+      right_padding = gaps;
+      left_padding = gaps;
+      window_gap = gaps;
       top_padding = top_padding;
       layout = "bsp";
       mouse_modifier = "fn";
