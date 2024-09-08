@@ -21,6 +21,8 @@
 
     ffmpeg
     imagemagick
+
+    irssi
   ];
   home.stateVersion = "23.11";
 

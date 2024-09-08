@@ -36,6 +36,7 @@
       alacritty
       starship
       coreutils
+      moreutils
     ];
   };
 
