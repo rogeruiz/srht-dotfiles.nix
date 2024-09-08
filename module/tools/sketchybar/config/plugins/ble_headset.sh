@@ -5,12 +5,10 @@ DEVICES=$(system_profiler SPBluetoothDataType -json -detailLevel basic 2>/dev/nu
 APPLE_LOGO=""
 BT_LOGO="󰂯"
 
-if [[ -z "$DEVICES" ]]
-then
+if [[ -z "$DEVICES" ]]; then
   sketchybar --set $NAME icon.drawing=off label.drawing=off
 else
-  if [[ "${DEVICES}" == "Scissors Pro" || "${DEVICES}" == "tijeras studio pro" ]]
-  then
+  if [[ "${DEVICES}" == "Scissors Pro" || "${DEVICES}" == "tijeras studio pro" ]]; then
     DEVICES=$APPLE_LOGO
   else
     DEVICES=$BT_LOGO

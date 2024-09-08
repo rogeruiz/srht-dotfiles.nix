@@ -25,7 +25,7 @@ else
       2[0-9]) ICON="󰕿";;
       1[0-9]) ICON="󰕿";;
       [0-9]) ICON="󰕿";;
-      *) ICON="󰕿"
+      *) ICON="󰕿" ;;
     esac
   fi
   VOLUME="${VOLUME}%"

@@ -33,6 +33,7 @@ case $INFO in
   "Consola" | "Console") INFO="" ;;
   "Compartir Pantalla") INFO="󱒃" ;;
   "Creative Cloud") INFO="" ;;
+  "deno") INFO="󱜙" ;;
   "Docker" | "Docker Desktop") INFO="󰡨" ;;
   "Dropbox") INFO="" ;;
   "DiskImages UI Agent") INFO="󰨣" ;;

@@ -139,50 +139,85 @@ function color() {
   echo "0x${alpha}${!selected_color}"
 }
 
-sketchybar \
-  --bar \
-  color="$(color base)" \
-  --default \
-  icon.color="$(color subtext0)" \
-  label.color="$(color subtext1)" \
-  --set /space\./ \
-  icon.color="$(color mauve)" \
-  icon.highlight_color="$(color green)" \
-  --set front_app \
-  background.color="$(color green)" \
-  icon.color="$(color mantle)" \
-  label.color="$(color mantle)" \
-  --set music \
-  background.color="$(color mauve)" \
-  label.color="$(color crust)" \
-  --set mic \
-  background.color="$(color base)" \
-  icon.color="$(color red)" \
-  icon.highlight_color="$(color green)" \
-  --set sound \
-  background.color="$(color crust)" \
-  icon.color="$(color green)" \
-  label.color="$(color subtext1)" \
-  icon.highlight_color="$(color red)" \
-  label.highlight_color="$(color red)" \
-  --set headphones \
-  background.color="$(color crust)" \
-  icon.color="$(color sapphire)" \
-  label.color="$(color subtext1)" \
-  --set wifi \
-  background.color="$(color mantle)" \
-  icon.color="$(color flamingo)" \
-  label.color="$(color subtext1)" \
-  --set battery \
-  background.color="$(color crust)" \
-  label.color="$(color subtext0)" \
-  --set clock \
-  background.color="$(color base)" \
-  icon.color="$(color mauve)" \
+bar_styles=(
+  color="$(color base 180)"
+)
+default_styles=(
+  icon.color="$(color text)"
+  label.color="$(color text)"
+)
+front_app_styles=(
+  background.border_color="$(color blue)"
+  background.color="$(color blue 51)"
+  icon.color="$(color subtext0)"
   label.color="$(color subtext0)"
+)
+space_styles=(
+  icon.color="$(color blue)"
+  icon.highlight_color="$(color mauve)"
+)
+spaces_styles=(
+  background.border_color="$(color blue)"
+  background.color="$(color blue 51)"
+)
+mic_styles=(
+  background.color="$(color mantle)"
+  icon.color="$(color red)"
+  icon.highlight_color="$(color green)"
+)
+headphones_styles=(
+  background.border_color="$(color sapphire)"
+  background.color="$(color sapphire 51)"
+  icon.color="$(color sapphire)"
+  label.color="$(color text)"
+)
+sound_styles=(
+  background.border_color="$(color lavender)"
+  background.color="$(color lavender 51)"
+  icon.color="$(color green)"
+  icon.highlight_color="$(color red)"
+  label.color="$(color text)"
+  label.highlight_color="$(color red)"
+)
+music_styles=(
+  background.border_color="$(color overlay2 102)"
+  background.color="$(color overlay2 51)"
+  label.color="$(color subtext1)"
+)
+wifi_styles=(
+  background.border_color="$(color flamingo)"
+  background.color="$(color flamingo 51)"
+  icon.color="$(color flamingo)"
+  label.color="$(color text)"
+)
+battery_styles=(
+  background.border_color="$(color lavender)"
+  background.color="$(color lavender 51)"
+  label.color="$(color subtext1)"
+)
+clock_styles=(
+  background.border_color="$(color green)"
+  background.color="$(color green 51)"
+  icon.color="$(color blue)"
+  label.color="$(color text)"
+)
+
+sketchybar \
+  --bar "${bar_styles[@]}" \
+  --default "${default_styles[@]}" \
+  --set front_app "${front_app_styles[@]}" \
+  --set /space\./ "${space_styles[@]}" \
+  --set spaces "${spaces_styles[@]}" \
+  --set mic "${mic_styles[@]}" \
+  --set headphones "${spaces_styles[@]}" \
+  --set sound "${sound_styles[@]}" \
+  --set music "${music_styles[@]}" \
+  --set wifi "${wifi_styles[@]}" \
+  --set battery "${battery_styles[@]}" \
+  --set clock "${clock_styles[@]}"
 
 # set the yabai colours as well
 yabai \
-  -m config active_window_border_color "$(color pink)" \
-  -m config normal_window_border_color "$(color mauve)" \
-  -m config feedback_color "$(color pink)"
+  -m config active_window_border_color "$(color mauve)" \
+  -m config normal_window_border_color "$(color base)" \
+  -m config feedback_color "$(color mauve)"
