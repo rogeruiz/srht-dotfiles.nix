@@ -134,6 +134,7 @@
       "rar"
       "soulver"
       "spotify"
+      "stats"
       "time-out"
       "transmission"
       "virtualbox"
