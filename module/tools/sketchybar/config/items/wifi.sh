@@ -6,6 +6,12 @@ properties=(
   script="$PLUGIN_DIR/wifi.sh"
   scroll_texts=on
 )
+network_properties=(
+  icon=󰛳
+  icon.padding_right=0
+  label.drawing=off
+  background.border_width=1
+)
 
 events=(
   wifi_config
@@ -13,4 +19,6 @@ events=(
 
 sketchybar --add item wifi right \
   --set wifi "${properties[@]}" \
-  --subscribe wifi "${events[@]}"
+  --subscribe wifi "${events[@]}" \
+  --add alias "Stats,Network_network_chart" right \
+  --set "Stats,Network_network_chart" "${network_properties[@]}"

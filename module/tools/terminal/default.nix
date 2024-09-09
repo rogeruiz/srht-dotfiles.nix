@@ -33,10 +33,12 @@ in
     catimg
     lynx
     htop
+    nowplaying-cli
 
     # Base terminal tools we all need
     cmake
     coreutils
+    moreutils
     curl
     wget
     reattach-to-user-namespace

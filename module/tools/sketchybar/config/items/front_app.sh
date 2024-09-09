@@ -1,11 +1,11 @@
 #!/bin/bash
 
 properties=(
-  icon.drawing=off
+  icon.drawing=on
   label.font="RecMonoCasual Nerd Font:Regular:16"
   script="$PLUGIN_DIR/front_app.sh"
   updates=when_shown
-  label.padding_left="${margins}"
+  # label.padding_left="${margins}"
 )
 events=(
   front_app_switched

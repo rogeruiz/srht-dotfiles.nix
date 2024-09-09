@@ -1,8 +1,8 @@
 { ... }:
 
 let
-  gaps = 10;
-  bar_height = 40;
+  gaps = 12;
+  bar_height = 25;
   bar_y_offset = 24;
   top_padding = gaps + bar_height + bar_y_offset;
 in

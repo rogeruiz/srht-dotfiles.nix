@@ -40,6 +40,7 @@ done
 
 bg_styles=(
   background.drawing=on
+  # background.border_width=1
 )
 
 sketchybar --add bracket spaces '/space\..*/' \

@@ -201,6 +201,26 @@ clock_styles=(
   icon.color="$(color blue)"
   label.color="$(color text)"
 )
+keyboard_alias_styles=(
+  background.border_color="$(color overlay0 102)"
+  background.color="$(color overlay0 0)"
+  icon.color="$(color overlay0)"
+)
+network_styles=(
+  background.border_color="$(color flamingo 102)"
+  background.color="$(color flamingo 51)"
+  icon.color="$(color overlay2)"
+)
+# cpu_styles=(
+#   background.border_color="$(color overlay0 102)"
+#   background.color="$(color mantle)"
+#   icon.color="$(color overlay0)"
+# )
+# ram_styles=(
+#   background.border_color="$(color overlay0 102)"
+#   background.color="$(color mantle)"
+#   icon.color="$(color overlay0)"
+# )
 
 sketchybar \
   --bar "${bar_styles[@]}" \
@@ -208,13 +228,17 @@ sketchybar \
   --set front_app "${front_app_styles[@]}" \
   --set /space\./ "${space_styles[@]}" \
   --set spaces "${spaces_styles[@]}" \
-  --set mic "${mic_styles[@]}" \
   --set headphones "${spaces_styles[@]}" \
   --set sound "${sound_styles[@]}" \
   --set music "${music_styles[@]}" \
   --set wifi "${wifi_styles[@]}" \
   --set battery "${battery_styles[@]}" \
-  --set clock "${clock_styles[@]}"
+  --set clock "${clock_styles[@]}" \
+  --set "TextInputMenuAgent,Item-0" "${keyboard_alias_styles[@]}" \
+  --set "Stats,Network_network_chart" "${network_styles[@]}"
+# --set mic "${mic_styles[@]}" \
+# --set "Stats,CPU_mini" "${cpu_styles[@]}" \
+# --set "Stats,RAM_mini" "${ram_styles[@]}"
 
 # set the yabai colors as well
 yabai \

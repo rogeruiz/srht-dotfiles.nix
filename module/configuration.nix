@@ -9,7 +9,7 @@
   # add more system settings here
   nix = {
     settings = {
-      auto-optimise-store = true;
+      auto-optimise-store = pkgs.stdenv.isLinux;
       builders-use-substitutes = true;
       experimental-features = [ "flakes" "nix-command" ];
       substituters = [ "https://nix-community.cachix.org" ];
