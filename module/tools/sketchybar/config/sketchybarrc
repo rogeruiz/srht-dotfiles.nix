@@ -6,6 +6,7 @@ ITEM_DIR="${CONFIG_DIR}/items"
 PLUGIN_DIR="${CONFIG_DIR}/plugins"
 
 source "${VARIABLES_DIR}/margins.sh"
+source "${VARIABLES_DIR}/app_icons.sh"
 
 source "${ITEM_DIR}/bar.sh"
 source "${ITEM_DIR}/default.sh"

@@ -50,9 +50,13 @@ meses_del_ano_abreviados=(
   "dic."
 )
 
-# dia="${dias_de_la_semana[$(date "+%w")]}"
+# PERF: Se tiene que aumentar el numero reportado por `date` pa' el dia de la semana porque los Arrays de Bash empiezan con 1 y no con 0.
+dia_num=$(date "+%w")
+dia_num=$((dia_num + 1))
+
+# dia="${dias_de_la_semana[${dia_num}]}"
 # mes="${meses_del_ano[$(date "+%m")]}"
-dia="${dias_de_la_semana_abreviados[$(date "+%w")]}"
+dia="${dias_de_la_semana_abreviados[${dia_num}]}"
 mes="${meses_del_ano_abreviados[$(date "+%m")]}"
 
 sketchybar --set $NAME label="$(date "+${dia} %d ${mes} '%y %H:%M:%S")"

@@ -4,7 +4,7 @@ properties=(
   update_freq=1
   icon=
   script="$PLUGIN_DIR/clock.sh"
-  label.padding_right=$((margins * 2))
+  label.padding_right="${margins}"
   label.padding_left=0
 )
 

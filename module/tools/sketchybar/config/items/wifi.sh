@@ -17,8 +17,8 @@ events=(
   wifi_config
 )
 
-sketchybar --add item wifi right \
+sketchybar --add alias "Stats,Network_network_chart" right \
+  --set "Stats,Network_network_chart" "${network_properties[@]}" \
+  --add item wifi right \
   --set wifi "${properties[@]}" \
-  --subscribe wifi "${events[@]}" \
-  --add alias "Stats,Network_network_chart" right \
-  --set "Stats,Network_network_chart" "${network_properties[@]}"
+  --subscribe wifi "${events[@]}"

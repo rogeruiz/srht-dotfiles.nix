@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+_run() {
+  case $1 in
+  "1Password") echo "󰟵" ;;
+  "Acceso a Llaveros" | "Keychain Access") echo "󱕴" ;;
+  "Adobe Photoshop 2024") echo "" ;;
+  "Asistente de Redes Captivas") echo "󰀂" ;;
+  "Alacritty") echo "" ;;
+  "Amphetamine") echo "" ;;
+  "Anki") echo "󰛇" ;;
+  "App Store") echo "" ;;
+  "Backblaze") echo "" ;;
+  "bzbmenu") echo "󰈸" ;;
+  "Bitdefender Endpoint Security Tools" | "SecurityAgent") echo "󰒃" ;;
+  "Bolsa") echo "" ;;
+  "Calculadora" | "Calculator") echo "󰪚" ;;
+  "coreautha") echo "󱅞" ;;
+  "calibre") echo "󱉟" ;;
+  "Calendario" | "Calendar") echo "󰧒" ;;
+  "Catálogo Tipográfico" | "Font Book") echo "" ;;
+  "Centro de control") echo "󰕮" ;;
+  "Centro de notificaciones") echo "󰕮" ;;
+  "Citrix Viewer") echo "󰨡" ;;
+  "Clima") echo "󰖐" ;;
+  "Configuración del Sistema" | "System Settings" | "CoreUIAgent") echo "" ;;
+  "Consola" | "Console") echo "" ;;
+  "Compartir Pantalla") echo "󱒃" ;;
+  "Creative Cloud") echo "" ;;
+  "deno") echo "󱜙" ;;
+  "Docker" | "Docker Desktop") echo "󰡨" ;;
+  "Dropbox") echo "" ;;
+  "DiskImages UI Agent") echo "󰨣" ;;
+  "Discord") echo "󰙯" ;;
+  "Due") echo "" ;;
+  "FaceTime") echo "" ;;
+  "Familia") echo "󱘎" ;;
+  "Finder") echo "󰀶" ;;
+  "Firefox") echo "󰈹" ;;
+  "Fotos") echo "" ;;
+  "Google Chrome") echo "󰊯" ;;
+  "iA Writer") echo "󰴒" ;;
+  "iA Presenter") echo "󰐨" ;;
+  "Instalador") echo "" ;;
+  "Instapaper") echo "󰬐" ;;
+  "Keybase") echo "󱕵" ;;
+  "KeyCastr") echo "" ;;
+  "Kindle Classic" | "Kindle") echo "" ;;
+  "LaunchBar") echo "󰌓" ;;
+  "Lagrange") echo "󰪁" ;;
+  "loginwindow") echo "󰍂" ;;
+  "Mail") echo "󰛮" ;;
+  "Mapas" | "Maps") echo "" ;;
+  "Menú de Kandji") echo "󰾡" ;;
+  "Mensajes" | "Messages") echo "󰍡" ;;
+  "Miro") echo "󱁉" ;;
+  "Mirror") echo "" ;;
+  "Música" | "Music") echo "" ;;
+  "Monitor de Actividad" | "Activity Monitor") echo "󱎴" ;;
+  "Microsoft Teams (work or school)" | "Microsoft Teams") echo "󰊻" ;;
+  "News") echo "󰎕" ;;
+  "The Archive") echo "" ;;
+  "Numbers") echo "" ;;
+  "osascript") echo "󰯁" ;;
+  "Pages") echo "󱔗" ;;
+  "Photo Booth") echo "" ;;
+  "Postman") echo "󱂛" ;;
+  "Pocket Sync") echo "󱎓" ;;
+  "QuickTime Player") echo "󱜅" ;;
+  "Recordatorios") echo "󰢌" ;;
+  "Reloj" | "Clock") echo "󱉊" ;;
+  "RetroArch") echo "󰯉" ;;
+  "Safari") echo "󰀹" ;;
+  "ScreenSaverEngine") echo "" ;;
+  "Slack") echo "󰒱" ;;
+  "Spotify") echo "󰓇" ;;
+  "Thunderbird") echo "󰴃" ;;
+  "TV") echo "" ;;
+  "Transmission") echo "󰴾" ;;
+  "Velja") echo "󰄛" ;;
+  "Vista Previa" | "Preview") echo "" ;;
+  "zoom.us" | "ZoomAutoUpdater") echo "󰨜" ;;
+  "UserNotificationCenter") echo "" ;;
+  "Compilador de problemas") echo "" ;;
+  "Wacom Center") echo "󰰮" ;;
+  *) echo "󰣆" ;;
+  esac
+}
+
+_run "$@"

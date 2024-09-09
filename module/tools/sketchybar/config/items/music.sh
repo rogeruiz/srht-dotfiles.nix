@@ -1,24 +1,16 @@
 #!/bin/bash
 
 properties=(
-  icon.drawing=off
+  display=1
   label.max_chars=55
   label.scroll_duration=920
-  label.padding_left="${margins}"
-  script="$PLUGIN_DIR/music.sh"
+  script="$PLUGIN_DIR/now-playing.sh"
   scroll_texts=on
-  display=1
+  updates=when_shown
 )
 events=(
-  mouse.clicked
-  system_woke
-  music_change
-  spotify_change
+  media_change
 )
-
-sketchybar --add event \
-  music_change "com.apple.Music.playerInfo" \
-  spotify_change "com.spotify.client.PlaybackStateChanged"
 
 sketchybar --add item music center \
   --set music "${properties[@]}" \

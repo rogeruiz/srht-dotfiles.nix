@@ -167,8 +167,8 @@ mic_styles=(
 )
 headphones_styles=(
   background.border_color="$(color maroon)"
-  background.color="$(color maroon 51)"
-  icon.color="$(color maroon)"
+  background.color="$(color overlay0 51)"
+  icon.color="$(color sky)"
   label.color="$(color text)"
 )
 sound_styles=(
@@ -182,6 +182,7 @@ sound_styles=(
 music_styles=(
   background.border_color="$(color overlay2 102)"
   background.color="$(color overlay2 51)"
+  icon.color="$(color rosewater)"
   label.color="$(color subtext1)"
 )
 wifi_styles=(
@@ -203,7 +204,7 @@ clock_styles=(
 )
 keyboard_alias_styles=(
   background.border_color="$(color overlay0 102)"
-  background.color="$(color overlay0 0)"
+  background.color="$(color overlay0 51)"
   icon.color="$(color overlay0)"
 )
 network_styles=(
@@ -228,7 +229,7 @@ sketchybar \
   --set front_app "${front_app_styles[@]}" \
   --set /space\./ "${space_styles[@]}" \
   --set spaces "${spaces_styles[@]}" \
-  --set headphones "${spaces_styles[@]}" \
+  --set headphones "${headphones_styles[@]}" \
   --set sound "${sound_styles[@]}" \
   --set music "${music_styles[@]}" \
   --set wifi "${wifi_styles[@]}" \

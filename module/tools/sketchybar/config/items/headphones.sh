@@ -1,6 +1,7 @@
 #!/bin/bash
 
 properties=(
+  display=1
   icon=󰋋
   script="$PLUGIN_DIR/ble_headset.sh"
 )
