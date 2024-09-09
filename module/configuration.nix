@@ -37,6 +37,7 @@
       starship
       coreutils
       moreutils
+      jq
     ];
   };
 
