@@ -1,37 +1,34 @@
 #!/usr/bin/env bash
 
-_run() {
+_ejecutar() {
   case $1 in
   "1Password") echo "󰟵" ;;
   "Acceso a Llaveros" | "Keychain Access") echo "󱕴" ;;
   "Adobe Photoshop 2024") echo "" ;;
-  "Asistente de Redes Captivas") echo "󰀂" ;;
   "Alacritty") echo "" ;;
   "Amphetamine") echo "" ;;
   "Anki") echo "󰛇" ;;
   "App Store") echo "" ;;
+  "Asistente de Redes Captivas") echo "󰀂" ;;
   "Backblaze") echo "" ;;
-  "bzbmenu") echo "󰈸" ;;
   "Bitdefender Endpoint Security Tools" | "SecurityAgent") echo "󰒃" ;;
   "Bolsa") echo "" ;;
   "Calculadora" | "Calculator") echo "󰪚" ;;
-  "coreautha") echo "󱅞" ;;
-  "calibre") echo "󱉟" ;;
   "Calendario" | "Calendar") echo "󰧒" ;;
   "Catálogo Tipográfico" | "Font Book") echo "" ;;
   "Centro de control") echo "󰕮" ;;
   "Centro de notificaciones") echo "󰕮" ;;
   "Citrix Viewer") echo "󰨡" ;;
   "Clima") echo "󰖐" ;;
+  "Compartir Pantalla") echo "󱒃" ;;
+  "Compilador de problemas") echo "" ;;
   "Configuración del Sistema" | "System Settings" | "CoreUIAgent") echo "" ;;
   "Consola" | "Console") echo "" ;;
-  "Compartir Pantalla") echo "󱒃" ;;
   "Creative Cloud") echo "" ;;
-  "deno") echo "󱜙" ;;
+  "Discord") echo "󰙯" ;;
+  "DiskImages UI Agent") echo "󰨣" ;;
   "Docker" | "Docker Desktop") echo "󰡨" ;;
   "Dropbox") echo "" ;;
-  "DiskImages UI Agent") echo "󰨣" ;;
-  "Discord") echo "󰙯" ;;
   "Due") echo "" ;;
   "FaceTime") echo "" ;;
   "Familia") echo "󱘎" ;;
@@ -39,33 +36,28 @@ _run() {
   "Firefox") echo "󰈹" ;;
   "Fotos") echo "" ;;
   "Google Chrome") echo "󰊯" ;;
-  "iA Writer") echo "󰴒" ;;
-  "iA Presenter") echo "󰐨" ;;
   "Instalador") echo "" ;;
   "Instapaper") echo "󰬐" ;;
-  "Keybase") echo "󱕵" ;;
   "KeyCastr") echo "" ;;
+  "Keybase") echo "󱕵" ;;
   "Kindle Classic" | "Kindle") echo "" ;;
-  "LaunchBar") echo "󰌓" ;;
   "Lagrange") echo "󰪁" ;;
-  "loginwindow") echo "󰍂" ;;
+  "LaunchBar") echo "󰌓" ;;
   "Mail") echo "󰛮" ;;
   "Mapas" | "Maps") echo "" ;;
-  "Menú de Kandji") echo "󰾡" ;;
   "Mensajes" | "Messages") echo "󰍡" ;;
+  "Menú de Kandji") echo "󰾡" ;;
+  "Microsoft Teams (work or school)" | "Microsoft Teams") echo "󰊻" ;;
   "Miro") echo "󱁉" ;;
   "Mirror") echo "" ;;
-  "Música" | "Music") echo "" ;;
   "Monitor de Actividad" | "Activity Monitor") echo "󱎴" ;;
-  "Microsoft Teams (work or school)" | "Microsoft Teams") echo "󰊻" ;;
+  "Música" | "Music") echo "" ;;
   "News") echo "󰎕" ;;
-  "The Archive") echo "" ;;
   "Numbers") echo "" ;;
-  "osascript") echo "󰯁" ;;
   "Pages") echo "󱔗" ;;
   "Photo Booth") echo "" ;;
-  "Postman") echo "󱂛" ;;
   "Pocket Sync") echo "󱎓" ;;
+  "Postman") echo "󱂛" ;;
   "QuickTime Player") echo "󱜅" ;;
   "Recordatorios") echo "󰢌" ;;
   "Reloj" | "Clock") echo "󱉊" ;;
@@ -74,17 +66,26 @@ _run() {
   "ScreenSaverEngine") echo "" ;;
   "Slack") echo "󰒱" ;;
   "Spotify") echo "󰓇" ;;
-  "Thunderbird") echo "󰴃" ;;
   "TV") echo "" ;;
+  "The Archive") echo "" ;;
+  "Thunderbird") echo "󰴃" ;;
   "Transmission") echo "󰴾" ;;
+  "UserNotificationCenter") echo "" ;;
   "Velja") echo "󰄛" ;;
   "Vista Previa" | "Preview") echo "" ;;
-  "zoom.us" | "ZoomAutoUpdater") echo "󰨜" ;;
-  "UserNotificationCenter") echo "" ;;
-  "Compilador de problemas") echo "" ;;
   "Wacom Center") echo "󰰮" ;;
+  "Xcode") echo "" ;;
+  "bzbmenu") echo "󰈸" ;;
+  "calibre") echo "󱉟" ;;
+  "coreautha") echo "󱅞" ;;
+  "deno") echo "󱜙" ;;
+  "iA Presenter") echo "󰐨" ;;
+  "iA Writer") echo "󰴒" ;;
+  "loginwindow") echo "󰍂" ;;
+  "osascript") echo "󰯁" ;;
+  "zoom.us" | "ZoomAutoUpdater") echo "󰨜" ;;
   *) echo "󰣆" ;;
   esac
 }
 
-_run "$@"
+_ejecutar "$@"
