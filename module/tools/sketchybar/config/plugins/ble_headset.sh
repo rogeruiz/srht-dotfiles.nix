@@ -8,10 +8,10 @@ BT_LOGO="󰂯"
 if [[ -z "$DEVICES" ]]; then
   sketchybar --set $NAME drawing=off icon.drawing=off label.drawing=off
 else
-  if [[ "${DEVICES}" == "Scissors Pro" || "${DEVICES}" == "tijeras studio pro" ]]; then
+  if [[ "${DEVICES}" == "Scissors" ||"${DEVICES}" == "Scissors Pro" || "${DEVICES}" == "tijeras studio pro" ]]; then
     DEVICES=$APPLE_LOGO
   else
     DEVICES=$BT_LOGO
   fi
-  sketchybar --set $NAME drawing=on icon.drawing=on label.drawing=on label="$DEVICES"
+  sketchybar --set "${NAME:=headphones}" drawing=on icon.drawing=on label.drawing=on label="$DEVICES"
 fi
