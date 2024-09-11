@@ -192,8 +192,8 @@ wifi_styles=(
   label.color="$(color text)"
 )
 battery_styles=(
-  background.border_color="$(color lavender)"
-  background.color="$(color lavender 51)"
+  background.border_color="$(color mauve)"
+  background.color="$(color mauve 51)"
   label.color="$(color subtext1)"
 )
 clock_styles=(

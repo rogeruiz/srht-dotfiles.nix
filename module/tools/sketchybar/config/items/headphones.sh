@@ -4,6 +4,7 @@ properties=(
   display=1
   icon=󰋋
   script="$PLUGIN_DIR/ble_headset.sh"
+  updates=when_shown
 )
 events=(
   bt_connect
