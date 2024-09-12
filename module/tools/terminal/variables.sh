@@ -1,4 +1,4 @@
-LS_COLORS=$(vivid generate catppuccin-mocha)
+LS_COLORS=$(/etc/profiles/per-user/yo/bin/vivid generate catppuccin-mocha)
 
 export LS_COLORS
 
