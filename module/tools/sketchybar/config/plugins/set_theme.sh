@@ -182,8 +182,8 @@ sound_styles=(
 music_styles=(
   background.border_color="$(color overlay2 102)"
   background.color="$(color overlay2 51)"
-  icon.color="$(color rosewater)"
-  label.color="$(color subtext1)"
+  icon.color="$(color mauve)"
+  label.color="$(color subtext0)"
 )
 wifi_styles=(
   background.border_color="$(color flamingo)"

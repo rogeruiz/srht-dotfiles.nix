@@ -35,7 +35,7 @@ _ejecutar() {
   "Finder") echo "󰀶" ;;
   "Firefox") echo "󰈹" ;;
   "Fotos") echo "" ;;
-  "Google Chrome") echo "󰊯" ;;
+  "Chromium" | "Google Chrome" | "Google Chrome Canary") echo "󰊯" ;;
   "Instalador") echo "" ;;
   "Instapaper") echo "󰬐" ;;
   "KeyCastr") echo "" ;;
