@@ -1,11 +1,11 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = ''' $package$python$rust$nodejs$golang$terraform$ruby$nix_shell
+format = '''$package$python$rust$nodejs$golang$terraform$ruby$nix_shell
 $battery$directory$git_branch${custom.git_color}$git_commit$git_metrics$git_status$git_state
-$aws$jobs$cmd_duration$character$shell '''
+$aws$jobs$cmd_duration$character$shell'''
 
-right_format = ''' ${custom.tick_icon}${custom.tick_name}${custom.tick_timer} '''
+right_format = '''${custom.tick_icon}${custom.tick_name}${custom.tick_timer}'''
 
 palette = "dark"
 
