@@ -50,7 +50,8 @@ meses_del_ano_abreviados=(
   "dic."
 )
 
-# PERF: Se tiene que aumentar el numero reportado por `date` pa' el dia de la semana porque los Arrays de Bash empiezan con 1 y no con 0.
+# PERF: Se tiene que aumentar el numero reportado por `date` pa' el dia de la
+# semana porque los Arrays de Bash empiezan con 1 y no con 0.
 dia_num=$(date "+%w")
 dia_num=$((dia_num + 1))
 

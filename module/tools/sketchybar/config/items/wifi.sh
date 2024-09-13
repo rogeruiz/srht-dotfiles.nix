@@ -5,6 +5,7 @@ properties=(
   label.scroll_duration=920
   script="$PLUGIN_DIR/wifi.sh"
   scroll_texts=on
+  background.border_width=1
 )
 network_properties=(
   icon=󰛳

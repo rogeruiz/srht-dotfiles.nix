@@ -7,6 +7,7 @@ properties=(
   script="$PLUGIN_DIR/now-playing.sh"
   scroll_texts=on
   updates=when_shown
+  background.border_width=1
 )
 events=(
   media_change

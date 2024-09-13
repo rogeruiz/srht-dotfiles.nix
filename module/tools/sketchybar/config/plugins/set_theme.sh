@@ -140,39 +140,42 @@ function color() {
 }
 
 bar_styles=(
-  color="$(color base 180)"
+  background.border_color="$(color crust 51)"
+  color="$(color mantle)"
 )
 default_styles=(
+  background.color="$(color mantle)"
+  background.border_color="$(color crust)"
   icon.color="$(color text)"
   label.color="$(color text)"
 )
 front_app_styles=(
-  background.border_color="$(color blue)"
+  background.border_color="$(color blue 102)"
   background.color="$(color blue 51)"
-  icon.color="$(color subtext0)"
-  label.color="$(color subtext0)"
+  icon.color="$(color rosewater)"
+  label.color="$(color text)"
 )
 space_styles=(
   icon.color="$(color blue)"
   icon.highlight_color="$(color mauve)"
 )
 spaces_styles=(
-  background.border_color="$(color blue)"
-  background.color="$(color sapphire 51)"
+  background.border_color="$(color blue 102)"
+  background.color="$(color blue 51)"
 )
 mic_styles=(
-  background.color="$(color mantle)"
+  background.color="$(color mantle 102)"
   icon.color="$(color red)"
   icon.highlight_color="$(color green)"
 )
 headphones_styles=(
-  background.border_color="$(color maroon)"
-  background.color="$(color overlay0 51)"
+  background.border_color="$(color maroon 102)"
+  background.color="$(color maroon 51)"
   icon.color="$(color sky)"
   label.color="$(color text)"
 )
 sound_styles=(
-  background.border_color="$(color lavender)"
+  background.border_color="$(color lavender 102)"
   background.color="$(color lavender 51)"
   icon.color="$(color green)"
   icon.highlight_color="$(color red)"
@@ -186,18 +189,18 @@ music_styles=(
   label.color="$(color subtext0)"
 )
 wifi_styles=(
-  background.border_color="$(color flamingo)"
+  background.border_color="$(color flamingo 102)"
   background.color="$(color flamingo 51)"
   icon.color="$(color flamingo)"
   label.color="$(color text)"
 )
 battery_styles=(
-  background.border_color="$(color mauve)"
+  background.border_color="$(color mauve 102)"
   background.color="$(color mauve 51)"
   label.color="$(color subtext1)"
 )
 clock_styles=(
-  background.border_color="$(color green)"
+  background.border_color="$(color green 102)"
   background.color="$(color green 51)"
   icon.color="$(color blue)"
   label.color="$(color text)"
@@ -205,7 +208,7 @@ clock_styles=(
 keyboard_alias_styles=(
   background.border_color="$(color overlay0 102)"
   background.color="$(color overlay0 51)"
-  icon.color="$(color overlay0)"
+  icon.color="$(color teal)"
 )
 network_styles=(
   background.border_color="$(color flamingo 102)"

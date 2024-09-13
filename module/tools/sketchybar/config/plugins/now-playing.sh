@@ -22,8 +22,8 @@ LABEL=''
 # ```
 eval "$(
   jq -r --argjson info "$INFO" -n '
-    $info | 
-      to_entries | 
+    $info |
+      to_entries |
       map(["export \(.key + "_info")=\(.value | @sh)"])[][]
   '
 )"
@@ -59,4 +59,8 @@ properties=(
   label.drawing=on
 )
 
-sketchybar --set "${NAME:=music}" "${properties[@]}"
+if [[ -z $INFO ]]; then
+  sketchybar --set "${NAME:=music}" icon.drawing=off label.drawing=off
+else
+  sketchybar --set "${NAME:=music}" "${properties[@]}"
+fi
