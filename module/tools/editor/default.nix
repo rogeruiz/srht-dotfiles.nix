@@ -8,6 +8,9 @@
     # This is used for Markdown files
     nodejs_20
     vale
+
+    # Experimenting with other editors
+    kakoune
   ];
 
   editorconfig = {
