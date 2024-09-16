@@ -1,7 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   skylight-include-file = ".config/git/includes/skylight.inc";
+  ghDashFile = "${config.home.homeDirectory}/.files.nix/module/tools/git/gh-dash.yml";
+  link = config.lib.file.mkOutOfStoreSymlink;
 in
 {
   home.packages = with pkgs; [
@@ -13,6 +15,10 @@ in
     ".config/git/template".source = ./template;
     ".config/git/ignore".source = ./ignore;
     "${skylight-include-file}".source = ./includes/skylight.inc;
+  };
+
+  xdg.configFile = {
+    "gh-dash/config.yml".source = (link ghDashFile);
   };
 
   programs.git = {

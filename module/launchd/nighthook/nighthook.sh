@@ -30,6 +30,12 @@ cambia_tema() {
     "s/^(--theme=).+$/\1catppuccin-$FLAVOR/" \
     "$DIR"/terminal/bat/config
 
+  # NOTE: GH-Dash
+  sed -E \
+    -i "" \
+    "s/(colors: \*).+$/\1${MODE}/" \
+    "$DIR"/git/gh-dash.yml
+
   # NOTE: Bottom
   cat \
     ~/.config/bottom/.base.toml \

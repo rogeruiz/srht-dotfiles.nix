@@ -1,0 +1,92 @@
+flavors:
+  catppuccin_mocha_mauve: &dark
+    text:
+      primary: "#cdd6f4"
+      secondary: "#cba6f7"
+      inverted: "#11111b"
+      faint: "#bac2de"
+      warning: "#f38ba8"
+      success: "#a6e3a1"
+    background:
+      selected: "#313244"
+    border:
+      primary: "#cba6f7"
+      secondary: "#45475a"
+      faint: "#313244"
+  catppuccin_latte_mauve: &light
+    text:
+      primary: "#4c4f69"
+      secondary: "#8839ef"
+      inverted: "#dce0e8"
+      faint: "#5c5f77"
+      warning: "#d20f39"
+      success: "#40a02b"
+    background:
+      selected: "#ccd0da"
+    border:
+      primary: "#8839ef"
+      secondary: "#bcc0cc"
+      faint: "#ccd0da"
+
+prSections:
+- title: Mis solicitudes de cambios
+  filters: is:open author:@me
+- title: Necesitan mi revisión
+  filters: is:open review-requested:@me
+- title: Involucrado
+  filters: is:open involves:@me -author:@me
+issuesSections:
+- title: Mis Issues
+  filters: is:open author:@me
+- title: Asignada a mí
+  filters: is:open assignee:@me
+- title: Involucrado
+  filters: is:open involves:@me -author:@me
+defaults:
+  preview:
+    open: true
+    width: 100
+  prsLimit: 20
+  issuesLimit: 20
+  view: prs
+  layout:
+    prs:
+      updatedAt:
+        width: 7
+      repo:
+        width: 15
+      author:
+        width: 15
+      assignees:
+        width: 20
+        hidden: true
+      base:
+        width: 15
+        hidden: true
+      lines:
+        width: 16
+    issues:
+      updatedAt:
+        width: 7
+      repo:
+        width: 15
+      creator:
+        width: 10
+      assignees:
+        width: 20
+        hidden: true
+  refetchIntervalMinutes: 30
+keybindings:
+  issues: []
+  prs: []
+repoPaths: {
+  cdcent/*: ~/Developer/skylight/cdcent/*
+}
+theme:
+  ui:
+    table:
+      showSeparator: true
+  colors: *light
+pager:
+  diff: less
+confirmQuit: true
