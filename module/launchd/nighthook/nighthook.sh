@@ -10,25 +10,25 @@ fi
 
 cambia_tema() {
   # shellcheck disable=SC2154
-  DIR="${HOME}/.files.nix/module/tools/terminal"
+  DIR="${HOME}/.files.nix/module/tools"
 
   # NOTE: Alacritty
   sed -E \
     -i "" \
     "s/(catppuccin-[a-z]+.toml)/catppuccin-$FLAVOR.toml/" \
-    "$DIR"/alacritty.toml
+    "$DIR"/terminal/alacritty.toml
 
   # NOTE: Starship
   sed -E \
     -i "" \
     "s/^(palette = ).+$/\1\"$MODE\"/" \
-    "$DIR"/starship.toml
+    "$DIR"/terminal/starship.toml
 
   # NOTE: Bat
   sed -E \
     -i "" \
     "s/^(--theme=).+$/\1catppuccin-$FLAVOR/" \
-    "$DIR"/bat/config
+    "$DIR"/terminal/bat/config
 
   # NOTE: Bottom
   cat \
@@ -58,16 +58,13 @@ cambia_tema() {
   sed -E \
     -i "" \
     "s/(catppuccin-)[a-z]+/\1$FLAVOR/" \
-    "${DIR}"/variables.sh
+    "${DIR}"/terminal/variables.sh
 
   # NOTE: COLORFGBG (gh)
   sed -E \
     -i "" \
     "s/(export COLORFGBG=)\".*\"/\1\"$COLORFGBG_VALUE\"/" \
-    "${DIR}"/variables.sh
-
-  # shellcheck disable=SC1091
-  source "${DIR}/variables.sh"
+    "${DIR}"/terminal/variables.sh
 
 }
 
