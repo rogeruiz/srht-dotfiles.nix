@@ -11,6 +11,7 @@
 
     # Experimenting with other editors
     kakoune
+    kakoune-lsp
   ];
 
   editorconfig = {
