@@ -86,7 +86,7 @@ theme:
   ui:
     table:
       showSeparator: true
-  colors: *light
+  colors: *dark
 pager:
   diff: less
 confirmQuit: true
