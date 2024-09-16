@@ -169,10 +169,10 @@ mic_styles=(
   icon.highlight_color="$(color green)"
 )
 headphones_styles=(
-  background.border_color="$(color maroon 102)"
-  background.color="$(color maroon 51)"
-  icon.color="$(color sky)"
-  label.color="$(color text)"
+  background.border_color="$(color yellow 102)"
+  background.color="$(color yellow 51)"
+  icon.color="$(color yellow)"
+  label.color="$(color overlay0)"
 )
 sound_styles=(
   background.border_color="$(color lavender 102)"

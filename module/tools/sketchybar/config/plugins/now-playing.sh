@@ -10,14 +10,15 @@ LABEL=''
 # Parse the JSON variable, `$INFO`, into a bunch of variables of the same name
 # with '_info' as a suffix one-time.
 #
+# NOTE:
 # ejemplo / example:
 # ```sh
 # INFO="{
-#   "album": "[<valor_de_album>]"
+#   "album": "[<valor_para_album>]"
 #   "app": "<nobre_de_app>"
-#   "artist": "[<valor_de_artista>]"
+#   "artist": "[<valor_para_artista>]"
 #   "state": "<playing|paused>",
-#   "title": "[<valor_de_titulo>]"
+#   "title": "[<valor_para_titulo>]"
 # }"
 # ```
 eval "$(
@@ -57,10 +58,11 @@ properties=(
   label="${LABEL}"
   icon.drawing=on
   label.drawing=on
+  drawing=on
 )
 
 if [[ -z $INFO ]]; then
-  sketchybar --set "${NAME:=music}" icon.drawing=off label.drawing=off
+  sketchybar --set "${NAME:=music}" drawing=off icon.drawing=off label.drawing=off
 else
   sketchybar --set "${NAME:=music}" "${properties[@]}"
 fi

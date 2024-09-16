@@ -3,10 +3,10 @@
 properties=(
   display=1
   label.max_chars=55
-  label.scroll_duration=920
+  label.scroll_duration=720
   script="$PLUGIN_DIR/now-playing.sh"
   scroll_texts=on
-  updates=when_shown
+  updates=on
   background.border_width=1
 )
 events=(
