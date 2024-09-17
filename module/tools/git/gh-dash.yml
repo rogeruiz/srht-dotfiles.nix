@@ -31,13 +31,17 @@ flavors:
 confirmQuit: true
 
 prSections:
+- title: 🔦 Los mios
+  filters: 'is:open org:cdcent assignee:@me'
 - title: 🔦 CaseBridge
-  filters: is:open repo:cdcent/CaseBridge
+  filters: 'is:open repo:cdcent/CaseBridge'
 - title: 🔦 MMGAT
-  filters: is:open repo:cdcent/mmgat
-- title: Catppuccin
-  filters: repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open
+  filters: 'is:open repo:cdcent/mmgat'
+- title: 🐱 Catppuccin
+  filters: 'repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open'
 issuesSections:
+- title: 🔦 Los mios
+  filters: 'is:open org:cdcent assignee:@me'
 - title: 🔦 MVP de CaseBridge
   filters: 'is:open label:"MVP: R" project:cdcent/76 no:assignee'
 - title: 🔦 Refinamiento
@@ -45,15 +49,15 @@ issuesSections:
 - title: 🔦 Dimensionamiento
   filters: 'is:open no:assignee project:cdcent/76 label:"Size it!"'
 - title: 🔦 Bichos
-  filters: is:open no:assignee project:cdcent/76 label:bug
+  filters: 'is:open no:assignee project:cdcent/76 label:bug'
 - title: 🔦 Boletitos
-  filters: is:open no:assignee project:cdcent/76 label:X-Small,Small
-- title: Catppuccin
-  filters: repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open
+  filters: 'is:open no:assignee project:cdcent/76 label:X-Small,Small'
+- title: 🐱 Catppuccin
+  filters: 'repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open'
 defaults:
   preview:
     open: true
-    width: 110
+    width: 100
   prsLimit: 20
   issuesLimit: 20
   view: issues
