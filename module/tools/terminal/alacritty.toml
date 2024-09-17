@@ -59,7 +59,7 @@ enabled = true
 mods = "None"
 
 [scrolling]
-history = 10000
+history = 30000
 multiplier = 1
 
 [selection]
@@ -71,7 +71,7 @@ program = "/bin/zsh"
 
 [window]
 decorations = "buttonless"
-opacity = 0.72
+opacity = 0.69
 startup_mode = "Windowed"
 title = "te vez bien hoy"
 blur = true
