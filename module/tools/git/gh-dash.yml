@@ -28,27 +28,35 @@ flavors:
       secondary: "#bcc0cc"
       faint: "#ccd0da"
 
+confirmQuit: true
+
 prSections:
-- title: Mis solicitudes de cambios
-  filters: is:open author:@me
-- title: Necesitan mi revisión
-  filters: is:open review-requested:@me
-- title: Involucrado
-  filters: is:open involves:@me -author:@me
+- title: 🔦 CaseBridge
+  filters: is:open repo:cdcent/CaseBridge
+- title: 🔦 MMGAT
+  filters: is:open repo:cdcent/mmgat
+- title: Catppuccin
+  filters: repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open
 issuesSections:
-- title: Mis Issues
-  filters: is:open author:@me
-- title: Asignada a mí
-  filters: is:open assignee:@me
-- title: Involucrado
-  filters: is:open involves:@me -author:@me
+- title: 🔦 MVP de CaseBridge
+  filters: 'is:open label:"MVP: R" project:cdcent/76 no:assignee'
+- title: 🔦 Refinamiento
+  filters: 'is:open no:assignee project:cdcent/76 label:"needs refinement"'
+- title: 🔦 Dimensionamiento
+  filters: 'is:open no:assignee project:cdcent/76 label:"Size it!"'
+- title: 🔦 Bichos
+  filters: is:open no:assignee project:cdcent/76 label:bug
+- title: 🔦 Boletitos
+  filters: is:open no:assignee project:cdcent/76 label:X-Small,Small
+- title: Catppuccin
+  filters: repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open
 defaults:
   preview:
     open: true
-    width: 100
+    width: 110
   prsLimit: 20
   issuesLimit: 20
-  view: prs
+  view: issues
   layout:
     prs:
       updatedAt:
@@ -89,4 +97,3 @@ theme:
   colors: *dark
 pager:
   diff: less
-confirmQuit: true

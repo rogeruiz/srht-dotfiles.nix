@@ -9,6 +9,7 @@ in
   home.packages = with pkgs; [
     git
     gh
+    gh-dash
   ];
 
   home.file = {
