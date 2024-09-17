@@ -2,6 +2,7 @@
 
 let
   skylight-include-file = ".config/git/includes/skylight.inc";
+  ghFile = "${config.home.homeDirectory}/.files.nix/module/tools/git/gh.yml";
   ghDashFile = "${config.home.homeDirectory}/.files.nix/module/tools/git/gh-dash.yml";
   link = config.lib.file.mkOutOfStoreSymlink;
 in
@@ -19,6 +20,8 @@ in
   };
 
   xdg.configFile = {
+    "gh/config.yml".source = (link ghFile);
+    "gh/hosts.yml".source = ./gh-hosts.yml;
     "gh-dash/config.yml".source = (link ghDashFile);
   };
 
