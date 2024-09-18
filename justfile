@@ -40,10 +40,10 @@ add-files tool:
 
     echo "➕ Attempting to add files for {{ tool }}"
     case "{{ tool }}" in
-        "sketchybar")
-            git add -v ./module/tools/sketchybar/
-            ;;
-        *) echo 'Adding {{ tool }} not implemented!' ;;
+    "sketchybar")
+        git add -v ./module/tools/sketchybar/
+        ;;
+    *) echo '⚠️ Adding {{ tool }} not implemented!' ;;
     esac
 
 [doc('Update flake channel from registry')]
