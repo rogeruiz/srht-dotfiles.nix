@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+# SketchyBar Wi-Fi plugin
+# Copyright (C) 2024 Roger Steve Ruiz
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation, either version 3 of the License, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+# more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
 SSID="$(
   networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}' | xargs networksetup -getairportnetwork | sed "s/Current Wi-Fi Network: //"
 )"
@@ -9,6 +25,7 @@ SIN_PODER="Wi-Fi power is currently off."
 ICONO='󰖩'
 CELULAR=""
 CASA="󰴖"
+CAFE=""
 ETIQUETA_ERROR=""
 
 if [[ $SSID =~ $SIN_CONEXION ]]; then
@@ -29,7 +46,8 @@ fi
 SSID="${SSID//[$'\t\r\n']/}"
 
 case "${SSID}" in
-"tell my wifi love her") ICONO+=" ${CASA}" ;;
+"tell my wifi love her"*) ICONO+=" ${CASA}" ;;
+"OverflowCHI" | "SocialeCafePress_IoT") ICONO+=" ${CAFE}" ;;
 "razor 13" | *iPhone) ICONO+=" ${CELULAR}" ;;
 *) ;;
 esac
