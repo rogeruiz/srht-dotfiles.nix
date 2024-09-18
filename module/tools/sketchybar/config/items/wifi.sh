@@ -2,10 +2,11 @@
 
 properties=(
   label.max_chars=30
-  label.scroll_duration=920
+  label.scroll_duration=720
   script="$PLUGIN_DIR/wifi.sh"
   scroll_texts=on
   background.border_width=1
+  updates=on
 )
 network_properties=(
   icon=󰛳
@@ -16,6 +17,8 @@ network_properties=(
 
 events=(
   wifi_config
+  mouse.entered
+  system_woke
 )
 
 sketchybar --add alias "Stats,Network_network_chart" right \
