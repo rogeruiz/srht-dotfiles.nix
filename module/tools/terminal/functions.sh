@@ -86,7 +86,7 @@
 # |   __| |_ ___| | |
 # |__   |   | -_| | |
 # |_____|_|_|___|_|_|
-# _reload-vars es una función pa' facilitar los cambios de los variables de mi
+# reload-vars es una función pa' facilitar los cambios de los variables de mi
 # Shell
 # NOTE:
 # ejemplo: `,recarga-vars`
@@ -114,7 +114,7 @@
 # |__   |   | -_| | |
 # |_____|_|_|___|_|_|
 #
-# _recarga_funcs es una función pa' facilitar los cambios de las funciones de
+# recarga_funcs es una función pa' facilitar los cambios de las funciones de
 # mi Shell
 # NOTE:
 # ejemplo: `,recarga-funcs`
@@ -124,4 +124,32 @@
   printf "🔃 %s\n" "${msg}"
   # shellcheck source=/Users/yo/.local/share/rstrz/.functions
   source "${path}"
+}
+
+#  _____                       _        _
+# | __  |___ ___ ___ ___ ___ _| |___   | |___ ___
+# | __ -| . |  _|  _| .'|   | . | . |  | | . |_ -|
+# |_____|___|_| |_| |__,|_|_|___|___|  |_|___|___|
+#
+#              _   _                  _
+#  ___ ___ ___| |_|_|_ _ ___ ___    _| |___
+# | .'|  _|  _|   | | | | . |_ -|  | . | -_|
+# |__,|_| |___|_|_|_|\_/|___|___|  |___|___|
+#
+#    ____  _____       _____ _
+#   |    \|   __|     |   __| |_ ___ ___ ___
+#  _|  |  |__   |     |__   |  _| . |  _| -_|
+# |_|____/|_____|_____|_____|_| |___|_| |___|
+#               |_____|
+# borrar-ds-store es una función pa' borrar los archivos de .DS_Store en un
+# directorio y todo los directorios debajo de manera recursiva
+# NOTE:
+# ejemplo: `,borrar-ds-store`
+,borrar-ds-store() {
+  if type -p fd >/dev/null 2>&1; then
+    printf '➕ Attempting to find & remove .DS_Store files all the way down\n'
+    fd --hidden --no-ignore DS_Store --exec-batch rm -rvf
+  else
+    printf '❌ `fd` not found!\n'
+  fi
 }

@@ -66,15 +66,16 @@ meses_del_ano_abreviados=(
   "dic."
 )
 
-# PERF: Se tiene que aumentar el numero reportado por `date` pa' el dia de la
-# semana porque los Arrays de Bash empiezan con 1 y no con 0.
-dia_num=$(date "+%w")
-dia_num=$((dia_num + 1))
+# PERF: Aseguremos que los numeros de'l comando `date` son numeros usando
+# `$((..))` pa' convertir numeros con ceros delanteros en numeros sin ceros a
+# la izquierda.
+num_semana=$((10#$(date +%w) + 0))
+num_mes=$((10#$(date +%m) + 0))
 
-# dia="${dias_de_la_semana[${dia_num}]}"
-# mes="${meses_del_ano[$(date "+%m")]}"
-dia="${dias_de_la_semana_abreviados[${dia_num}]}"
-mes="${meses_del_ano_abreviados[$(date "+%m")]}"
+# dia="${dias_de_la_semana[${num_semana}]}"
+# mes="${meses_del_ano[${num_mes}]}"
+dia="${dias_de_la_semana_abreviados[${num_semana}]}"
+mes="${meses_del_ano_abreviados[${num_mes}]}"
 
-sketchybar --set $NAME label="$(date "+${dia} %d ${mes} '%y %H:%M:%S")"
-# sketchybar --set $NAME label="$(date "+%y/%m/%d %H:%M:%S")"
+sketchybar --set "${NAME:=clock}" label="$(date "+${dia} %d ${mes} '%y %H:%M:%S")"
+# sketchybar --set "${NAME:=clock}" label="$(date "+%y/%m/%d %H:%M:%S")"

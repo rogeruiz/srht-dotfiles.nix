@@ -96,8 +96,9 @@ in
     enable = true;
     shellAliases = {
       g = "git";
+      j = "just";
       nv = "nvim";
-      nvd = "nvim -d";
+      ndf = "nvim -d";
       "-- -" = "cd -";
       ".." = "cd ..";
       "..." = "cd ../..";
