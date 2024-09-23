@@ -70,7 +70,7 @@ meses_del_ano_abreviados=(
 # `$((..))` pa' convertir numeros con ceros delanteros en numeros sin ceros a
 # la izquierda.
 num_semana=$((10#$(date +%w) + 0))
-num_mes=$((10#$(date +%m) + 0))
+num_mes=$((10#$(date +%m) - 1))
 
 # dia="${dias_de_la_semana[${num_semana}]}"
 # mes="${meses_del_ano[${num_mes}]}"
