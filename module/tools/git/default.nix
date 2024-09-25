@@ -78,7 +78,7 @@ in
       up = "reset HEAD --patch";
       url = "config --local --get-regexp remote\\.\\.\\*\\.url";
       who = "!who() { git log --pretty='Author: %an <%ae>' | rg -i $1 | sort | uniq; }; who";
-      wtb = "!wtb() { git br -l | rg '\\*' | awk '{ print $2 }'; }; wtb";
+      wtb = "symbolic-ref --short -q HEAD";
       pen = "!pen() { git who $1 | sed 's/Author:/Co-Authored-By:/'; }; pen";
 
       catchup = "log FETCH_HEAD...HEAD --reverse --stat --pretty=format:'${(builtins.readFile ./log/long)}'";
