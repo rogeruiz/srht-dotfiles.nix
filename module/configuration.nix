@@ -54,6 +54,8 @@
       coreutils
       moreutils
       jq
+
+      skhd
     ];
   };
 

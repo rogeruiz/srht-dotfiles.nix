@@ -26,9 +26,11 @@ alias help := default
 @default:
     just --list
 
+alias b := build
+
 [doc('Build x86_64 Darwin configuration')]
 [macos]
-build-darwin:
+build:
     @echo "🛠️ Rebuilding x86_64 Darwin"
     darwin-rebuild switch --flake ".#x86_64" --fallback
 
@@ -43,6 +45,12 @@ add-files tool:
     "sketchybar")
         git add -v ./module/tools/sketchybar/
         ;;
+    "skhd")
+        git add -v ./module/tools/skhd/
+        ;;
+    "yabai")
+        git add -v ./module/tools/yabai/
+        ;;
     *) echo '⚠️ Adding {{ tool }} not implemented!' ;;
     esac
 
@@ -53,6 +61,18 @@ update:
 
 [doc('Develop my Sketchybar configuration')]
 [macos]
-dev-sketchybar: (add-files "sketchybar") build-darwin
-    @echo "🔃 Reloading SketchyBar"
-    sketchybar --reload
+dev-sketchybar: (add-files "sketchybar") build
+    @echo "🔃 Respawning the SketchyBar daemon"
+    launchctl kill 3 gui/501/org.nixos.sketchybar
+
+[doc('Develop my yabai configuration')]
+[macos]
+dev-yabai: (add-files "yabai") build
+    @echo "🔃 Respawning the yabai daemon"
+    launchctl kill 3 gui/501/org.nixos.yabai
+
+[doc('Develop my skhd configuration')]
+[macos]
+dev-skhd: (add-files "skhd") build
+    @echo "🔃 Respawning the skhd daemon"
+    launchctl kill 3 gui/501/org.nixos.skhd
