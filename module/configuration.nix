@@ -107,6 +107,7 @@
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         ApplePressAndHoldEnabled = false;
+        # NSWindowShouldDragOnGesture = true; # FIX: Puedo usar esto cuando se integra LnL7/nix-darwin#TBD
       };
 
       dock = {
@@ -117,6 +118,7 @@
         magnification = false;
         mineffect = "suck";
         showhidden = true;
+        # slow-motion-allowed = true; # FIX: Puedo usar esto cuando se integra LnL7/nix-darwin#1094
         static-only = true;
         wvous-br-corner = 5;
         wvous-tr-corner = 13;
