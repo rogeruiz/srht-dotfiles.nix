@@ -59,7 +59,7 @@ in
       conflicts = "!con() { nvim -p $(git s | rg 'U[UAD]' | awk '{ print $2 }'); }; con";
       continue = "!git add . && git rebase --continue";
       df = "diff --ws-error-highlight=all";
-      discard = "checkout --";
+      discard = "restore";
       fall = "fetch --all";
       local = "br --list";
       ls = "stash list";
@@ -74,7 +74,7 @@ in
       save = "stash save";
       some = "!git add $@ && git ci";
       st = "status";
-      unstage = "reset HEAD";
+      unstage = "restore --staged";
       up = "reset HEAD --patch";
       url = "config --local --get-regexp remote\\.\\.\\*\\.url";
       who = "!who() { git log --pretty='Author: %an <%ae>' | rg -i $1 | sort | uniq; }; who";
