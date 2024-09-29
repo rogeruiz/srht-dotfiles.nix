@@ -83,11 +83,6 @@
     ];
   };
 
-  # FIX: No se donde esta vaina se tiene que poner.
-  # Este es el comando que estoy usando por ahora: `defaults write -g
-  # ApplePressAndHoldEnabled -bool false`
-  # targets.darwin.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
-
   # FIX: Integrar este comando en Nix
   # defaults write -g NSWindowShouldDragOnGesture YES
 
@@ -111,6 +106,7 @@
       NSGlobalDomain = {
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
+        ApplePressAndHoldEnabled = false;
       };
 
       dock = {
