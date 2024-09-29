@@ -83,9 +83,6 @@
     ];
   };
 
-  # FIX: Integrar este comando en Nix
-  # defaults write -g NSWindowShouldDragOnGesture YES
-
   system = {
     keyboard = {
       enableKeyMapping = true;
@@ -107,7 +104,7 @@
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         ApplePressAndHoldEnabled = false;
-        # NSWindowShouldDragOnGesture = true; # FIX: Puedo usar esto cuando se integra LnL7/nix-darwin#TBD
+        NSWindowShouldDragOnGesture = true;
       };
 
       dock = {
