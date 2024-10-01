@@ -56,6 +56,7 @@
       jq
 
       skhd
+      jankyborders
     ];
   };
 

@@ -261,6 +261,9 @@ sketchybar \
 
 # set the yabai colors as well
 yabai \
-  -m config active_window_border_color "$(color mauve)" \
-  -m config normal_window_border_color "$(color base)" \
-  -m config feedback_color "$(color mauve)"
+  -m config insert_feedback_color "$(color mauve)"
+
+# fijar los colores de los bordes usando JankyBorders
+borders \
+  active_color="$(color mauve)" \
+  inactive_color="$(color base)"
