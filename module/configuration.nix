@@ -119,6 +119,7 @@
         magnification = false;
         mineffect = "suck";
         showhidden = true;
+        show-process-indicators = false;
         # slow-motion-allowed = true; # FIX: Puedo usar esto cuando se integra LnL7/nix-darwin#1094
         static-only = true;
         wvous-br-corner = 5;
