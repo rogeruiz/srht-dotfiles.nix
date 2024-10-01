@@ -78,7 +78,10 @@
       (nerdfonts.override {
         fonts = [
           "0xProto"
+          "HeavyData"
+          "NerdFontsSymbolsOnly"
           "Recursive"
+          "ShareTechMono"
         ];
       })
     ];
