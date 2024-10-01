@@ -50,7 +50,7 @@ in
       mouse_action2 = "resize";
       mouse_drop_action = "swap";
       mouse_follows_focus = "off";
-      focus_follows_mouse = "off";
+      focus_follows_mouse = "autofocus";
     };
     extraConfig = (builtins.readFile ./yabairc);
   };
