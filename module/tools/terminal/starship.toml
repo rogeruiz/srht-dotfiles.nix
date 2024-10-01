@@ -18,7 +18,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = '''$package$python$rust$nodejs$golang$terraform$ruby$nix_shell
-$battery$directory$git_branch${custom.git_color}$git_commit$git_metrics$git_status$git_state
+$battery$directory$git_branch${custom.git_color}$git_metrics$git_status$git_state
 $aws$jobs$cmd_duration$character$shell'''
 
 right_format = '''${custom.tick_icon}${custom.tick_name}${custom.tick_timer}'''
@@ -118,10 +118,10 @@ stashed = "[󰘓](magenta) "
 format = " ([ $added]($added_style) )([ $deleted]($deleted_style) )"
 disabled = false
 
-[git_commit]
-commit_hash_length = 6
-only_detached = false
-format = "[#](fg:rosewater)[$hash$tag ](italic fg:rosewater)"
+# [git_commit]
+# commit_hash_length = 6
+# only_detached = false
+# format = "[#](fg:rosewater)[$hash$tag ](italic fg:rosewater)"
 
 [directory]
 truncation_length = 5
@@ -159,10 +159,11 @@ utc_time_offset = "local"
 
 
 [custom.git_color]
-command = ''' perl -e 'foreach $a(@ARGV){print "\e[48;2;".join(";",unpack("C*",pack("H*",$a)))."m  \e[49m"};' $(git rev-parse HEAD | head -c 6) 2>/dev/null '''
+command = ''' perl -e 'foreach $a(@ARGV){print "\e[48;2;".join(";",unpack("C*",pack("H*",$a)))."m  \e[49m"}; print " #@ARGV";' $(git rev-parse HEAD | head -c 6) 2>/dev/null '''
 when = 'git rev-parse --is-inside-work-tree'
 description = "The current hexidecimal color based on the current Git SHA at HEAD."
 unsafe_no_escape = true
+style = "bold italic fg:subtext1"
 
 [custom.tick_icon]
 command = 'echo "󱫤 "'
