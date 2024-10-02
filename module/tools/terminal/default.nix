@@ -18,7 +18,6 @@
 
 let
   terminalPath = "${config.home.homeDirectory}/.files.nix/module/tools/terminal";
-  alacrittyFile = "${terminalPath}/alacritty.toml";
   starshipFile = "${terminalPath}/starship.toml";
   variablesFile = "${terminalPath}/variables.sh";
   functionsFile = "${terminalPath}/functions.sh";
@@ -28,6 +27,7 @@ in
   imports = [
     ./bat
     ./bottom
+    ./alacritty
     ./tmux
 
     # NOTE: Esto se configura aquí pero se activo en `module/configuration.nix`
@@ -99,7 +99,7 @@ in
       j = "just";
       nv = "nvim";
       ndf = "nvim -d";
-      "-- -" = "cd -";
+      "-" = "cd -";
       ".." = "cd ..";
       "..." = "cd ../..";
       l = "exa -xa";
@@ -121,7 +121,6 @@ in
   };
 
   xdg.configFile = {
-    "alacritty/alacritty.toml".source = (link alacrittyFile);
     "starship.toml".source = (link starshipFile);
   };
 
