@@ -17,8 +17,7 @@
 { pkgs, config, ... }:
 
 let
-  terminalPath = "${config.home.homeDirectory}/.files.nix/module/tools/terminal";
-  alacrittyFile = "${terminalPath}/alacritty.toml";
+  configFile = "${config.home.homeDirectory}/.files.nix/module/tools/terminal/alacritty/alacritty.toml";
   themeRepo = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "alacritty";
@@ -29,7 +28,7 @@ let
 in
 {
   xdg.configFile = {
-    "alacritty/alacritty.toml".source = (link alacrittyFile);
+    "alacritty/alacritty.toml".source = (link configFile);
     "alacritty/catppuccin-latte.toml".source = "${themeRepo}/catppuccin-latte.toml";
     "alacritty/catppuccin-mocha.toml".source = "${themeRepo}/catppuccin-mocha.toml";
   };
