@@ -143,6 +143,7 @@
       "equinox"
       "firefox"
       "flux"
+      "flycast"
       "handbrake"
       "hot"
       "imageoptim"
