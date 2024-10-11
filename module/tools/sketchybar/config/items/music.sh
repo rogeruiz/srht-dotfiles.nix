@@ -27,7 +27,13 @@ properties=(
 )
 events=(
   media_change
+  music_change
+  spotify_change
 )
+
+sketchbar --add event \
+  music_change "com.apple.Music.playerInfo" \
+  spotify_change "com.spotify.client.PlaybackStateChanged"
 
 sketchybar --add item music center \
   --set music "${properties[@]}" \

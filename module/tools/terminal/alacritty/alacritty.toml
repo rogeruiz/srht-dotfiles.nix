@@ -75,7 +75,7 @@ enabled = true
 mods = "None"
 
 [scrolling]
-history = 30000
+history = 90_000
 multiplier = 1
 
 [selection]

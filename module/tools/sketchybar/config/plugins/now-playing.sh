@@ -23,27 +23,81 @@ LABEL=''
 # PERF:
 # Analizar el variable de JSON, `$INFO`, en un montón de variables con el mismo
 # nombre con '_info' como un sufijo una vez.
-# Parse the JSON variable, `$INFO`, into a bunch of variables of the same name
+# en: Parse the JSON variable, `$INFO`, into a bunch of variables of the same name
 # with '_info' as a suffix one-time.
 #
 # NOTE:
 # ejemplo / example:
 # ```sh
 # INFO="{
-#   "album": "[<valor_para_album>]"
-#   "app": "<nobre_de_app>"
-#   "artist": "[<valor_para_artista>]"
+#   "album": "[<valor_para_album>]",
+#   "app": "<nobre_de_app>",
+#   "artist": "[<valor_para_artista>]",
 #   "state": "<playing|paused>",
 #   "title": "[<valor_para_titulo>]"
 # }"
 # ```
-eval "$(
+
+EXTRACTED_VARS="$(
   jq -r --argjson info "$INFO" -n '
     $info |
       to_entries |
       map(["export \(.key + "_info")=\(.value | @sh)"])[][]
-  '
+  ' 2>/dev/null
 )"
+
+if [[ -z $EXTRACTED_VARS ]]; then
+  declare -A info=(
+    [playbackRate]=''
+    [artist]=''
+    [title]=''
+    [album]=''
+    [isMusicApp]=''
+  )
+  count=0
+
+  INFO=$(/etc/profiles/per-user/yo/bin/nowplaying-cli get playbackRate artist title album isMusicApp | {
+    while read -r line; do
+      case ${count} in
+      0) info[playbackRate]="$line" ;;
+      1) info[artist]="$line" ;;
+      2) info[title]="$line" ;;
+      3) info[album]="$line" ;;
+      4) info[isMusicApp]="$line" ;;
+      *) ;;
+      esac
+      count=$((count + 1))
+    done
+
+    if [[ "${info[artist]}" == "null" ]]; then
+      unset 'info[artist]'
+    fi
+
+    if [[ "${info[album]}" == "null" ]]; then
+      unset 'info[album]'
+    fi
+
+    if [[ "${info[isMusicApp]}" -eq 1 ]]; then
+      info[isMusicApp]='Música'
+    fi
+
+    if [[ "${info[playbackRate]}" -eq 1 ]]; then
+      info[playbackRate]='playing'
+    else
+      info[playbackRate]='paused'
+    fi
+
+    printf "%s," "${info[@]}"
+  })
+
+  state_info=$(printf %s "${INFO}" | cut -d ',' -f 1)
+  artist_info=$(printf %s "${INFO}" | cut -d ',' -f 2)
+  title_info=$(printf %s "${INFO}" | cut -d ',' -f 3)
+  app_info=$(printf %s "${INFO}" | cut -d ',' -f 4)
+  album_info=$(printf %s "${INFO}" | cut -d ',' -f 5)
+else
+  eval "$EXTRACTED_VARS"
+fi
 
 if [[ -n "${state_info}" ]]; then
   case "${state_info}" in

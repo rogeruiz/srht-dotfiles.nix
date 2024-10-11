@@ -32,7 +32,7 @@ cambia_tema() {
   sed -E \
     -i "" \
     "s/(catppuccin-[a-z]+.toml)/catppuccin-$FLAVOR.toml/" \
-    "$DIR"/terminal/alacritty.toml
+    "$DIR"/terminal/alacritty/alacritty.toml
 
   # NOTE: Starship
   sed -E \

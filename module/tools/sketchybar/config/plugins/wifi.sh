@@ -26,6 +26,7 @@ ICONO='󰖩'
 CELULAR=""
 CASA="󰴖"
 CAFE=""
+HOTEL=""
 ETIQUETA_ERROR=""
 
 if [[ $SSID =~ $SIN_CONEXION ]]; then
@@ -48,7 +49,8 @@ SSID="${SSID//[$'\t\r\n']/}"
 case "${SSID}" in
 "tell my wifi love her"*) ICONO+=" ${CASA}" ;;
 "OverflowCHI" | "SocialeCafePress_IoT") ICONO+=" ${CAFE}" ;;
-"razor 13" | *iPhone) ICONO+=" ${CELULAR}" ;;
+"razor "* | *iPhone) ICONO+=" ${CELULAR}" ;;
+"Hilton Honors") ICONO+=" ${HOTEL}" ;;
 *) ;;
 esac
 

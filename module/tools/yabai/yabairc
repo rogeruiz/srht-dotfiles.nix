@@ -39,6 +39,8 @@ yabai -m rule --add app="^Mirror" manage=off
 yabai -m rule --add app="^Mensajes" manage=off
 yabai -m rule --add app="^The Archive" manage=off
 yabai -m rule --add app="^Equinox" manage=off
+yabai -m rule --add app="^Utilidad de Compresión" manage=off
+yabai -m rule --add app="^The Unarchiver" manage=off
 
 yabai -m rule --add app="^deno" title="^Peek preview" manage=on
 
