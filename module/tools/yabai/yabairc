@@ -29,6 +29,7 @@ yabai -m rule --add app="^DiskImages UI Agent" manage=off
 # pequeñia y efímera.
 yabai -m rule --add app="^Finder" title="Copiar" manage=off
 yabai -m rule --add app="^Finder" title="Configuración del Finder" manage=off
+yabai -m rule --add app="^Finder" title="Basurero" manage=off
 
 yabai -m rule --add app="^Safari" title="^(General|Pestañas|Autorelleno|Contraseñas|Buscar|Seguridad|Privacidad|Sitios|Perfiles|Extensiones|Avanzado|Desarrollador|Interruptores de funciones)$" manage=off
 

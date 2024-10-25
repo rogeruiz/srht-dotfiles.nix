@@ -87,14 +87,19 @@ if [[ -z $EXTRACTED_VARS ]]; then
       info[playbackRate]='paused'
     fi
 
-    printf "%s," "${info[@]}"
+    printf "%s|" "${info[@]}"
   })
 
-  state_info=$(printf %s "${INFO}" | cut -d ',' -f 1)
-  artist_info=$(printf %s "${INFO}" | cut -d ',' -f 2)
-  title_info=$(printf %s "${INFO}" | cut -d ',' -f 3)
-  app_info=$(printf %s "${INFO}" | cut -d ',' -f 4)
-  album_info=$(printf %s "${INFO}" | cut -d ',' -f 5)
+  state_info=$(printf %s "${INFO}" | cut -d '|' -f 1)
+  artist_info=$(printf %s "${INFO}" | cut -d '|' -f 2)
+  title_info=$(printf %s "${INFO}" | cut -d '|' -f 3)
+  album_info=$(printf %s "${INFO}" | cut -d '|' -f 5)
+  app_info=$(printf %s "${INFO}" | cut -d '|' -f 4)
+
+  if [[ "${title_info}" == "null" ]]; then
+    unset INFO
+  fi
+
 else
   eval "$EXTRACTED_VARS"
 fi
@@ -128,11 +133,10 @@ properties=(
   label="${LABEL}"
   icon.drawing=on
   label.drawing=on
-  drawing=on
 )
 
 if [[ -z $INFO ]]; then
-  sketchybar --set "${NAME:=music}" drawing=off icon.drawing=off label.drawing=off
+  sketchybar --set "${NAME:=music}" icon.drawing=off label.drawing=off
 else
   sketchybar --set "${NAME:=music}" "${properties[@]}"
 fi

@@ -39,7 +39,7 @@
       awk '{print $1}' |
       xargs git branch -D
   else
-    echo "There's not \".git/\" directory in \"$(pwd)\"."
+    printf '%s %s\n' 'No hay directorio `.git/` en' "$(pwd)"
   fi
 }
 
@@ -92,7 +92,7 @@
 # ejemplo: `,recarga-vars`
 ,recarga-vars() {
   local path=$HOME/.local/share/rstrz/.variables
-  local msg="Sourcing ${path}"
+  local msg="Suministrando ${path}"
   printf "🔃 %s\n" "${msg}"
   # shellcheck source=/Users/yo/.local/share/rstrz/.variables
   source "${path}"
@@ -120,7 +120,7 @@
 # ejemplo: `,recarga-funcs`
 ,recarga-funcs() {
   local path=$HOME/.local/share/rstrz/.functions
-  local msg="Sourcing ${path}"
+  local msg="Suministrando ${path}"
   printf "🔃 %s\n" "${msg}"
   # shellcheck source=/Users/yo/.local/share/rstrz/.functions
   source "${path}"
@@ -147,9 +147,9 @@
 # ejemplo: `,borrar-ds-store`
 ,borrar-ds-store() {
   if type -p fd >/dev/null 2>&1; then
-    printf '➕ Attempting to find & remove .DS_Store files all the way down\n'
+    printf '➕ %s\n' 'Intentando buscar y borrar archivos de `.DS_store` en esta y todas las carpetas que siguen'
     fd --hidden --no-ignore DS_Store --exec-batch rm -rvf
   else
-    printf '❌ `fd` not found!\n'
+    printf 'ℹ️ %s\n' 'Por favor instalar la aplicación CLI llamada `fd`'
   fi
 }

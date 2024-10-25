@@ -42,9 +42,18 @@ export PATH=$(go env GOPATH)/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "/Users/yo/.bun/_bun" ] && source "/Users/yo/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-[ -s "/Users/yo/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+[ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
 
 source "$HOME/.local/share/rstrz/.variables"
 source "$HOME/.local/share/rstrz/.functions"
+
+# WARN: deno https://github.com/denoland/deno_install/blob/b4dad3254e44fbad38f7a4859e7840342cdba2b9/shell-setup/src/shell.ts#L197-L220
+#
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/yo/.zsh/completions/_deno.zsh:"* ]]; then
+  export FPATH="/Users/yo/.zsh/completions/_deno.zsh:$FPATH"
+fi

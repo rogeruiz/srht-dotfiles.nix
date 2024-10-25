@@ -57,6 +57,8 @@
 
       skhd
       jankyborders
+
+      wireguard-tools
     ];
   };
 

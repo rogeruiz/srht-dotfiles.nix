@@ -18,7 +18,7 @@
 
 properties=(
   display=1
-  label.max_chars=55
+  label.max_chars=45
   label.scroll_duration=720
   script="$PLUGIN_DIR/now-playing.sh"
   scroll_texts=on
@@ -29,6 +29,7 @@ events=(
   media_change
   music_change
   spotify_change
+  mouse.exited
 )
 
 sketchbar --add event \
