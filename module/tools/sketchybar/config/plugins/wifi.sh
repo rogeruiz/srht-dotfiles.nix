@@ -17,11 +17,10 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 SSID="$(
-  networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}' | xargs networksetup -getairportnetwork | sed "s/Current Wi-Fi Network: //"
+  ipconfig getsummary en0 | awk -F ' SSID : ' '/ SSID : / {print $2}'
 )"
 
 SIN_CONEXION="You are not associated with an AirPort network."
-SIN_PODER="Wi-Fi power is currently off."
 ICONO='󰖩'
 CELULAR=""
 CASA="󰴖"
@@ -29,16 +28,10 @@ CAFE=""
 HOTEL=""
 ETIQUETA_ERROR=""
 
-if [[ $SSID =~ $SIN_CONEXION ]]; then
+if [[ -z $SSID ]]; then
   ICONO="󱚵"
   SSID="${SSID//${SIN_CONEXION}/}"
   ETIQUETA_ERROR="No hay conexión de Wi-Fi"
-fi
-
-if [[ $SSID =~ $SIN_PODER ]]; then
-  ICONO="󰖪"
-  SSID="${SSID//${SIN_PODER}/}"
-  ETIQUETA_ERROR="Wi-Fi esta apagado"
 fi
 
 # NOTE: Esto se requiere porque la manera que remplazo el texto de $SSID no le
