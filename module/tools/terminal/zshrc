@@ -39,11 +39,6 @@ export GOPATH=${GOPATH:-$(go env GOPATH)}
 
 export PATH=$(go env GOPATH)/bin:$PATH
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 [ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 [ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"

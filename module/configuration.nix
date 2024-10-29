@@ -130,6 +130,8 @@
     };
   };
 
+  system.stateVersion = 5;
+
   homebrew = {
     enable = true;
     caskArgs.no_quarantine = true;
