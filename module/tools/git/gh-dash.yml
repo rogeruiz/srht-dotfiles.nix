@@ -21,8 +21,9 @@ flavors:
       secondary: "#cba6f7"
       inverted: "#11111b"
       faint: "#bac2de"
-      warning: "#f38ba8"
+      warning: "#f9e2af"
       success: "#a6e3a1"
+      error: "#f38ba8"
     background:
       selected: "#313244"
     border:
@@ -35,8 +36,9 @@ flavors:
       secondary: "#8839ef"
       inverted: "#dce0e8"
       faint: "#5c5f77"
-      warning: "#d20f39"
+      warning: "#df8e1d"
       success: "#40a02b"
+      error: "#d20f39"
     background:
       selected: "#ccd0da"
     border:
