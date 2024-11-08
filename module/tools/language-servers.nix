@@ -30,5 +30,11 @@
     go
     shellcheck
     shfmt
+
+    # crystal
+    # crystalline
+    # shards
+    # icr
+    # scry
   ];
 }

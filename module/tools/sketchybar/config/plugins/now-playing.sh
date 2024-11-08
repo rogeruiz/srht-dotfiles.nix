@@ -77,6 +77,10 @@ if [[ -z $EXTRACTED_VARS ]]; then
       unset 'info[album]'
     fi
 
+    if [[ "${info[isMusicApp]}" == "null" ]]; then
+      unset 'info[isMusicApp]'
+    fi
+
     if [[ "${info[isMusicApp]}" -eq 1 ]]; then
       info[isMusicApp]='Música'
     fi

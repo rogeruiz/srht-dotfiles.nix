@@ -57,6 +57,8 @@ prSections:
   filters: 'is:open repo:cdcent/mmgat'
 - title: 🐱 Catppuccin
   filters: 'repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open'
+- title: 🦂 Alacrán Studio
+  filters: 'org:alacran-studio is:open'
 issuesSections:
 - title: 🔦 Los mios
   filters: 'is:open org:cdcent assignee:@me'

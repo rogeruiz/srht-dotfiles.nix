@@ -36,9 +36,8 @@ in
   ];
 
   home.packages = with pkgs; [
-    # Some of the tools I like to use in the terminal
+    # Herramientas que uso porque me gusta el terminal
     pv
-    gawk
     ranger
     httpie
     direnv
@@ -51,31 +50,33 @@ in
     htop
     nowplaying-cli
 
-    # Base terminal tools we all need
+    # Herramientas que yo uso pa' que Darwin se sienta más como Linux
     cmake
     coreutils
-    moreutils
     curl
-    wget
-    reattach-to-user-namespace
+    gawk
+    moreutils
     pam-reattach
-    zoxide
+    reattach-to-user-namespace
+    wget
 
-    # Some Rust tools that I like to use that replace classic tools not written
-    # in Rust
+    # Herramientas que me gustan y remplazan las herramientas clasicas escritos
+    # en Rust
     choose
-    vivid
-    just
-    eza
-    ripgrep
-    jq
     du-dust
+    eza
     fd
-    procs
-    sd
     grex
+    jq
+    just
+    procs
+    ripgrep
+    rm-improved
+    sd
     tealdeer
     tokei
+    vivid
+    zoxide
 
     keychain
     _1password
@@ -103,6 +104,7 @@ in
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
+      "....." = "cd ../../../..";
       l = "exa -xa";
       ll = "exa -lah --git";
       lll = "exa -lah --git -T --git-ignore";
