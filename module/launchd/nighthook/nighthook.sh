@@ -73,7 +73,7 @@ cambia_tema() {
 
   # NOTE: Tmux
 
-  "$TMUX_BIN" set -g "@catppuccin_flavor" "$FLAVOR"
+  "$TMUX_BIN" set -g "@catppuccin_flavour" "$FLAVOR"
   "$TMUX_BIN" run "$CATPPUCCIN_TMUX"
 
   # NOTE: LS_COLORS (exa, fd, rg)

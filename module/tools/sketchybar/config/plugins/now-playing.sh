@@ -100,7 +100,9 @@ if [[ -z $EXTRACTED_VARS ]]; then
   album_info=$(printf %s "${INFO}" | cut -d '|' -f 5)
   app_info=$(printf %s "${INFO}" | cut -d '|' -f 4)
 
-  if [[ "${title_info}" == "null" ]]; then
+  if [[ "${artist_info}" == "null" && "${title_info}" != "null" ]]; then
+    unset INFO
+  elif [[ "${title_info}" == "null" ]]; then
     unset INFO
   fi
 
