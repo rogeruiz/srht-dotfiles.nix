@@ -23,7 +23,8 @@ config=(
   y_offset=$((bar_yoffset))
   padding_left="${margins}"
   padding_right="${margins}"
-  background.border_width=1
+  border_width=2
+  corner_radius=8
 )
 
 sketchybar --bar "${config[@]}"

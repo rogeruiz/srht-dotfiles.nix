@@ -172,7 +172,7 @@ description ='Icon for the cuttent timer running with `tick`.'
 style = 'bg:mantle fg:subtext0'
 
 [custom.tick_name]
-command = 'tick -v status | rg "NOW" | rg "\[ (\w+) \]" -or "\$1" && echo " "'
+command = 'tick -v status | rg "NOW" | rg "\[ ([a-zA-Z\-áéíúñ]+) \]" -or "\$1" && echo " "'
 when = 'tick -v status | rg "NOW"'
 description = "Name of the current timer running with `tick`."
 style = "italic fg:subtext0 bg:mantle"
