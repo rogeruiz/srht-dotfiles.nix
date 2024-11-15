@@ -23,7 +23,7 @@ config=(
   y_offset=$((bar_yoffset))
   padding_left="${margins}"
   padding_right="${margins}"
-  border_width=2
+  border_width=1
   corner_radius=8
 )
 
