@@ -21,8 +21,8 @@ config=(
   corner_radius=0
   margin="${gaps}"
   y_offset=$((bar_yoffset))
-  padding_left="${margins}"
-  padding_right="${margins}"
+  padding_left="${gaps}"
+  padding_right="${gaps}"
   border_width=1
   corner_radius=8
 )

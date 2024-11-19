@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-export margins=16
+export margins=10
 export gaps=16
 export altura=25
 export bar_yoffset=24
