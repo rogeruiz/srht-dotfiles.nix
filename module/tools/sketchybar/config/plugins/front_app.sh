@@ -18,5 +18,14 @@
 
 VARIABLES_DIR="${CONFIG_DIR}/variables"
 ICON=$("${VARIABLES_DIR}/app_icons.sh" "${INFO}")
+source "${VARIABLES_DIR}/margins.sh"
 
-sketchybar --set "${NAME}" icon="${ICON}" label="${INFO:=SketchyBar}"
+if [[ "${ICON}" != "󰣆" ]]; then
+  unset INFO
+fi
+
+sketchybar --set "${NAME}" icon="${ICON}" icon.padding_right="${margins}" label.drawing="off"
+
+if [[ -n "${INFO}" ]]; then
+  sketchybar --set "${NAME}" icon.padding_right=0 label="${INFO}" label.drawing="on"
+fi

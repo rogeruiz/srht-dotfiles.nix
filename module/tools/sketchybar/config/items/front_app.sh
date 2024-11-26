@@ -18,6 +18,7 @@
 
 properties=(
   icon.drawing=on
+  icon.font="RecMonoCasual Nerd Font:Regular:18"
   label.font="RecMonoCasual Nerd Font:Regular:16"
   script="$PLUGIN_DIR/front_app.sh"
   updates=when_shown

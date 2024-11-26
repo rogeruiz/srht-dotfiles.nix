@@ -86,6 +86,7 @@ in
       history = "log --reverse --stat --pretty=format:'${(builtins.readFile ./log/long)}'";
       last = "log --patch -1 --stat --pretty=format:'${(builtins.readFile ./log/long)}'";
       verbose = "log --stat --patch --pretty=format:'${(builtins.readFile ./log/long)}'";
+      change-set = "log --reverse --pretty=format:'${(builtins.readFile ./log/change-set)}'";
     };
 
     attributes = [
