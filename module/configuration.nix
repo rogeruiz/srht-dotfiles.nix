@@ -65,8 +65,6 @@
   # environment.systemPath = [ "/usr/local/bin" ];
   # environmentpathsToLink = [ "/Applications" ];
 
-  programs.zsh.enable = true;
-
   services.nix-daemon.enable = true;
 
   # NOTE: Eso se tiene que hacer a nivel de sistema y no de hogar. Por ahora,

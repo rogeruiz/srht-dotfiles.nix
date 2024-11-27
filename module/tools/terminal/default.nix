@@ -116,7 +116,7 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
-    initExtraFirst = (builtins.readFile ./zshrc);
+    initExtra = (builtins.readFile ./zshrc);
     autocd = true;
   };
 
