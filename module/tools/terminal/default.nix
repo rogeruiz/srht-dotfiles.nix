@@ -37,6 +37,7 @@ in
 
   home.packages = with pkgs; [
     # Herramientas que uso porque me gusta el terminal
+    starship
     pv
     ranger
     httpie

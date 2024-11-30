@@ -41,7 +41,7 @@ SSID="${SSID//[$'\t\r\n']/}"
 
 case "${SSID}" in
 "tell my wifi love her"*) ICONO+=" ${CASA}" ;;
-"OverflowCHI" | "SocialeCafePress_IoT") ICONO+=" ${CAFE}" ;;
+"OverflowCHI" | "SocialeCafePress_IoT" | "Hexecoffee") ICONO+=" ${CAFE}" ;;
 "razor "* | *iPhone) ICONO+=" ${CELULAR}" ;;
 "Hilton Honors") ICONO+=" ${HOTEL}" ;;
 *) ;;
