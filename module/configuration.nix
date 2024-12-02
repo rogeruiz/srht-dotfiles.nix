@@ -79,16 +79,12 @@
   services.sketchybar.enable = true;
 
   fonts = {
-    packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [
-          "0xProto"
-          "HeavyData"
-          "NerdFontsSymbolsOnly"
-          "Recursive"
-          "ShareTechMono"
-        ];
-      })
+    packages = with pkgs.nerd-fonts; [
+      _0xproto
+      heavy-data
+      symbols-only
+      recursive-mono
+      shure-tech-mono
     ];
   };
 

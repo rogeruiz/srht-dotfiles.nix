@@ -80,7 +80,7 @@ in
     zoxide
 
     keychain
-    _1password
+    _1password-cli
   ];
 
   home.file.".inputrc".text = ''
