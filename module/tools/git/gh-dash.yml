@@ -62,16 +62,16 @@ prSections:
 issuesSections:
 - title: 🔦 Los mios
   filters: 'is:open org:cdcent assignee:@me'
-- title: 🔦 MVP de CaseBridge
-  filters: 'is:open label:"MVP: R" project:cdcent/76 no:assignee'
+- title: "🔦 CaseBridge 1.1"
+  filters: 'is:open label:"CaseBridge1.1" project:cdcent/76 no:assignee'
 - title: 🔦 Refinamiento
-  filters: 'is:open no:assignee project:cdcent/76 label:"needs refinement"'
+  filters: '-label:EPIC label:"CaseBridge1.1" no:assignee -label:"1.1:Nice to Have" label:"needs refinement"'
 - title: 🔦 Dimensionamiento
-  filters: 'is:open no:assignee project:cdcent/76 label:"Size it!"'
+  filters: '-label:EPIC label:"CaseBridge1.1" no:assignee -label:"1.1:Nice to Have" label:"Size it!"'
 - title: 🔦 Bichos
   filters: 'is:open no:assignee project:cdcent/76 label:bug'
 - title: 🔦 Boletitos
-  filters: 'is:open no:assignee project:cdcent/76 label:X-Small,Small'
+  filters: 'is:open no:assignee project:cdcent/76 label:X-Small,Small -label:"Size it!" -label:"needs refinement"'
 - title: 🐱 Catppuccin
   filters: 'repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open'
 defaults:

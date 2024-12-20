@@ -14,12 +14,14 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.security.pam;
 in
 {
@@ -70,47 +72,47 @@ in
     environment.pathsToLink = optional cfg.enablePamReattach "/lib/pam";
 
     system.patches =
-      if cfg.enableSudoTouchIdAuthPatch && cfg.enablePamReattach
-      then [
-        (pkgs.writeText "pam-reattach-tid.patch" ''
-          --- a/etc/pam.d/sudo
-          +++ b/etc/pam.d/sudo
-          @@ -1,4 +1,6 @@
-           # sudo: auth account password session
-          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
-          +auth       sufficient     pam_tid.so
-           auth       sufficient     pam_smartcard.so
-           auth       required       pam_opendirectory.so
-           account    required       pam_permit.so
-        '')
-      ]
-      else if cfg.enableSudoTouchIdAuthPatch && !cfg.enablePamReattach
-      then [
-        (pkgs.writeText "pam-tid.patch" ''
-          --- a/etc/pam.d/sudo
-          +++ b/etc/pam.d/sudo
-          @@ -1,4 +1,5 @@
-           # sudo: auth account password session
-          +auth       sufficient     pam_tid.so
-           auth       sufficient     pam_smartcard.so
-           auth       required       pam_opendirectory.so
-           account    required       pam_permit.so
-        '')
-      ]
-      else if !cfg.enableSudoTouchIdAuthPatch && cfg.enablePamReattach
-      then [
-        (pkgs.writeText "pam-reattach.patch" ''
-          --- a/etc/pam.d/sudo
-          +++ b/etc/pam.d/sudo
-          @@ -1,4 +1,5 @@
-           # sudo: auth account password session
-          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
-           auth       sufficient     pam_smartcard.so
-           auth       required       pam_opendirectory.so
-           account    required       pam_permit.so
-        '')
-      ]
-      else [ ];
+      if cfg.enableSudoTouchIdAuthPatch && cfg.enablePamReattach then
+        [
+          (pkgs.writeText "pam-reattach-tid.patch" ''
+            --- a/etc/pam.d/sudo
+            +++ b/etc/pam.d/sudo
+            @@ -1,4 +1,6 @@
+             # sudo: auth account password session
+            +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
+            +auth       sufficient     pam_tid.so
+             auth       sufficient     pam_smartcard.so
+             auth       required       pam_opendirectory.so
+             account    required       pam_permit.so
+          '')
+        ]
+      else if cfg.enableSudoTouchIdAuthPatch && !cfg.enablePamReattach then
+        [
+          (pkgs.writeText "pam-tid.patch" ''
+            --- a/etc/pam.d/sudo
+            +++ b/etc/pam.d/sudo
+            @@ -1,4 +1,5 @@
+             # sudo: auth account password session
+            +auth       sufficient     pam_tid.so
+             auth       sufficient     pam_smartcard.so
+             auth       required       pam_opendirectory.so
+             account    required       pam_permit.so
+          '')
+        ]
+      else if !cfg.enableSudoTouchIdAuthPatch && cfg.enablePamReattach then
+        [
+          (pkgs.writeText "pam-reattach.patch" ''
+            --- a/etc/pam.d/sudo
+            +++ b/etc/pam.d/sudo
+            @@ -1,4 +1,5 @@
+             # sudo: auth account password session
+            +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
+             auth       sufficient     pam_smartcard.so
+             auth       required       pam_opendirectory.so
+             account    required       pam_permit.so
+          '')
+        ]
+      else
+        [ ];
   };
 }
-

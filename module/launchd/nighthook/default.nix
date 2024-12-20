@@ -14,12 +14,14 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
-with lib; let
+with lib;
+let
   homeDir = "/Users/yo";
   rgBin = "${pkgs.ripgrep}/bin/rg";
   tmuxBin = "${pkgs.tmux}/bin/tmux";

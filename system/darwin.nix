@@ -26,7 +26,7 @@ let
   lorri-config = import ../module/launchd/lorri.nix;
 in
 inputs.darwin.lib.darwinSystem {
-  inherit system;
+  inherit system inputs;
   # modules: allows for reusable code
   modules = [
     lorri-config

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 # Nix Darwin configuration
 # Copyright (C) 2024 Roger Steve Ruiz
@@ -27,7 +27,10 @@
     settings = {
       auto-optimise-store = pkgs.stdenv.isLinux;
       builders-use-substitutes = true;
-      experimental-features = [ "flakes" "nix-command" ];
+      experimental-features = [
+        "flakes"
+        "nix-command"
+      ];
       substituters = [ "https://nix-community.cachix.org" ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -35,6 +38,9 @@
       trusted-users = [ "@wheel" ];
       warn-dirty = false;
     };
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs}"
+    ];
   };
 
   nixpkgs.config = {
@@ -59,6 +65,14 @@
       jankyborders
 
       wireguard-tools
+
+      # NOTE: Nix Formatters
+      nixpkgs-fmt
+      nixfmt-rfc-style
+      alejandra
+
+      # NOTE: Nix LSP
+      nixd
     ];
   };
 

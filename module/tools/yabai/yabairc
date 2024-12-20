@@ -33,6 +33,8 @@ yabai -m rule --add app="^Finder" title="Basurero" manage=off
 
 yabai -m rule --add app="^Safari" title="^(General|Pestañas|Autorelleno|Contraseñas|Buscar|Seguridad|Privacidad|Sitios|Perfiles|Extensiones|Avanzado|Desarrollador|Interruptores de funciones)$" manage=off
 
+yabai -m rule --add app="^Mail" title="^(General|Cuentas|Correo no deseado|Tipos y colores|Visualización|Redacción|Firmas|Reglas|Extensiones|Privacidad)$" manage=off
+
 yabai -m rule --add app="^iA Writer" title="^(General|Cuentas|Documentos|Biblioteca|Editor|Autores|Plantillas|Markdown)$" manage=off
 
 yabai -m rule --add app="^1Password" manage=off

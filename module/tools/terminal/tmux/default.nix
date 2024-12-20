@@ -44,6 +44,15 @@
     tmuxp.enable = true;
     escapeTime = 0;
     extraConfig = builtins.readFile ./extra.config;
+
+    # TODO: No hay un `extraConfigBeforePlugins` pa poner esto. Creo que lo
+    # mejor que puedo hacer aquí es hacer un archivo que tieno las referencias
+    # a `${pkgs}` y incluirlo en el `./extra.config` archivo con un commando
+    # usando `source ~/.config/tmux/extra-bindings`.
+    # extraConfigBeforePlugins = ''
+    #   # Atajo pa' recargar Catppuccin atravez de Tmux
+    #   tmux bind -N "Reload Catppuccin" g run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux \; display-message "Catppuccin Reloaded"
+    # '';
+
   };
 }
-
