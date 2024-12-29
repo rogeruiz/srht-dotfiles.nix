@@ -28,6 +28,7 @@ in
     ./bat
     ./bottom
     ./alacritty
+    ./ghostty
     ./tmux
 
     # NOTE: Esto se configura aquí pero se activo en `module/configuration.nix`

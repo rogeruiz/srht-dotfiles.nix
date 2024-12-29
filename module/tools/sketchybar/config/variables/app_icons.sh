@@ -23,7 +23,7 @@ _ejecutar() {
   "Acceso a Llaveros" | "Keychain Access") icono="󱕴" ;;
   "Adobe Photoshop 2024") icono="" ;;
   "Adobe Illustrator 2024") icono="" ;;
-  "Alacritty") icono="" ;;
+  "Alacritty" | "Ghostty") icono="" ;;
   "Amphetamine") icono="" ;;
   "Anki") icono="󰛇" ;;
   "App Store") icono="" ;;

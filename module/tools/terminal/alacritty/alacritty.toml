@@ -35,7 +35,7 @@ TERM = "xterm-256color"
 
 [font]
 builtin_box_drawing = true
-size = 15
+size = 16
 
 [font.bold]
 family = "RecMonoCasual Nerd Font"

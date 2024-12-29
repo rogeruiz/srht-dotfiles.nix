@@ -1,0 +1,18 @@
+font-family = Rec Mono Casual
+
+font-size = 16
+
+theme = light:catppuccin-latte,dark:catppuccin-mocha
+background-opacity = 0.69
+
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = true
+
+macos-titlebar-style = hidden
+
+copy-on-select = true
+
+command = /Users/yo/.local/bin/tux
+
+macos-option-as-alt = right

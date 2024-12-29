@@ -162,6 +162,7 @@
       "firefox"
       "flux"
       "flycast"
+      "ghostty"
       "handbrake"
       "hot"
       "imageoptim"
