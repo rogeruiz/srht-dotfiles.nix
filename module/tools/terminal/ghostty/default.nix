@@ -14,9 +14,15 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-{ ... }:
+{ config, ... }:
+
+let
+  configFile = "${config.home.homeDirectory}/.files.nix/module/tools/terminal/ghostty/config";
+  link = config.lib.file.mkOutOfStoreSymlink;
+in
+
 {
   xdg.configFile = {
-    "ghostty/config".source = ./config;
+    "ghostty/config".source = (link configFile);
   };
 }
