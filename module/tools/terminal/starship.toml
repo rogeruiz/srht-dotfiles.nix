@@ -26,51 +26,51 @@ right_format = '''${custom.tick_icon}${custom.tick_name}${custom.tick_timer}'''
 palette = "dark"
 
 [character]
-success_symbol = "[  ](fg:green)"
-error_symbol = "[  ](fg:red)"
-vimcmd_symbol = "[  ](fg:blue)"
+success_symbol = "[ ](fg:green)"
+error_symbol = "[ ](fg:red)"
+vimcmd_symbol = "[ ](fg:blue)"
 format = "[$symbol](fg:mauve)"
 
 [cmd_duration]
 min_time = 5_000
-format = "[  ](fg:yellow)[ ($duration) ](italic fg:yellow)"
+format = "[ ](fg:yellow)[($duration) ](italic fg:yellow)"
 
 [package]
 symbol = " "
 display_private = true
-format = "[ $symbol](fg:peach)[$version ](italic fg:peach)"
+format = "[$symbol](fg:peach)[$version ](italic fg:peach)"
 
 [python]
 symbol = " "
-format = "[ $symbol](fg:yellow)[$version ](italic fg:yellow)"
+format = "[$symbol](fg:yellow)[$version ](italic fg:yellow)"
 
 [rust]
 symbol = " "
-format = "[ $symbol](fg:flamingo)[$version ](italic fg:flamingo)"
+format = "[$symbol](fg:flamingo)[$version ](italic fg:flamingo)"
 
 [nodejs]
 symbol = "󰎙 "
-format = "[ $symbol](fg:green)[$version ](italic fg:green)"
+format = "[$symbol](fg:green)[$version ](italic fg:green)"
 
 [golang]
 symbol = " "
-format = "[ $symbol](fg:sapphire)[$version ](italic fg:sapphire)"
+format = "[$symbol](fg:sapphire)[$version ](italic fg:sapphire)"
 
 [terraform]
 symbol = "  "
 detect_files = [".terraform-version"]
-format = "[ $symbol](fg:mauve)[$version ](italic fg:mauve)"
+format = "[$symbol](fg:mauve)[$version ](italic fg:mauve)"
 
 [ruby]
 symbol = " "
-format = "[ $symbol](fg:red)[$version ](italic fg:red)"
+format = "[$symbol](fg:red)[$version ](italic fg:red)"
 
 [nix_shell]
 symbol = "󱄅 "
 impure_msg = '[   ](fg:base bg:red)'
 pure_msg = '[   ](fg:base bg:green)'
 unknown_msg = '[   ](fg:base bg:yellow)'
-format = "[ $symbol](fg:sky)[$state]()[ $name ](italic fg:sky)"
+format = "[$symbol](fg:sky)[$state]()[ $name ](italic fg:sky)"
 
 [shell]
 powershell_indicator = ''
@@ -130,20 +130,20 @@ home_symbol = "~"
 style = "bold fg:green"
 
 # NOTE: This hex-value is Git orange from their website. Este valor hex es
-# naranja de'l website de Git.
+# naranja del website de Git.
 repo_root_style = "bold fg:#f14e32"
 
-read_only = "  "
+read_only = " "
 read_only_style = "fg:pink"
 
 truncate_to_repo = true
-format = "[  ](fg:green bold)[ $path ]($style)[$read_only]($read_only_style)"
-repo_root_format = "[  ](fg:green)[ $before_root_path]($repo_root_style)[$repo_root[$path](dimmed fg:sky)]($repo_root_style)[$read_only]($read_only_style)"
+format = "[ ](fg:green bold)[ $path ]($style)[$read_only]($read_only_style)"
+repo_root_format = "[ ](fg:green)[ $before_root_path]($repo_root_style)[$repo_root[$path](dimmed fg:sky)]($repo_root_style)[$read_only]($read_only_style)"
 
 [jobs]
 symbol = " "
 style = "fg:pink"
-format = "[ $symbol ]($style)[$number](fg:pink)"
+format = "[$symbol]($style)[$number](fg:pink)"
 
 [time]
 disabled = false

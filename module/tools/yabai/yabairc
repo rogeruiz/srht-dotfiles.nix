@@ -48,6 +48,6 @@ yabai -m rule --add app="^The Unarchiver" manage=off
 yabai -m rule --add app="^deno" title="^Peek preview" manage=on
 
 # Empezar JankyBorders con Yabai
-borders width=5.0 &
+borders width=2.5 &
 
 # vi:set ft=sh
