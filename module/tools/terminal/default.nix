@@ -107,9 +107,9 @@ in
       "..." = "cd ../..";
       "...." = "cd ../../..";
       "....." = "cd ../../../..";
-      l = "exa -xa";
-      ll = "exa -lah --git";
-      lll = "exa -lah --git -T --git-ignore";
+      l = "eza -xa";
+      ll = "eza -lah --git";
+      lll = "eza -lah --git -T --git-ignore";
       _ = "sudo";
       pls = "sudo";
       please = "sudo";
