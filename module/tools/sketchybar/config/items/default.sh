@@ -19,9 +19,9 @@
 config=(
   background.height="${altura}"
   drawing=on
-  icon.font="RecMonoCasual Nerd Font:Regular:15"
+  icon.font="RecMonoCasual Nerd Font:Regular:13"
   icon.padding_left="${margins}"
-  label.font="RecMonoCasual Nerd Font:Regular:15"
+  label.font="RecMonoCasual Nerd Font:Regular:13"
   icon.padding_right=$((margins / 2))
   label.padding_left=$((margins / 2))
   label.padding_right="${margins}"
