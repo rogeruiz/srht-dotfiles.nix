@@ -17,7 +17,7 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 properties=(
-  display=1
+  display='1,2'
   icon=󰋋
   script="$PLUGIN_DIR/ble_headset.sh"
   updates=on
