@@ -1,4 +1,4 @@
-# Home Manager Editor module 
+# Home Manager Editor module
 # Copyright (C) 2024 Roger Steve Ruiz
 #
 # This program is free software: you can redistribute it and/or modify it
@@ -47,7 +47,7 @@
         indent_size = 4;
       };
 
-      "*justfile" = {
+      "*justfile,*.just" = {
         indent_style = "space";
         indent_size = 4;
       };

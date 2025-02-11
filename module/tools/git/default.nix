@@ -148,6 +148,12 @@ in
       tag = {
         gpgsign = true;
       };
+      sendemail = {
+        smtpserver = "mail.gandi.net";
+        smtpuser = "hi@rog.gr";
+        smtpencryption = "ssl";
+        smtpserverport = 465;
+      };
     };
   };
 
