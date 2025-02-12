@@ -25,8 +25,11 @@ in
 {
   home.packages = with pkgs; [
     git
+    # Pa' interactuar con GitHub en el ordenador
     gh
     gh-dash
+    # Pa' interactuar con sourceut en el ordenador
+    hut
   ];
 
   home.file = {
