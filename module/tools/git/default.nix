@@ -90,6 +90,8 @@ in
       last = "log --patch -1 --stat --pretty=format:'${(builtins.readFile ./log/long)}'";
       verbose = "log --stat --patch --pretty=format:'${(builtins.readFile ./log/long)}'";
       change-set = "!chst() { git log --reverse --pretty=format:'${(builtins.readFile ./log/change-set)}' origin/$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')..HEAD \"$@\"; }; chst";
+
+      progress = "!progress() { ${(builtins.readFile ./scripts/progress.sh)} }; progress";
     };
 
     attributes = [
