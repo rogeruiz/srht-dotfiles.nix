@@ -1,6 +1,6 @@
 image: alpine/latest
 secrets:
-  - 3089eab4-03d1-41f1-85d7-80367dc7f105
+  - 05adeb56-20d9-40f5-95ed-f6ec7213fa8b
 environment:
   GH_REPO: srht-dotfiles.nix
   GH_USER: rogeruiz
