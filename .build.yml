@@ -1,6 +1,6 @@
 image: alpine/latest
 secrets:
-  - asdf
+  - 3089eab4-03d1-41f1-85d7-80367dc7f105
 environment:
   GH_REPO: srht-dotfiles.nix
   GH_USER: rogeruiz
@@ -8,6 +8,5 @@ environment:
 tasks:
   - mirror-to-github: |
       cd ~/"${SH_REPO}"
-      git config --global user.user ${GH_USER}
       git config --global credential.helper store
       git push --mirror "https://github.com/${GH_USER}/${GH_REPO}"
