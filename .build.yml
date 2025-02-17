@@ -9,4 +9,4 @@ tasks:
   - mirror-to-github: |
       cd ~/"${SH_REPO}"
       git config --global credential.helper store
-      git push --mirror "https://github.com/${GH_USER}/${GH_REPO}"
+      git push --mirror "git@github.com:${GH_USER}/${GH_REPO}.git"
