@@ -1,0 +1,12 @@
+image: alpine/latest
+secrets:
+  - asdf
+environment:
+  GH_REPO: srht-dotfiles.nix
+  GH_USER: rogeruiz
+  SH_REPO: .files.nix
+tasks:
+  - mirror-to-github: |
+      cd ~/"${SH_REPO}"
+      git config --global credential.helper store
+      git push --mirror "https://github.com/${GH_USER}/${GH_REPO}"
