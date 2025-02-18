@@ -1,4 +1,4 @@
-# Your Pull Request Will Not Be Merged
+# Your Pull Request Will Not Be Merged!
 
 This is a mirror of the [sourcehut][repo] repository.
 
