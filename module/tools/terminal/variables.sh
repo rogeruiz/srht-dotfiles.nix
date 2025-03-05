@@ -14,6 +14,8 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
+# vi: ft=sh
+
 LS_COLORS=$(/etc/profiles/per-user/yo/bin/vivid generate catppuccin-mocha)
 
 export LS_COLORS

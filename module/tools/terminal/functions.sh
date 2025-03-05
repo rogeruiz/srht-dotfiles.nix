@@ -14,6 +14,8 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
+# vi: ft=sh
+
 #  __    _           _                                   _
 # |  |  |_|_____ ___|_|___    ___ ___ _____ ___ ___    _| |___
 # |  |__| |     | . | | .'|  |  _| .'|     | .'|_ -|  | . | -_|
@@ -39,6 +41,7 @@
       awk '{print $1}' |
       xargs git branch -D
   else
+    # shellcheck disable=SC2016
     printf '%s %s\n' 'No hay directorio `.git/` en' "$(pwd)"
   fi
 }
@@ -147,9 +150,11 @@
 # ejemplo: `,borrar-ds-store`
 ,borrar-ds-store() {
   if type -p fd >/dev/null 2>&1; then
+    # shellcheck disable=SC2016
     printf '➕ %s\n' 'Intentando buscar y borrar archivos de `.DS_store` en esta y todas las carpetas que siguen'
     fd --hidden --no-ignore DS_Store --exec-batch rm -rvf
   else
+    # shellcheck disable=SC2016
     printf 'ℹ️ %s\n' 'Por favor instalar la aplicación CLI llamada `fd`'
   fi
 }

@@ -37,6 +37,8 @@ yabai -m rule --add app="^Mail" title="^(General|Cuentas|Correo no deseado|Tipos
 
 yabai -m rule --add app="^iA Writer" title="^(General|Cuentas|Documentos|Biblioteca|Editor|Autores|Plantillas|Markdown)$" manage=off
 
+yabai -m rule --add app="^Marked 2" title="^(General|Preview|Style|Processor|Apps|Proofing|Export|Advanced)$" manage=off
+
 yabai -m rule --add app="^1Password" manage=off
 yabai -m rule --add app="^Mirror" manage=off
 yabai -m rule --add app="^Mensajes" manage=off
