@@ -42,7 +42,6 @@ in
     pv
     ranger
     httpie
-    direnv
     lorri
     unar
     blahaj

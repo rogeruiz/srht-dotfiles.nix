@@ -67,9 +67,9 @@ format = "[$symbol](fg:red)[$version ](italic fg:red)"
 
 [nix_shell]
 symbol = "󱄅 "
-impure_msg = '[   ](fg:base bg:red)'
-pure_msg = '[   ](fg:base bg:green)'
-unknown_msg = '[   ](fg:base bg:yellow)'
+impure_msg = '[   ](fg:base bg:sapphire)'
+pure_msg = '[   ](fg:base bg:yellow)'
+unknown_msg = '[   ](fg:base bg:red)'
 format = "[$symbol](fg:sky)[$state]()[ $name ](italic fg:sky)"
 
 [shell]
@@ -87,15 +87,6 @@ format = "[   ](bg:#ff9900 fg:base)[ $symbol](fg:#ff9900 bg:base)[ $profile ]
 [aws.region_aliases]
 us-gov-west-1 = "    us-gov-west-1"
 us-gov-east-1 = "    us-gov-east-1"
-
-# [aws.profile_aliases]
-# transcom-gov-dev = "    nonato/dev"
-# transcom-gov-milmove-demo = "  蠟 nonato/demo"
-# transcom-gov-milmove-exp = "    nonato/exp"
-# transcom-gov-milmove-loadtest = "    nonato/loadtest"
-# transcom-gov-milmove-stg = "撚   ato/stg"
-# transcom-gov-milmove-prd = "撚 嘆 ato/prd"
-# transcom-gov-org-root = "    org-root"
 
 [git_branch]
 symbol = "  "
