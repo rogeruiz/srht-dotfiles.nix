@@ -18,21 +18,22 @@
 
 let
   catppuccin-tmux-path = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
-  reload-catppuccin-tmux = (pkgs.writeShellApplication
-    {
+  reload-catppuccin-tmux = (
+    pkgs.writeShellApplication {
       name = "reload-catppuccin-tmux";
       runtimeInputs = [
         pkgs.tmux
       ];
       text = lib.concatLines [
+        # bash
         ''
           catppuccin_tmux_path_from_nix_store="${catppuccin-tmux-path}"
         ''
         (builtins.readFile ./reload-catppuccin-tmux.sh)
       ];
-    });
+    }
+  );
 in
-
 {
   programs.tmux = {
     enable = true;
@@ -63,5 +64,6 @@ in
     extraConfig = builtins.readFile ./extra.config;
   };
 
-  home.file.".local/bin/reload-catppuccin-tmux".source = "${reload-catppuccin-tmux}/bin/reload-catppuccin-tmux";
+  home.file.".local/bin/reload-catppuccin-tmux".source =
+    "${reload-catppuccin-tmux}/bin/reload-catppuccin-tmux";
 }
