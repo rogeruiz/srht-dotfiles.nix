@@ -33,4 +33,4 @@ LC_ALL=en_US.UTF-8
 # LANG=es_ES.UTF-8
 # LC_ALL=es_ES.UTF-8
 
-export PATH="/Users/yo/.local/bin/:$PATH"
+export PATH="/Users/yo/.local/bin:$PATH"
