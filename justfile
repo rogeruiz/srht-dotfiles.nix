@@ -20,6 +20,9 @@
 # |_______||_____|_____||____| |_____/|_____| |_______|____|
 # ==========================================================
 
+alias a := default
+alias h := default
+alias ayuda := default
 alias help := default
 
 [private]
