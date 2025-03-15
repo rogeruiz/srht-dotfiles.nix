@@ -32,7 +32,6 @@ inputs.darwin.lib.darwinSystem {
     lorri-config
     nighthook-config
     {
-      services.nix-daemon.enable = true;
       users.users.${username}.home = "/Users/${username}";
       system.defaults.loginwindow.autoLoginUser = username;
     }

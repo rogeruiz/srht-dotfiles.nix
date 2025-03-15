@@ -84,8 +84,6 @@
     enableGlobalCompInit = false;
   };
 
-  services.nix-daemon.enable = true;
-
   # NOTE: Eso se tiene que hacer a nivel de sistema y no de hogar. Por ahora,
   # no voy hacer la configuración aqui pero se puede hacer. La configuración de
   # Sketchybar esta en `./tools/sketchybar/default.nix` y se envoca a través de
