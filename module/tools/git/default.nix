@@ -52,7 +52,7 @@ in
 
     aliases = {
       all = "!git add . && git ci";
-      alt = "!alt() { nvim -p $(git s | awk '{ print $2 }'); }; alt";
+      alt = "!alt() { nvim -p $(git files); }; alt";
       amend = "ci --amend";
       br = "branch";
       ch = "diff --ws-error-highlight=all --cached --";
@@ -64,6 +64,7 @@ in
       df = "diff --ws-error-highlight=all";
       discard = "restore";
       fall = "fetch --all";
+      files = "s | awk '{ print $2 }'";
       local = "br --list";
       ls = "stash list";
       mr = "merge";
