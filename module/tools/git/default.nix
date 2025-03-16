@@ -84,13 +84,41 @@ in
       wtb = "symbolic-ref --short -q HEAD";
       pen = "!pen() { git who $1 | sed 's/Author:/Co-Authored-By:/'; }; pen";
 
-      catchup = "log FETCH_HEAD...HEAD --reverse --stat --pretty=format:\"${(builtins.readFile ./log/long)}\"";
-      gist = "log --graph --pretty=format:\"${(builtins.readFile ./log/short)}\"";
-      history = "log --reverse --stat --pretty=format:\"${(builtins.readFile ./log/long)}\"";
-      last = "log --patch -1 --stat --pretty=format:\"${(builtins.readFile ./log/long)}\"";
-      verbose = "log --stat --patch --pretty=format:\"${(builtins.readFile ./log/long)}\"";
-      change-set = "!chst() { git log --reverse --pretty=format:\"${(builtins.readFile ./log/change-set)}\" origin/$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')..HEAD \"$@\"; }; chst";
+      # es: un ejemplo de usando una función pa' crear cadenas amenas de multiple lineas
+      # en: an example of using a function to create readable strings on multiple lines
+      catchup = builtins.concatStringsSep " " [
+        "log"
+        "FETCH_HEAD...HEAD"
+        "--reverse"
+        "--stat"
+        "--pretty=format:\"${(builtins.readFile ./log/long-es)}\""
+      ];
 
+      gist = "log --graph --pretty=format:\"${(builtins.readFile ./log/short)}\"";
+      history = "log --reverse --stat --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
+      last = "log --patch -1 --stat --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
+      verbose = "log --stat --patch --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
+
+      # es: un ejemplo de usando una función pa' crear una cadenas amenas
+      # usando Bash para' aliases más complicados
+      # en: an example of using a function to create readable strings with Bash
+      # for more complicated aliases
+      change-set =
+        builtins.replaceStrings [ "\\" "  " "\n" ] [ "" "" "" ]
+          # bash
+          ''
+              !chst() {
+                git log \
+                   --reverse \
+                   --pretty=format:\"${(builtins.readFile ./log/long-es)}\" \
+                   origin/$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')..HEAD \
+                   \"$@\"
+              };
+            chst
+          '';
+
+      # es: aun con las funciones de arriba, si la linea no es tan larga se puede escribir bien simple
+      # en: if you have a short line you can write it simply without the functions above
       progress = "!progress() { ${(builtins.readFile ./scripts/progress.sh)} }; progress";
     };
 

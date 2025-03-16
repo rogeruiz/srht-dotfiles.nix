@@ -1,0 +1,7 @@
+%C(yellow)%C(yellow)%C(yellow)%C(yellow)%C(blue)%C(blue)%C(red)%C(red)%C(reset)
+
+󱓏 almohadilla: %C(green)<[1m%h>M%C(reset) ~= %C(yellow)[3m%HM
+       autor: %C(yellow)<[1m%ar>M%C(reset) by %C(green)[3m%anM
+     cometer: %C(magenta)<[1m%cE>M%C(reset) at %C(green)[3m%cDM
+     󰍩 recado: %B
+%C(yellow)%C(yellow)%C(yellow)%C(yellow)%C(blue)%C(blue)%C(red)%C(red)%C(reset)
