@@ -1,33 +1,47 @@
-# Dot files Nix edition
+# `.files.nix` Archivos de puntos — edición Nix
 
-So I've been curious about Nix for a while. Now that I've gotten a taste of it,
-I'm going to be using Nix, Home Manager, Nixpkgs, & Nix Darwin to manage a
-number of things from my operating system on Linux, packages on Darwin, and my
-home directory across the two using the Nix language. I'll be writing some posts
-around this topic in the future as well.
+Este proyecto empezó en enero del 2024. Yo tuve la oportunidad de tener tiempo
+libre pa' dedicarme en _la santísima trinidad_ que es Nix. Mí confi' es esta
+dedicado en configurar mis computadoras de uso personal. Aquí esta todo que yo
+uso día a día para ambos tipos de proyectos privados y públicos.
 
-## Bootstrapping all this
+Mi curiosidad sobre el tema de Nix ha existido por un rato. Empeció con el uso
+pa' convertir unos Dell Chromebooks que tengo ha usar NixOS. Con el experimento
+terminando con éxito, empece aprender y usar más de Nixlang, Home Manager,
+Nixpkgs, & Nix Darwin. Uso todo estas cosas para manejar todo en mi computadoras
+que usa macOS.
 
-When starting from scratch, you will need to have a couple of **required**
-things installed before the stuff in this project are useful. For starters,
-you'll need to have `nix` installed. Along with Nix, you'll need to have
-`home-manager` installed as well. And if you're on macOS & not NixOS, you'll
-need to have `nix-darwin` installed as well.
+El uso de Nix me ha dado tantas oportunidades pa' aprender más sobre mucho de
+los niveles más bajos de macOS. Por ejemplo, este repositorio contiene como
+manejar un cambio de temas automatizado usando `launchd` y `bash` pa' controlar
+varias configuraciones que soportan temas pero no los cambios automatizados.
 
-## Directory structure
+## Sigo aprendiendo
 
-This Nix repository uses Flakes to manage configuration for NixOS, Darwin, &
-Home Manager. The Home Manager is done as a standalone so that I can avoid
-having to build out the configuration for my OS separately from my home
-directory files. There are also some files that aren't directly managed by Home
-Manager and are documented separately.
+Y con esto te suplico que sigas mirando este espacio para ver mi progreso de
+conocimientos de Nix.
 
-This project also houses the Nix Shell configurations for various projects. Some
-of these Nix files are also saved in another repository, but I keep copies here
-as both a backup but to also continue learning, testing, and improving them.
+---
 
-## Impurity in this Flake
+# `.files.nix` Dot-files – Nix edition
 
-There is some basic impurities in this Flake. Some of the configuration files
-are local to `~/.files.nix` & expects this path to exist for the user to link
-these values rather than us the `/nix/store` derivations.
+This project started in 2024 of January. I had the opportunity to dedicate my
+free-time to _the holy trinity_ that is Nix. My configuration is dedicated to my
+computers for personal-use. You'll find here everything I use day to day for
+both types of private & public projects.
+
+My curiosity around Nix topics has existed for a while. It started with the
+conversion of some Dell Chromebooks that I have over to NixOS. With that
+successful experiment, I started learning how to use more of Nixlang, Home
+Manager, Nixpkgs, & Nix Darwin. I use these things to manage everything on my
+macOS computers.
+
+My Nix usage has given me so many opportunities to learn more about so many
+low-level things about macOS. For example, this repository contains how to
+manage theme changes automatically using `launchd` and `bash` to control other
+configurations that support themes but don't have automatic change detection.
+
+## Keep learning
+
+And with that, I ask you keep watching this space to see my progress in Nix
+knowledge.
