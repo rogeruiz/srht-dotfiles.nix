@@ -20,6 +20,6 @@ else
   FLAVOR="latte"
 fi
 
-tmux set -g "@catppuccin_flavour" "$FLAVOR"
+tmux set -g "@catppuccin_flavor" "$FLAVOR"
 # shellcheck disable=SC2154
 tmux run "${catppuccin_tmux_path_from_nix_store}"

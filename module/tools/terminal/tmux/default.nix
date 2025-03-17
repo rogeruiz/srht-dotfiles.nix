@@ -45,14 +45,14 @@ in
         plugin = catppuccin;
         extraConfig = builtins.readFile ./plugins/catppuccin.config;
       }
-      # {
-      #   plugin = continuum;
-      #   extraConfig = builtins.readFile ./plugins/continuum.config;
-      # }
-      # {
-      #   plugin = resurrect;
-      #   extraConfig = builtins.readFile ./plugins/resurrect.config;
-      # }
+      {
+        plugin = continuum;
+        extraConfig = builtins.readFile ./plugins/continuum.config;
+      }
+      {
+        plugin = resurrect;
+        extraConfig = builtins.readFile ./plugins/resurrect.config;
+      }
     ];
     mouse = true;
     shell = "/etc/profiles/per-user/yo/bin/zsh";
