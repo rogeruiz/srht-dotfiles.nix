@@ -15,4 +15,4 @@ TMPL
 git rev-list \
   --left-right \
   --count "$1" |
-  xargs printf "${tmpl_es}"
+  xargs printf "$tmpl_es"
