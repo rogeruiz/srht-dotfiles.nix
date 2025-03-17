@@ -1,4 +1,4 @@
-# `.files.nix` Archivos de puntos — edición Nix
+# `.files.nix` Archivos ocultos — edición Nix
 
 Este proyecto empezó en enero del 2024. Yo tuve la oportunidad de tener tiempo
 libre pa' dedicarme en _la santísima trinidad_ que es Nix. Mí confi' es esta
