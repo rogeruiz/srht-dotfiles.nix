@@ -26,6 +26,10 @@ let
   rgBin = "${pkgs.ripgrep}/bin/rg";
   tmuxBin = "${pkgs.tmux}/bin/tmux";
   catppuccinTmux = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
+  # FIX:
+  # es: Este variable deber ser una derivación y no una referencia a mí guion directamente.
+  # en: This variable should be pointing to a derivation and not a script file reference.
+  reloadTmuxCatppuccin = "${homeDir}/.local/bin/reload-catppuccin-tmux";
 in
 {
   launchd.user.agents.nighthook = {
@@ -38,6 +42,7 @@ in
         RIPGREP_BIN = rgBin;
         TMUX_BIN = tmuxBin;
         CATPPUCCIN_TMUX = catppuccinTmux;
+        RELOAD_TMUX_CATPPUCCIN_SCRIPT = reloadTmuxCatppuccin;
       };
       Program = "${pkgs.writeShellScript "nighthook-action" (builtins.readFile ./nighthook.sh)}";
     };

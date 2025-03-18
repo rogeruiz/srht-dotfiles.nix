@@ -17,7 +17,8 @@
 { pkgs, lib, ... }:
 
 let
-  catppuccin-tmux-path = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
+  # catppuccin-tmux-path = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
+  catppuccin-tmux-path = "/Users/yo/Developer/oss/rogeruiz/github/catppuccin-tmux/catppuccin.tmux"; # NOTE: pa' el desarrollo
   reload-catppuccin-tmux = (
     pkgs.writeShellApplication {
       name = "reload-catppuccin-tmux";
