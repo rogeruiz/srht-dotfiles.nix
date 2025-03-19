@@ -67,8 +67,11 @@ in
     extraConfig = lib.concatLines [
       # tmux
       ''
-        # TODO: es: Esto se puede usar cuando los cambios de catppuccin/tmux y tmux/tmux se alineen.
-        # en: This can be used when changes from catppuccin/tmux & tmux/tmux align.
+        # TODO:
+        # es: Esto se puede usar cuando los cambios de catppuccin/tmux y
+        # tmux/tmux se alineen.
+        # en: This can be used when changes from catppuccin/tmux & tmux/tmux
+        # align.
         #
         # set-hook -g client-dark-theme {
         #   set -g @catppuccin_flavor "mocha"
@@ -87,11 +90,17 @@ in
         # README:
         # es: Siempre se carga la confi' de catppuccin/tmux que no usa la
         # arroba pa' los nombres de los variables despues de que se ejecuta `run
-        # <nix-store>/catppuccin.tmux`. 
+        # <nix-store>/catppuccin.tmux`.
         # en: Always load the config for catppuccin/tmux that doesn't use the
         # at-sign for variable names after the `run <nix-store>/catppuccin.tmux`
         # command.
         source "${./plugins/catppuccin.after.config}"
+
+        # es: Ejecuta continuum al final porque afecta la opción
+        # `status-right` se usa por el complemento.
+        # en: Run continuum at the end because the `status-right` option is
+        # used by the plugin.
+        run "${pkgs.tmuxPlugins.continuum}/share/tmux-plugins/continuum/continuum.tmux"
       ''
     ];
   };

@@ -21,6 +21,7 @@ if [[ "$TMUX" != "" ]]; then
     FLAVOR="latte"
   fi
 
+  tmux set -g @catppuccin_flavor "${FLAVOR}"
   tmux set -g @catppuccin_reset "true"
   # shellcheck disable=SC2154
   tmux run -d 1 "${catppuccin_tmux_path_from_nix_store}"
