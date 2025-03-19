@@ -29,6 +29,8 @@ let
         # bash
         ''
           catppuccin_tmux_path_from_nix_store="${catppuccin-tmux-path}"
+          catppuccin_config="${./plugins/catppuccin.config}"
+          catppuccin_after_config="${./plugins/catppuccin.after.config}"
         ''
         (builtins.readFile ./reload-catppuccin-tmux.sh)
       ];
@@ -62,7 +64,36 @@ in
     clock24 = true;
     tmuxp.enable = true;
     escapeTime = 0;
-    extraConfig = builtins.readFile ./extra.config;
+    extraConfig = lib.concatLines [
+      # tmux
+      ''
+        # TODO: es: Esto se puede usar cuando los cambios de catppuccin/tmux y tmux/tmux se alineen.
+        # en: This can be used when changes from catppuccin/tmux & tmux/tmux align.
+        #
+        # set-hook -g client-dark-theme {
+        #   set -g @catppuccin_flavor "mocha"
+        #   set -g @catppuccin_reset "true"
+        #   run ${catppuccin-tmux-path}
+        # }
+        # set-hook -g client-light-theme {
+        #   set -g @catppuccin_flavor "latte"
+        #   set -g @catppuccin_reset "true"
+        #   run ${catppuccin-tmux-path}
+        # }
+      ''
+      (builtins.readFile ./extra.config)
+      # tmux
+      ''
+        # README:
+        # es: Siempre se carga la confi' de catppuccin/tmux que no usa la
+        # arroba pa' los nombres de los variables despues de que se ejecuta `run
+        # <nix-store>/catppuccin.tmux`. 
+        # en: Always load the config for catppuccin/tmux that doesn't use the
+        # at-sign for variable names after the `run <nix-store>/catppuccin.tmux`
+        # command.
+        source "${./plugins/catppuccin.after.config}"
+      ''
+    ];
   };
 
   home.file.".local/bin/reload-catppuccin-tmux".source =

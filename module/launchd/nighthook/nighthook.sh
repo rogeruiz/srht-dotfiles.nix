@@ -71,12 +71,6 @@ cambia_tema() {
       ~/.config/nvim/lua/custom/plugins/catppuccin.lua
   fi
 
-  # NOTE: Tmux
-  "$RELOAD_TMUX_CATPPUCCIN_SCRIPT"
-
-  # "$TMUX_BIN" set -g "@catppuccin_flavor" "$FLAVOR"
-  # "$TMUX_BIN" run "$CATPPUCCIN_TMUX"
-  #
   # NOTE: LS_COLORS (exa, fd, rg)
   sed -E \
     -i "" \
@@ -88,7 +82,6 @@ cambia_tema() {
     -i "" \
     "s/(export COLORFGBG=)\".*\"/\1\"$COLORFGBG_VALUE\"/" \
     "${DIR}"/terminal/variables.sh
-
 }
 
 cambia_tema "$@"
