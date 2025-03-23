@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 # Nix Darwin SKHD module
 # Copyright (C) 2024 Roger Steve Ruiz
@@ -18,48 +18,52 @@
 
 let
   margins = "6";
-  sketchybarBin = "${pkgs.sketchybar}/bin/sketchybar";
-  yabaiBin = "${pkgs.yabai}/bin/yabai";
+  sketchybar = "${pkgs.sketchybar}/bin/sketchybar";
+  yabai = "${pkgs.yabai}/bin/yabai";
 in
 {
   services.skhd = {
     enable = true;
-    skhdConfig = ''
-      # Navegación
-      alt - h : ${yabaiBin} -m window --focus west
-      alt - j : ${yabaiBin} -m window --focus south
-      alt - k : ${yabaiBin} -m window --focus north
-      alt - l : ${yabaiBin} -m window --focus east
+    skhdConfig =
+      # ini
+      ''
+        # Navegación
+        alt - h: ${yabai} - m window - -focus west
+        alt - j: ${yabai} - m window - -focus south
+        alt - k: ${yabai} - m window - -focus north
+        alt - l: ${yabai} - m window - -focus east
 
-      # Moviendo ventanas
-      shift + alt - h : ${yabaiBin} -m window --warp west
-      shift + alt - j : ${yabaiBin} -m window --warp south
-      shift + alt - k : ${yabaiBin} -m window --warp north
-      shift + alt - l : ${yabaiBin} -m window --warp east
+        # Moviendo ventanas
+        shift + alt - h: ${yabai} - m window - -warp west
+        shift + alt - j: ${yabai} - m window - -warp south
+        shift + alt - k: ${yabai} - m window - -warp north
+        shift + alt - l: ${yabai} - m window - -warp east
 
-      # Cambiar el tamaño de las ventanas
-      lctrl + alt - h : ${yabaiBin} -m window --resize left:-${margins}:0; \
-                        ${yabaiBin} -m window --resize right:-${margins}:0
-      lctrl + alt - j : ${yabaiBin} -m window --resize bottom:0:${margins}; \
-                        ${yabaiBin} -m window --resize top:0:${margins}
-      lctrl + alt - k : ${yabaiBin} -m window --resize top:0:-${margins}; \
-                        ${yabaiBin} -m window --resize bottom:0:-${margins}
-      lctrl + alt - l : ${yabaiBin} -m window --resize right:${margins}:0; \
-                        ${yabaiBin} -m window --resize left:${margins}:0
+        # Cambiar el tamaño de las ventanas
+        lctrl + alt - h: ${yabai} - m window - -resize left:-$ { margins }: 0; \
+          ${yabai} -m window --resize right:-${margins}:0
+          lctrl + alt - j : ${yabai} -m window --resize bottom:0:${margins}; \
+          ${yabai} -m window --resize top:0:${margins}
+          lctrl + alt - k : ${yabai} -m window --resize top:0:-${margins}; \
+          ${yabai} -m window --resize bottom:0:-${margins}
+          lctrl + alt - l : ${yabai} -m window --resize right:${margins}:0; \
+          ${yabai} -m window --resize left:${margins}:0
 
-      # Moviendo el foco de el espacio de trabajo
-      shift + alt - m : ${yabaiBin} -m window --space last; yabai -m space --focus last
-      shift + alt - p : ${yabaiBin} -m window --space prev; yabai -m space --focus prev
-      shift + alt - n : ${yabaiBin} -m window --space next; yabai -m space --focus next
+        # Moviendo el foco de el espacio de trabajo
+        shift + alt - m : ${yabai} -m window --space last; yabai -m space --focus last
+        shift + alt - p : ${yabai} -m window --space prev; yabai -m space --focus prev
+        shift + alt - n : ${yabai} -m window --space next; yabai -m space --focus next
 
-      # Flotar o sin flotar la ventana
-      shift + alt - space : \
-          ${yabaiBin} -m window --toggle float; \
-          ${yabaiBin} -m window --toggle border
+        # Flotar o sin flotar la ventana
+        shift + alt - space : \
+          ${yabai} -m window --toggle float; \
+          ${yabai} -m window --toggle border
 
-      fn + shift - r : ${sketchybarBin} --reload
+        fn + shift - r : ${sketchybar} --reload
 
-      fn + shift - 0x2B : /usr/bin/osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
-    '';
+        fn + shift - 0x2B : \
+          /usr/bin/osascript -e \
+          'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode';
+      '';
   };
 }

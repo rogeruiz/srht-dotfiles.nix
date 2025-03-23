@@ -17,25 +17,13 @@
 { pkgs, lib, ... }:
 
 let
-  # catppuccin-tmux-path = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
-  catppuccin-tmux-path = "/Users/yo/Developer/oss/rogeruiz/github/catppuccin-tmux/catppuccin.tmux"; # NOTE: pa' el desarrollo
-  reload-catppuccin-tmux = (
-    pkgs.writeShellApplication {
-      name = "reload-catppuccin-tmux";
-      runtimeInputs = [
-        pkgs.tmux
-      ];
-      text = lib.concatLines [
-        # bash
-        ''
-          catppuccin_tmux_path_from_nix_store="${catppuccin-tmux-path}"
-          catppuccin_config="${./plugins/catppuccin.config}"
-          catppuccin_after_config="${./plugins/catppuccin.after.config}"
-        ''
-        (builtins.readFile ./reload-catppuccin-tmux.sh)
-      ];
-    }
-  );
+
+  utils = import ./catppuccin/utils { inherit pkgs; };
+
+  catppuccin = utils.catppuccin { local = true; };
+  reload-catppuccin-tmux = import ./catppuccin/bin { inherit pkgs lib; };
+  continuum = utils.plugin-path-within-nix-store pkgs.tmuxPlugins.continuum;
+  ventana = import ./catppuccin/modules/ventana { inherit pkgs; };
 in
 {
   programs.tmux = {
@@ -44,14 +32,6 @@ in
     customPaneNavigationAndResize = true;
     historyLimit = 10000;
     plugins = with pkgs.tmuxPlugins; [
-      {
-        plugin = catppuccin;
-        extraConfig = builtins.readFile ./plugins/catppuccin.config;
-      }
-      {
-        plugin = continuum;
-        extraConfig = builtins.readFile ./plugins/continuum.config;
-      }
       {
         plugin = resurrect;
         extraConfig = builtins.readFile ./plugins/resurrect.config;
@@ -67,6 +47,21 @@ in
     extraConfig = lib.concatLines [
       # tmux
       ''
+        # Cargando a Continuum manualmente pa poder usar el variable
+        # `continuum` en ambos partes de mi configuración.
+        ${builtins.readFile ./plugins/continuum.config}
+        run ${continuum}
+      ''
+      # tmux
+      ''
+        # Cargando a Catppuccin Tmux manualmente pa poder ser capaze de
+        # desarollar y también usar el versión de GitHub.
+        ${builtins.readFile ./catppuccin/config/before.config}
+        source "${ventana}/share/ventana.config"
+        run ${catppuccin}
+      ''
+      # tmux
+      ''
         # TODO:
         # es: Esto se puede usar cuando los cambios de catppuccin/tmux y
         # tmux/tmux se alineen.
@@ -76,12 +71,12 @@ in
         # set-hook -g client-dark-theme {
         #   set -g @catppuccin_flavor "mocha"
         #   set -g @catppuccin_reset "true"
-        #   run ${catppuccin-tmux-path}
+        #   run ${catppuccin}
         # }
         # set-hook -g client-light-theme {
         #   set -g @catppuccin_flavor "latte"
         #   set -g @catppuccin_reset "true"
-        #   run ${catppuccin-tmux-path}
+        #   run ${catppuccin}
         # }
       ''
       (builtins.readFile ./extra.config)
@@ -94,17 +89,19 @@ in
         # en: Always load the config for catppuccin/tmux that doesn't use the
         # at-sign for variable names after the `run <nix-store>/catppuccin.tmux`
         # command.
-        source "${./plugins/catppuccin.after.config}"
+        source "${./catppuccin/config/after.config}"
 
         # es: Ejecuta continuum al final porque afecta la opción
         # `status-right` se usa por el complemento.
         # en: Run continuum at the end because the `status-right` option is
         # used by the plugin.
-        run "${pkgs.tmuxPlugins.continuum}/share/tmux-plugins/continuum/continuum.tmux"
+        run "${continuum}"
       ''
     ];
   };
 
+  # es: Ayuda con recargando la barra de estado de Tmux usando Catppuccin.
+  # en: Helps with reloading the Tmux status line using Catppuccin.
   home.file.".local/bin/reload-catppuccin-tmux".source =
     "${reload-catppuccin-tmux}/bin/reload-catppuccin-tmux";
 }
