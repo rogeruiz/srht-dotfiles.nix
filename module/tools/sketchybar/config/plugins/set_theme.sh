@@ -269,6 +269,4 @@ borders \
   inactive_color="$(color base)"
 
 # recargar el estado de Catppuccin Tmux
-if [[ "$TMUX" != "" ]]; then
-  tmux run /Users/yo/.local/bin/reload-catppuccin-tmux
-fi
+tmux run /Users/yo/.local/bin/reload-catppuccin-tmux

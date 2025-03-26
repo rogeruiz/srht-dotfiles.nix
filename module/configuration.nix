@@ -60,7 +60,7 @@
       coreutils
       moreutils
       jq
-
+      tmux
       skhd
       jankyborders
 

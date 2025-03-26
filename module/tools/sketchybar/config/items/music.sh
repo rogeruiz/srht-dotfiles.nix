@@ -32,7 +32,7 @@ events=(
   mouse.exited
 )
 
-sketchbar --add event \
+sketchybar --add event \
   music_change "com.apple.Music.playerInfo" \
   spotify_change "com.spotify.client.PlaybackStateChanged"
 
