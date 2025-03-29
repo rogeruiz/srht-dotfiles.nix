@@ -28,16 +28,16 @@ in
       # ini
       ''
         # Navegación
-        alt - h : ${yabai} - m window - -focus west
-        alt - j : ${yabai} - m window - -focus south
-        alt - k : ${yabai} - m window - -focus north
-        alt - l : ${yabai} - m window - -focus east
+        alt - h : ${yabai} -m window --focus west
+        alt - j : ${yabai} -m window --focus south
+        alt - k : ${yabai} -m window --focus north
+        alt - l : ${yabai} -m window --focus east
 
         # Moviendo ventanas
-        shift + alt - h : ${yabai} - m window - -warp west
-        shift + alt - j : ${yabai} - m window - -warp south
-        shift + alt - k : ${yabai} - m window - -warp north
-        shift + alt - l : ${yabai} - m window - -warp east
+        shift + alt - h : ${yabai} -m window --warp west
+        shift + alt - j : ${yabai} -m window --warp south
+        shift + alt - k : ${yabai} -m window --warp north
+        shift + alt - l : ${yabai} -m window --warp east
 
         # Cambiar el tamaño de las ventanas
         lctrl + alt - h : ${yabai} -m window --resize left:-${margins}:0; ${yabai} -m window --resize right:-${margins}:0
