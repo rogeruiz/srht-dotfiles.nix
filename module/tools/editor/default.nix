@@ -57,6 +57,11 @@
         indent_size = 4;
       };
 
+      "*.go" = {
+        indent_style = "tab";
+        indent_size = 8;
+      };
+
       "*.cs" = {
         indent_style = "space";
         indent_size = 4;
