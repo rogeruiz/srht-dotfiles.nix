@@ -79,3 +79,11 @@ dev-yabai: (add-files "yabai") build
 dev-skhd: (add-files "skhd") build
     @echo "🔃 Respawning the skhd daemon"
     launchctl kill 3 gui/501/org.nixos.skhd
+
+[doc('Ayuda con la salida forzada de el proceso llamado `<nombre>`. Se usa si algo se atascada y no responde cuando se esta construyendo a Nix-darwin')]
+[macos]
+@fix nombre="SecurityAgent":
+    echo "USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND"
+    ps aux | rg '{{ nombre }}' | rg --invert-match 'rg' && \
+      printf '\nEjecute la instrucción `%s` para forzar la salida de `%s`\n' 'kill -9 <PID>' '{{ nombre }}' || \
+      echo 'No se pudo encontrar a `{{ nombre}}` en los procesos corrientes'
