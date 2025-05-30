@@ -55,9 +55,9 @@ in
           ${yabai} -m window --toggle float; \
           ${yabai} -m window --toggle border
 
-        fn + shift - r : ${sketchybar} --reload
+        alt + shift - r : ${sketchybar} --reload
 
-        fn + shift - 0x2B : \
+        alt + shift - 0x2B : \
           /usr/bin/osascript -e \
           'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode';
       '';

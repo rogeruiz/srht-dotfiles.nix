@@ -38,7 +38,8 @@ source "${ITEM_DIR}/sound.sh"
 source "${ITEM_DIR}/mirrored.sh"
 
 source "${ITEM_DIR}/headphones.sh"
-source "${ITEM_DIR}/music.sh"
+# source "${ITEM_DIR}/music.sh"
+# source "${ITEM_DIR}/time-keeping.sh"
 
 source "${ITEM_DIR}/theme.sh"
 

@@ -197,7 +197,7 @@ sound_styles=(
   label.color="$(color text)"
   label.highlight_color="$(color red)"
 )
-music_styles=(
+tick_styles=(
   background.border_color="$(color overlay2 102)"
   background.color="$(color overlay2 51)"
   icon.color="$(color mauve)"
@@ -249,7 +249,7 @@ sketchybar \
   --set spaces "${spaces_styles[@]}" \
   --set headphones "${headphones_styles[@]}" \
   --set sound "${sound_styles[@]}" \
-  --set music "${music_styles[@]}" \
+  --set time_keeping "${tick_styles[@]}" \
   --set wifi "${wifi_styles[@]}" \
   --set battery "${battery_styles[@]}" \
   --set clock "${clock_styles[@]}" \

@@ -18,6 +18,7 @@
 
 let
   skylight-include-file = ".config/git/includes/skylight.inc";
+  cdc-include-file = ".config/git/includes/cdc.inc";
   ghFile = "${config.home.homeDirectory}/.files.nix/module/tools/git/gh.yml";
   ghDashFile = "${config.home.homeDirectory}/.files.nix/module/tools/git/gh-dash.yml";
   link = config.lib.file.mkOutOfStoreSymlink;
@@ -36,6 +37,7 @@ in
     ".config/git/template".source = ./template;
     ".config/git/ignore".source = ./ignore;
     "${skylight-include-file}".source = ./includes/skylight.inc;
+    "${cdc-include-file}".source = ./includes/cdc.inc;
   };
 
   xdg.configFile = {
@@ -134,6 +136,10 @@ in
       {
         path = "~/${skylight-include-file}";
         condition = "gitdir:~/Developer/skylight/";
+      }
+      {
+        path = "~/${cdc-include-file}";
+        condition = "gitdir:~/Developer/skylight/1cdp";
       }
     ];
 

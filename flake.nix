@@ -34,13 +34,12 @@
   };
 
   outputs =
-    inputs@{
-      self,
-      darwin,
-      home-manager,
-      nixpkgs,
-      nixpkgs-stable,
-      ...
+    inputs@{ self
+    , darwin
+    , home-manager
+    , nixpkgs
+    , nixpkgs-stable
+    , ...
     }:
     let
       darwin-system = import ./system/darwin.nix { inherit inputs username; };

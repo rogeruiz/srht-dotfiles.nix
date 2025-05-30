@@ -35,7 +35,7 @@ alias b := build
 [macos]
 build:
     @echo "🛠️ Rebuilding x86_64 Darwin"
-    darwin-rebuild switch --flake ".#x86_64" --fallback
+    sudo darwin-rebuild switch --flake ".#x86_64" --fallback
 
 # Used internally to add files via Git for other scripts.
 [private]

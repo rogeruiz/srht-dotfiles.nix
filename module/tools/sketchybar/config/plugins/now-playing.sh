@@ -16,6 +16,11 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
+# BUG: This stopped working due to macOS Sequoia 15.4.1
+# Lea más sobre esto aquí: (https://forum.keyboardmaestro.com/t/beware-upgrading-to-macos-15-4-if-you-need-now-playing-data/40285/7)
+# Lea más sobre `nowplaying-cli` aquí: (https://github.com/kirtan-shah/nowplaying-cli/issues/28)
+# La API `MRMediaRemoteGetNowPlayingInfofunction` ya esta hecha privada por Apple.
+
 VARIABLES_DIR="${CONFIG_DIR}/variables"
 ICON=''
 LABEL=''

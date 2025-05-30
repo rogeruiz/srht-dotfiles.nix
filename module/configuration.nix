@@ -139,6 +139,7 @@
         wvous-tr-corner = 13;
       };
     };
+    primaryUser = "yo";
   };
 
   system.stateVersion = 5;
@@ -167,6 +168,7 @@
       "iterm2"
       "keybase"
       "lagrange"
+      "monitorcontrol"
       "postman"
       "rar"
       "soulver"
