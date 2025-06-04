@@ -139,7 +139,7 @@ in
       }
       {
         path = "~/${cdc-include-file}";
-        condition = "gitdir:~/Developer/skylight/1cdp";
+        condition = "gitdir:~/Developer/skylight/1cdp/";
       }
     ];
 

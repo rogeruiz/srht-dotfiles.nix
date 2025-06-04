@@ -30,16 +30,17 @@
       url = "github:nix-community/home-manager/master";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
   };
 
   outputs =
-    inputs@{ self
-    , darwin
-    , home-manager
-    , nixpkgs
-    , nixpkgs-stable
-    , ...
+    inputs@{
+      self,
+      darwin,
+      home-manager,
+      nixpkgs,
+      nixpkgs-stable,
+      ...
     }:
     let
       darwin-system = import ./system/darwin.nix { inherit inputs username; };
