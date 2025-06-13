@@ -62,13 +62,13 @@ cambia_tema() {
   # Para Neovim, es mejor ver si ya esta selecionado el tema y no
   # cambiar el archivo si el tema no ha cambiado
 
-  if ! "$RIPGREP_BIN" "vim.o.background = \"$MODE\"" \
-    ~/.config/nvim/lua/custom/plugins/catppuccin.lua \
+  if ! "$RIPGREP_BIN" "vim.o.background = '$MODE'" \
+    ~/.config/nix-neovim/lua/rstrz/theme.lua \
     >/dev/null 2>&1; then
     sed -E \
       -i "" \
-      "s/(vim.o.background = ).+$/\1\"$MODE\"/" \
-      ~/.config/nvim/lua/custom/plugins/catppuccin.lua
+      "s/(vim.o.background = ).+$/\1'$MODE'/" \
+      ~/.config/nix-neovim/lua/rstrz/theme.lua
   fi
 
   # NOTE: LS_COLORS (exa, fd, rg)

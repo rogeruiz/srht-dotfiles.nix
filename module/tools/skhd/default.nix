@@ -39,6 +39,10 @@ in
         shift + alt - k : ${yabai} -m window --warp north
         shift + alt - l : ${yabai} -m window --warp east
 
+        shift + alt - 0x1D : ${yabai} -m window --opacity 1.0
+        shift + alt - 0x1B : ${yabai} -m window --opacity 0.25
+        shift + alt - 0x18 : ${yabai} -m window --opacity 0.7
+
         # Cambiar el tamaño de las ventanas
         lctrl + alt - h : ${yabai} -m window --resize left:-${margins}:0; ${yabai} -m window --resize right:-${margins}:0
         lctrl + alt - j : ${yabai} -m window --resize bottom:0:${margins}; ${yabai} -m window --resize top:0:${margins}

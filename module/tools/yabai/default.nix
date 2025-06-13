@@ -30,11 +30,11 @@ in
       window_placement = "second_child";
       window_shadow = "off";
       window_animation_duration = 0.2;
-      window_animation_easing = "easing_in_sine";
+      window_animation_easing = "ease_out_quart";
       window_opacity_duration = 0.2;
-      window_opacity_easing = "easing_in_sine";
+      window_opacity_easing = "ease_out_quart";
       active_window_opacity = 1.0;
-      normal_window_opacity = 0.8;
+      normal_window_opacity = 0.7;
       window_opacity = "on";
       split_ratio = 0.50;
       split_type = "auto";

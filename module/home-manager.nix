@@ -22,7 +22,6 @@
     ./tools/git
     ./tools/editor
     ./tools/neovim.nix
-    # ./tools/languages.nix
     ./tools/language-servers.nix
   ];
 
@@ -41,6 +40,8 @@
     irssi
   ];
   home.stateVersion = "24.11";
+
+  # nixCats = { enable = true; };
 
   programs.direnv = {
     enable = true;

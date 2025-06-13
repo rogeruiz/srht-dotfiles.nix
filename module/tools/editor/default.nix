@@ -17,6 +17,7 @@
 { pkgs, ... }:
 
 {
+
   home.packages = with pkgs; [
     # TODO: for now this is defined here but it should live inside of the
     # neovim repo I'm eventually adding

@@ -22,7 +22,7 @@ HIGHLIGHT="false"
 
 if [[ $VOLUME == "missing value" ]]; then
   ICON="󰡁 "
-  VOLUME="  "
+  VOLUME="  "
 else
   if [[ $MUTED != "false" ]]; then
     ICON="󰝟"
