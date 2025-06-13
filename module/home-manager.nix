@@ -21,8 +21,6 @@
     ./tools/terminal
     ./tools/git
     ./tools/editor
-    ./tools/neovim.nix
-    ./tools/language-servers.nix
   ];
 
   # add home-manager user settings here

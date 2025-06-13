@@ -19,14 +19,7 @@
 {
 
   home.packages = with pkgs; [
-    # TODO: for now this is defined here but it should live inside of the
-    # neovim repo I'm eventually adding
-
-    # This is used for Markdown files
-    nodejs_20
-    vale
-
-    # Experimenting with other editors
+    # Experimentando con otros procesadores
     kakoune
     kakoune-lsp
   ];

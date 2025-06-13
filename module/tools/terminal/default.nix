@@ -99,8 +99,8 @@ in
     shellAliases = {
       g = "git";
       j = "just";
-      nv = "nvim";
-      ndf = "nvim -d";
+      nv = "nnvim-dev";
+      ndf = "nnvim-dev -d";
       "-" = "cd -";
       ".." = "cd ..";
       "..." = "cd ../..";

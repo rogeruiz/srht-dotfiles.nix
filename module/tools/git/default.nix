@@ -148,7 +148,7 @@ in
         ui = true;
       };
       core = {
-        editor = "nvim";
+        editor = "nnvim-dev";
         quotepath = false;
         excludesFile = "~/.config/git/ignore";
         page = "more";
