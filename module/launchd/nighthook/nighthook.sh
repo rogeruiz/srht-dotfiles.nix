@@ -63,12 +63,12 @@ cambia_tema() {
   # cambiar el archivo si el tema no ha cambiado
 
   if ! "$RIPGREP_BIN" "vim.o.background = '$MODE'" \
-    ~/.config/nix-neovim/lua/rstrz/theme.lua \
+    ~/.config/nix-neovim/lua/rstrz/tema.lua \
     >/dev/null 2>&1; then
     sed -E \
       -i "" \
       "s/(vim.o.background = ).+$/\1'$MODE'/" \
-      ~/.config/nix-neovim/lua/rstrz/theme.lua
+      ~/.config/nix-neovim/lua/rstrz/tema.lua
   fi
 
   # NOTE: LS_COLORS (exa, fd, rg)
