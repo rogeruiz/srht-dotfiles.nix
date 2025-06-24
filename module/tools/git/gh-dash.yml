@@ -51,27 +51,24 @@ confirmQuit: true
 prSections:
 - title: 🔦 Los mios
   filters: 'is:open org:cdcent assignee:@me'
-- title: 🔦 CaseBridge
-  filters: 'is:open repo:cdcent/CaseBridge'
-- title: 🔦 MMGAT
-  filters: 'is:open repo:cdcent/mmgat'
+- title: 🔦 eCR Refiner
+  filters: 'is:open repo:cdcgov/dibbs-ecr-refiner'
 - title: 🐱 Catppuccin
   filters: 'repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open'
-- title: 🦂 Alacrán Studio
-  filters: 'org:alacran-studio is:open'
 issuesSections:
 - title: 🔦 Los mios
   filters: 'is:open org:cdcent assignee:@me'
-- title: "🔦 CaseBridge 1.1"
-  filters: 'is:open label:"CaseBridge1.1" project:cdcent/76 no:assignee'
-- title: 🔦 Refinamiento
-  filters: '-label:EPIC label:"CaseBridge1.1" no:assignee -label:"1.1:Nice to Have" label:"needs refinement"'
-- title: 🔦 Dimensionamiento
-  filters: '-label:EPIC label:"CaseBridge1.1" no:assignee -label:"1.1:Nice to Have" label:"Size it!"'
-- title: 🔦 Bichos
-  filters: 'is:open no:assignee project:cdcent/76 label:bug'
-- title: 🔦 Boletitos
-  filters: 'is:open no:assignee project:cdcent/76 label:X-Small,Small -label:"Size it!" -label:"needs refinement"'
+- title: 🔦 eCR Refiner
+  filters: 'is:open label:"dibbs-ecr-refiner" repo:cdcgov/dibbs-ecr-refiner no:assignee'
+- title: 🗣️ eCR Refiner (discusión)
+  filters: 'is:open label:"dibbs-ecr-refiner" repo:cdcgov/dibbs-ecr-refiner label:"Needs Discussion"'
+- title: 🛰️ eCR Refiner (descubrimiento)
+  filters: 'is:open label:"dibbs-ecr-refiner" repo:cdcgov/dibbs-ecr-refiner label:"Needs Discovery"'
+- title: 🛟 eCR Refiner (pruebas de usuarios)
+  filters: 'is:open label:"dibbs-ecr-refiner" repo:cdcgov/dibbs-ecr-refiner label:"Needs User Testing"'
+- title: 🖼️ eCR Refiner (producto)
+  filters: 'is:open label:"dibbs-ecr-refiner" repo:cdcgov/dibbs-ecr-refiner label:"Needs Product"'
+- title: 🎨 eCR Refiner (diseño)
 - title: 🐱 Catppuccin
   filters: 'repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open'
 defaults:
@@ -112,7 +109,8 @@ keybindings:
   issues: []
   prs: []
 repoPaths: {
-  cdcent/*: ~/Developer/skylight/cdcent/*
+  cdcent/*: ~/Developer/skylight/cdcent/*,
+  cdcgov/*: ~/Developer/skylight/cdcgov/*
 }
 theme:
   ui:
