@@ -3,17 +3,38 @@ font-family = Rec Mono Casual
 font-size = 14
 
 theme = light:catppuccin-latte,dark:catppuccin-mocha
-background-opacity = 0.75
-background-blur-radius = 20
+background-opacity = 0.5
+background-blur = true
 
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = true
 
-macos-titlebar-style = hidden
-
 copy-on-select = true
 
 command = /Users/yo/.local/bin/tux
 
+
+# README:
+# ██████╗  █████╗ ██████╗ ██╗    ██╗██╗███╗   ██╗
+# ██╔══██╗██╔══██╗██╔══██╗██║    ██║██║████╗  ██║
+# ██║  ██║███████║██████╔╝██║ █╗ ██║██║██╔██╗ ██║
+# ██║  ██║██╔══██║██╔══██╗██║███╗██║██║██║╚██╗██║
+# ██████╔╝██║  ██║██║  ██║╚███╔███╔╝██║██║ ╚████║
+# ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝
+#
+# ███╗   ███╗ █████╗  ██████╗ ██████╗ ███████╗
+# ████╗ ████║██╔══██╗██╔════╝██╔═══██╗██╔════╝
+# ██╔████╔██║███████║██║     ██║   ██║███████╗
+# ██║╚██╔╝██║██╔══██║██║     ██║   ██║╚════██║
+# ██║ ╚═╝ ██║██║  ██║╚██████╗╚██████╔╝███████║
+# ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
+
+macos-titlebar-style = hidden
+macos-window-shadow = false
+
 macos-option-as-alt = right
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = #9c59d2
+macos-icon-screen-color = #5bcefa,#f5a9b8,#ffffff,#f5a9b8,#5bcefa,#fcf434,#fcfcfc,#9c59d2,#2c2c2c
