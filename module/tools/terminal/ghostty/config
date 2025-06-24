@@ -22,7 +22,6 @@ command = /Users/yo/.local/bin/tux
 # ██║  ██║██╔══██║██╔══██╗██║███╗██║██║██║╚██╗██║
 # ██████╔╝██║  ██║██║  ██║╚███╔███╔╝██║██║ ╚████║
 # ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝
-#
 # ███╗   ███╗ █████╗  ██████╗ ██████╗ ███████╗
 # ████╗ ████║██╔══██╗██╔════╝██╔═══██╗██╔════╝
 # ██╔████╔██║███████║██║     ██║   ██║███████╗
@@ -35,6 +34,8 @@ macos-window-shadow = false
 
 macos-option-as-alt = right
 macos-icon = custom-style
-macos-icon-frame = beige
+macos-icon-frame = plastic
 macos-icon-ghost-color = #9c59d2
-macos-icon-screen-color = #5bcefa,#f5a9b8,#ffffff,#f5a9b8,#5bcefa,#fcf434,#fcfcfc,#9c59d2,#2c2c2c
+macos-icon-screen-color = #fcf434,#fcfcfc,#9c59d2,#2c2c2c,#5bcefa,#f5a9b8,#fcfcfc,#f5a9b8,#5bcefa
+
+# vim: set filetype=config :
