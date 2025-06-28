@@ -158,3 +158,39 @@
     printf 'ℹ️ %s\n' 'Por favor instalar la aplicación CLI llamada `fd`'
   fi
 }
+
+#    _____                               __     __)
+#   (, /   )     ,         ,            (, )   /      /)      ,
+#     /__ /  _    __   _     _   __       /   /  _   (/_ _
+#  ) /   \__(/__(_/ (_(___(_(_(_/ (_     (___/_ (_(_/_) (_(__(_
+# (_/                                   )   /
+#                                      (__ /
+# NOTE:
+# ejemplo: `,reiniciar-yabai`
+,reiniciar-yabai() {
+  launchctl kill 3 gui/501/org.nixos.yabai
+}
+
+#    _____
+#   (, /   )     ,         ,                /)  /)    /)
+#     /__ /  _    __   _     _   __     _  (/_ (/   _(/
+#  ) /   \__(/__(_/ (_(___(_(_(_/ (_   /_)_/(__/ )_(_(_
+# (_/
+#
+# NOTE:
+# ejemplo: `,reiniciar-skhd`
+,reiniciar-skhd() {
+  launchctl kill 3 gui/501/org.nixos.skhd
+}
+
+#    _____                                  __
+#   (, /   )     ,         ,            (__/  ) /)            /)       /)
+#     /__ /  _    __   _     _   __       /    (/_   _ _/_ _ (/       (/_ _   __
+#  ) /   \__(/__(_/ (_(___(_(_(_/ (_   ) /     /(___(/_(__(__/ )_(_/_/_) (_(_/ (_
+# (_/                                 (_/                       .-/
+#                                                              (_/
+# NOTE:
+# ejemplo: `,reiniciar-sketchybar`
+,reiniciar-sketchybar() {
+  launchctl kill 3 gui/501/org.nixos.sketchybar
+}
