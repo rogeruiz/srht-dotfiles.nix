@@ -59,7 +59,8 @@ in
           ${yabai} -m window --toggle float; \
           ${yabai} -m window --toggle border
 
-        alt + shift - r : ${sketchybar} --reload
+        # Reiniciar Sketchybar y Yabai juntos
+        alt + shift - r : ${sketchybar} --reload; launchctl kill 3 gui/501/org.nixos.yabai
 
         alt + shift - 0x2B : \
           /usr/bin/osascript -e \
