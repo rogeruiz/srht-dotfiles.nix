@@ -50,14 +50,14 @@ confirmQuit: true
 
 prSections:
 - title: 🔦 Los mios
-  filters: 'is:open org:cdcent assignee:@me'
+  filters: 'is:open org:cdcgov assignee:@me'
 - title: 🔦 eCR Refiner
   filters: 'is:open repo:cdcgov/dibbs-ecr-refiner'
 - title: 🐱 Catppuccin
   filters: 'repo:catppuccin/tmux repo:catppuccin/the-archive repo:cattppuccin/whiskers is:open'
 issuesSections:
 - title: 🔦 Los mios
-  filters: 'is:open org:cdcent assignee:@me'
+  filters: 'is:open org:cdcgov assignee:@me'
 - title: 🔦 eCR Refiner
   filters: 'is:open label:"dibbs-ecr-refiner" repo:cdcgov/dibbs-ecr-refiner no:assignee'
 - title: 🗣️ eCR Refiner (discusión)
