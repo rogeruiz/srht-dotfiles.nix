@@ -59,17 +59,10 @@ cambia_tema() {
     >~/.config/bottom/bottom.toml
 
   # NOTE: Nvim
-  # Para Neovim, es mejor ver si ya esta selecionado el tema y no
-  # cambiar el archivo si el tema no ha cambiado
-
-  if ! "$RIPGREP_BIN" "vim.o.background = '$MODE'" \
-    ~/.config/nix-neovim/lua/rstrz/tema.lua \
-    >/dev/null 2>&1; then
-    sed -E \
-      -i "" \
-      "s/(vim.o.background = ).+$/\1'$MODE'/" \
-      ~/.config/nix-neovim/lua/rstrz/tema.lua
-  fi
+  # Para Neovim, ya no se asi aquí pero en la configuración antes montar el
+  # complemento de Catppuccin con un commando de `io.popen()`.
+  # Vea cambios aquí:
+  # https://git.sr.ht/~rogeruiz/neovim.nix/commit/99ff497b6c40a83aaabc70be441344e9a609007c
 
   # NOTE: LS_COLORS (exa, fd, rg)
   sed -E \
