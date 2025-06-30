@@ -18,8 +18,8 @@
 
 let
   gaps = 20;
-  bar_height = 25;
-  bar_y_offset = 24;
+  bar_height = 28;
+  bar_y_offset = 27;
   top_padding = gaps + bar_height + bar_y_offset;
 in
 {

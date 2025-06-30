@@ -27,7 +27,6 @@
 #   script="$PLUGIN_DIR/now-playing.sh"
 #   scroll_texts=on
 #   updates=on
-#   background.border_width=1
 # )
 # events=(
 #   media_change

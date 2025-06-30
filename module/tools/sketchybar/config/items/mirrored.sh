@@ -20,19 +20,16 @@ keyboard_alias_properties=(
   icon=
   icon.padding_right=0
   label.drawing=off
-  background.border_width=1
 )
 # cpu_properties=(
 #   icon=
 #   icon.padding_right=0
 #   label.drawing=off
-#   background.border_width=1
 # )
 # ram_properties=(
 #   icon=
 #   icon.padding_right=0
 #   label.drawing=off
-#   background.border_width=1
 # )
 
 sketchybar --add alias "TextInputMenuAgent,Item-0" right \

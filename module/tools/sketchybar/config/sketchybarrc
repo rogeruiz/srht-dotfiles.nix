@@ -16,7 +16,10 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-CONFIG_DIR="${HOME}/.config/sketchybar"
+
+CONFIG_DIR="${HOME}/.files.nix/module/tools/sketchybar/config"
+# CONFIG_DIR="${HOME}/.config/sketchybar"
+
 VARIABLES_DIR="${CONFIG_DIR}/variables"
 ITEM_DIR="${CONFIG_DIR}/items"
 PLUGIN_DIR="${CONFIG_DIR}/plugins"
@@ -28,7 +31,6 @@ source "${ITEM_DIR}/bar.sh"
 source "${ITEM_DIR}/default.sh"
 
 source "${ITEM_DIR}/spaces.sh"
-source "${ITEM_DIR}/front_app.sh"
 source "${ITEM_DIR}/clock.sh"
 
 source "${ITEM_DIR}/battery.sh"
@@ -39,6 +41,7 @@ source "${ITEM_DIR}/mirrored.sh"
 
 source "${ITEM_DIR}/headphones.sh"
 # source "${ITEM_DIR}/music.sh"
+source "${ITEM_DIR}/front_app.sh"
 # source "${ITEM_DIR}/time-keeping.sh"
 
 source "${ITEM_DIR}/theme.sh"

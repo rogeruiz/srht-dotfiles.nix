@@ -156,41 +156,34 @@ function color() {
 
 bar_styles=(
   border_color="$(color mauve)"
-  color="$(color mantle)"
+  color="$(color crust 127)"
 )
 default_styles=(
-  background.color="$(color mantle)"
-  background.border_color="$(color crust)"
   icon.color="$(color text)"
   label.color="$(color text)"
 )
 front_app_styles=(
-  background.border_color="$(color blue 102)"
-  background.color="$(color blue 51)"
-  icon.color="$(color rosewater)"
-  label.color="$(color text)"
+  background.color="$(color crust)"
+  icon.color="$(color mauve)"
+  label.color="$(color blue)"
 )
 space_styles=(
   icon.color="$(color blue)"
   icon.highlight_color="$(color mauve)"
 )
 spaces_styles=(
-  background.border_color="$(color blue 102)"
-  background.color="$(color blue 51)"
+  background.color="$(color surface0 51)"
 )
 mic_styles=(
-  background.color="$(color mantle 102)"
   icon.color="$(color red)"
   icon.highlight_color="$(color green)"
 )
 headphones_styles=(
-  background.border_color="$(color yellow 102)"
   background.color="$(color yellow 51)"
   icon.color="$(color yellow)"
   label.color="$(color overlay0)"
 )
 sound_styles=(
-  background.border_color="$(color lavender 102)"
   background.color="$(color lavender 51)"
   icon.color="$(color green)"
   icon.highlight_color="$(color red)"
@@ -198,35 +191,28 @@ sound_styles=(
   label.highlight_color="$(color red)"
 )
 tick_styles=(
-  background.border_color="$(color overlay2 102)"
   background.color="$(color overlay2 51)"
   icon.color="$(color mauve)"
   label.color="$(color subtext0)"
 )
 wifi_styles=(
-  background.border_color="$(color flamingo 102)"
   background.color="$(color flamingo 51)"
   icon.color="$(color flamingo)"
   label.color="$(color text)"
 )
 battery_styles=(
-  background.border_color="$(color mauve 102)"
-  background.color="$(color mauve 51)"
   label.color="$(color subtext1)"
 )
 clock_styles=(
-  background.border_color="$(color green 102)"
   background.color="$(color green 51)"
   icon.color="$(color blue)"
   label.color="$(color text)"
 )
 keyboard_alias_styles=(
-  background.border_color="$(color overlay0 102)"
   background.color="$(color overlay0 51)"
   icon.color="$(color teal)"
 )
 network_styles=(
-  background.border_color="$(color flamingo 102)"
   background.color="$(color flamingo 51)"
   icon.color="$(color overlay2)"
 )
@@ -261,12 +247,12 @@ sketchybar \
 
 # set the yabai colors as well
 yabai \
-  -m config insert_feedback_color "$(color mauve)"
+  -m config insert_feedback_color "$(color blue)"
 
 # fijar los colores de los bordes usando JankyBorders
 borders \
   active_color="$(color mauve)" \
-  inactive_color="$(color lavender)"
+  inactive_color="$(color surface2)"
 
 # recargar el estado de Catppuccin Tmux
 tmux run /Users/yo/.local/bin/reload-catppuccin-tmux

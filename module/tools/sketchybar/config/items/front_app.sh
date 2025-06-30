@@ -18,14 +18,14 @@
 
 properties=(
   icon.drawing=on
+  label.font.style=italic
   script="$PLUGIN_DIR/front_app.sh"
   updates=when_shown
-  background.border_width=1
 )
 events=(
   front_app_switched
 )
 
-sketchybar --add item front_app left \
+sketchybar --add item front_app center \
   --set front_app "${properties[@]}" \
   --subscribe front_app "${events[@]}"

@@ -18,7 +18,6 @@
 
 properties=(
   script="$PLUGIN_DIR/battery.sh"
-  background.border_width=1
 )
 events=(
   system_woke

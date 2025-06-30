@@ -21,14 +21,12 @@ properties=(
   label.scroll_duration=720
   script="$PLUGIN_DIR/wifi.sh"
   scroll_texts=on
-  background.border_width=1
   updates=on
 )
 network_properties=(
   icon=󰛳
   icon.padding_right=0
   label.drawing=off
-  background.border_width=1
 )
 
 events=(

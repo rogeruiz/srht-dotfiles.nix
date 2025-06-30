@@ -18,11 +18,9 @@
 
 properties=(
   updates=on
-  background.border_width=1
   update_freq=1
   script="$PLUGIN_DIR/time-keeping.sh"
   label.padding_right="${margins}"
-  background.border_width=1
 )
 
 sketchybar --add item time_keeping center --set time_keeping "${properties[@]}"

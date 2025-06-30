@@ -56,7 +56,6 @@ done
 
 bg_styles=(
   background.drawing=on
-  background.border_width=1
   padding_left="${margins}"
   padding_right="${margins}"
 )

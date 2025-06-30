@@ -18,7 +18,6 @@
 
 properties=(
   script="$PLUGIN_DIR/sound.sh"
-  background.border_width=1
 )
 events=(
   volume_change
