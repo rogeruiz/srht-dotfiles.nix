@@ -64,9 +64,10 @@ update:
 
 [doc('Develop my Sketchybar configuration')]
 [macos]
-dev-sketchybar: (add-files "sketchybar") build
-    @echo "🔃 Respawning the SketchyBar daemon"
-    launchctl kill 3 gui/501/org.nixos.sketchybar
+dev-sketchybar: (add-files "sketchybar")
+    @echo "🔃 Loading SketchyBar configuration from local path"
+    eza {{ absolute_path('./module/tools/sketchybar/config') }}/**/* | \
+      entr sketchybar --reload {{ absolute_path('./module/tools/sketchybar/config/sketchybarrc') }}
 
 [doc('Develop my yabai configuration')]
 [macos]
