@@ -20,7 +20,8 @@ eval "$(direnv hook zsh)"
 eval "$(op completion zsh)"; compdef _op op
 
 unsetopt correct_all
-export VISUAL=nvim
+export VISUAL=nnvim-dev
+export EDITOR=nnvim-dev
 autoload edit-command-line; zle -N edit-command-line
 set -o vi
 bindkey "\e[1;5D" backward-word

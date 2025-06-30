@@ -24,5 +24,13 @@ in
 {
   xdg.configFile = {
     "ghostty/config".source = (link configFile);
+
+    "ghostty/shaders" = {
+      source = builtins.fetchGit {
+        url = "https://github.com/hackr-sh/ghostty-shaders";
+        ref = "main";
+        rev = "a17573fb254e618f92a75afe80faa31fd5e09d6f";
+      };
+    };
   };
 }
