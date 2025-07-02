@@ -40,7 +40,7 @@ in
     mouse = true;
     shell = "/etc/profiles/per-user/yo/bin/zsh";
     shortcut = "b";
-    terminal = "tmux-256color";
+    terminal = "xterm-ghostty";
     clock24 = true;
     tmuxp.enable = true;
     escapeTime = 0;
