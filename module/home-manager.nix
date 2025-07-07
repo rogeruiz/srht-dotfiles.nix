@@ -36,6 +36,8 @@
     imagemagick
 
     irssi
+
+    fortune-kind
   ];
   home.stateVersion = "24.11";
 

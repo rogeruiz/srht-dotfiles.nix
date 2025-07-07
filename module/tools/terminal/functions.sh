@@ -73,6 +73,19 @@
   fi
 }
 
+# colores-git-perl es una función similar a la función anterior pero usa Perl y es un poco más rapido.
+,colores-git-perl() {
+  remote_name="${1:-origin}"
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    local default_branch
+    default_branch=$(git remote show "${remote_name}" | rg 'HEAD branch' | choose 2)
+    for sha in $(git rev-list "${remote_name}/${default_branch}...$(git wtb)"); do
+      perl -e 'foreach $a(@ARGV){print "\e[48;2;".join(";",unpack("C*",pack("H*",$a)))."m  \e[49m"};;' $(echo ${sha} | head -c 6) 2>/dev/null
+    done
+    echo
+  fi
+}
+
 #
 #  _____                               _
 # | __  |___ ___ ___ ___ ___ ___ ___ _| |___
