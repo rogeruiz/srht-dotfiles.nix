@@ -38,6 +38,8 @@
     irssi
 
     fortune-kind
+
+    nnn
   ];
   home.stateVersion = "24.11";
 
