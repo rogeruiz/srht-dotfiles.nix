@@ -23,8 +23,9 @@ rec {
     es: Ayuda con el desarrollo de Catppuccin Tmux.
     en: Helps with the development of Catppuccin Tmux.
   */
-  catppuccin = { local ? false }:
-    if local
-    then dev
-    else (plugin-path-within-nix-store ctp);
+  catppuccin =
+    {
+      local ? false,
+    }:
+    if local then dev else (plugin-path-within-nix-store ctp);
 }
