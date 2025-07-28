@@ -33,8 +33,8 @@ in
       window_animation_easing = "ease_out_quart";
       window_opacity_duration = 0.2;
       window_opacity_easing = "ease_out_quart";
-      active_window_opacity = 1.0;
-      normal_window_opacity = 1.0;
+      active_window_opacity = 0.9;
+      normal_window_opacity = 0.9;
       window_opacity = "on";
       split_ratio = 0.50;
       split_type = "auto";

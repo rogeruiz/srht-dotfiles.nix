@@ -42,6 +42,7 @@ in
         shift + alt - 0x1D : ${yabai} -m window --opacity 1.0
         shift + alt - 0x1B : ${yabai} -m window --opacity 0.25
         shift + alt - 0x18 : ${yabai} -m window --opacity 0.75
+        shift + alt - 0x19 : ${yabai} -m window --opacity 0.90
 
         # Cambiar el tamaño de las ventanas
         lctrl + alt - h : ${yabai} -m window --resize left:-${margins}:0; ${yabai} -m window --resize right:-${margins}:0
