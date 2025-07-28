@@ -35,8 +35,8 @@ icons=(
 )
 
 styles=(
-  icon.padding_left=$((margins / 2))
-  icon.padding_right=$((margins / 2))
+  icon.padding_left=$((margins / 4))
+  icon.padding_right=$((margins / 4))
   label.drawing=off
   script="$PLUGIN_DIR/space.sh"
 )

@@ -156,14 +156,13 @@ function color() {
 
 bar_styles=(
   border_color="$(color mauve)"
-  color="$(color crust 127)"
+  color="$(color crust 150)"
 )
 default_styles=(
   icon.color="$(color text)"
   label.color="$(color text)"
 )
 front_app_styles=(
-  background.color="$(color crust)"
   icon.color="$(color mauve)"
   label.color="$(color blue)"
 )
@@ -172,49 +171,43 @@ space_styles=(
   icon.highlight_color="$(color mauve)"
 )
 spaces_styles=(
-  background.color="$(color surface0 51)"
-)
+  # background.color="$(color mantle)"
+  )
+
 mic_styles=(
   icon.color="$(color red)"
   icon.highlight_color="$(color green)"
 )
 headphones_styles=(
-  background.color="$(color yellow 51)"
   icon.color="$(color yellow)"
-  label.color="$(color overlay0)"
+  label.color="$(color yellow)"
 )
 sound_styles=(
-  background.color="$(color lavender 51)"
   icon.color="$(color green)"
   icon.highlight_color="$(color red)"
-  label.color="$(color text)"
+  label.color="$(color overlay2)"
   label.highlight_color="$(color red)"
 )
 tick_styles=(
-  background.color="$(color overlay2 51)"
   icon.color="$(color mauve)"
   label.color="$(color subtext0)"
 )
 wifi_styles=(
-  background.color="$(color flamingo 51)"
-  icon.color="$(color flamingo)"
-  label.color="$(color text)"
+  icon.color="$(color blue)"
+  label.color="$(color overlay2)"
 )
 battery_styles=(
   label.color="$(color subtext1)"
 )
 clock_styles=(
-  background.color="$(color green 51)"
-  icon.color="$(color blue)"
-  label.color="$(color text)"
+  icon.color="$(color sapphire)"
+  label.color="$(color blue)"
 )
 keyboard_alias_styles=(
-  background.color="$(color overlay0 51)"
   icon.color="$(color teal)"
 )
 network_styles=(
-  background.color="$(color flamingo 51)"
-  icon.color="$(color overlay2)"
+  icon.color="$(color blue)"
 )
 # cpu_styles=(
 #   background.border_color="$(color overlay0 102)"
