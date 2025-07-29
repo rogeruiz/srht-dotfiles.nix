@@ -167,20 +167,18 @@ front_app_styles=(
   label.color="$(color blue)"
 )
 space_styles=(
-  icon.color="$(color blue)"
-  icon.highlight_color="$(color mauve)"
+  icon.color="$(color overlay0)"
+  icon.highlight_color="$(color overlay2)"
 )
-spaces_styles=(
-  # background.color="$(color mantle)"
-  )
+spaces_styles=()
 
 mic_styles=(
   icon.color="$(color red)"
   icon.highlight_color="$(color green)"
 )
 headphones_styles=(
-  icon.color="$(color yellow)"
-  label.color="$(color yellow)"
+  icon.color="$(color green)"
+  label.color="$(color overlay2)"
 )
 sound_styles=(
   icon.color="$(color green)"
