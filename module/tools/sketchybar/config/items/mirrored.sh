@@ -18,7 +18,6 @@
 
 keyboard_alias_properties=(
   icon=
-  icon.padding_right=0
   label.drawing=off
 )
 # cpu_properties=(

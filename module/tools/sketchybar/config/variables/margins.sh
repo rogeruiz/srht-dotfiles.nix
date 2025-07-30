@@ -17,6 +17,6 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 export margins=18
-export gaps=24
+export gaps=12
 export altura=28
-export bar_yoffset=27
+export bar_yoffset=12

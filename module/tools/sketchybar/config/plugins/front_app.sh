@@ -24,8 +24,8 @@ source "${VARIABLES_DIR}/margins.sh"
 #   unset INFO
 # fi
 
-sketchybar --set "${NAME}" icon="${ICON}" icon.padding_right="${margins}" label.drawing="off"
+sketchybar --set "${NAME}" icon="${ICON}" label.drawing="off"
 
 if [[ -n "${INFO}" ]]; then
-  sketchybar --set "${NAME}" icon.padding_right=0 label="${INFO}" label.drawing="on"
+  sketchybar --set "${NAME}" label="${INFO}" label.drawing="on"
 fi

@@ -20,6 +20,8 @@ properties=(
   update_freq=1
   icon=
   script="$PLUGIN_DIR/clock.sh"
+  background.padding_left=$margins
+  background.padding_right=$margins
 )
 
 sketchybar --add item clock left --set clock "${properties[@]}"

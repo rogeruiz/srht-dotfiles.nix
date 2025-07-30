@@ -25,7 +25,7 @@ APPLE_LOGO=""
 BT_LOGO="󰂯"
 
 if [[ -z "$DEVICES" ]]; then
-  sketchybar --set "${NAME}" drawing=off icon.drawing=off label.drawing=off
+  sketchybar --set "${NAME}" drawing=off
 else
   case "${DEVICES}" in
   "Scissors" | "Scissors Pro" | "tijeras studio pro" | "tijeras Powerbeats Pro")
@@ -35,5 +35,5 @@ else
     DEVICES=$BT_LOGO
     ;;
   esac
-  sketchybar --set "${NAME:=headphones}" drawing=on icon.drawing=on label.drawing=on label="$DEVICES"
+  sketchybar --set "${NAME:=headphones}" drawing=on label="$DEVICES"
 fi

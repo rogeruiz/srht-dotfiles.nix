@@ -155,57 +155,77 @@ function color() {
 }
 
 bar_styles=(
-  border_color="$(color mauve)"
-  color="$(color crust 150)"
+  # border_color="$(color mauve)"
+  color="$(color base 0)"
 )
 default_styles=(
-  icon.color="$(color text)"
-  label.color="$(color text)"
+  icon.color="$(color surface0)"
+  label.color=$(color text)
+  label.background.color=$(color text 25)
 )
 front_app_styles=(
-  icon.color="$(color mauve)"
-  label.color="$(color blue)"
+  icon.background.color=$(color teal)
+  icon.color=$(color mantle)
+  label.color=$(color text)
+  label.background.color=$(color text 25)
 )
 space_styles=(
-  icon.color="$(color overlay0)"
-  icon.highlight_color="$(color overlay2)"
+  icon.color=$(color overlay1)
+  icon.highlight_color="$(color sky)"
 )
-spaces_styles=()
+spaces_styles=(
+  background.color=$(color teal 24)
+)
 
 mic_styles=(
   icon.color="$(color red)"
   icon.highlight_color="$(color green)"
 )
 headphones_styles=(
-  icon.color="$(color green)"
-  label.color="$(color overlay2)"
+  icon.background.color=$(color green)
+  icon.color=$(color mantle)
+  label.color=$(color text)
+  background.color=$(color text 25)
 )
 sound_styles=(
-  icon.color="$(color green)"
+  icon.background.color="$(color pink)"
+  icon.color="$(color mantle)"
+  label.color="$(color overlay1)"
   icon.highlight_color="$(color red)"
-  label.color="$(color overlay2)"
   label.highlight_color="$(color red)"
+  background.color=$(color sapphire 24)
 )
 tick_styles=(
   icon.color="$(color mauve)"
   label.color="$(color subtext0)"
 )
 wifi_styles=(
-  icon.color="$(color blue)"
-  label.color="$(color overlay2)"
+  icon.background.color="$(color lavender)"
+  icon.color="$(color mantle)"
+  label.color=$(color overlay1)
+  background.color=$(color yellow 24)
 )
 battery_styles=(
-  label.color="$(color subtext1)"
+  background.color=$(color base)
+  label.color=$(color overlay2)
 )
 clock_styles=(
-  icon.color="$(color sapphire)"
-  label.color="$(color blue)"
+  icon.color="$(color mantle)"
+  icon.background.color=$(color peach)
+  label.color=$(color overlay1)
+  background.color="$(color rosewater 24)"
 )
+
 keyboard_alias_styles=(
-  icon.color="$(color teal)"
+  icon.background.color="$(color sky)"
+  icon.color="$(color mantle)"
+  alias.color="$(color overlay1)"
+  background.color=$(color green 25)
 )
 network_styles=(
-  icon.color="$(color blue)"
+  icon.background.color="$(color lavender)"
+  icon.color="$(color base)"
+  background.color=$(color yellow 25)
 )
 # cpu_styles=(
 #   background.border_color="$(color overlay0 102)"

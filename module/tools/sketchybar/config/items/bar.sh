@@ -18,12 +18,11 @@
 
 config=(
   height="${altura}"
-  corner_radius=0
   margin="${gaps}"
   y_offset=$((bar_yoffset))
   padding_left="${gaps}"
   padding_right="${gaps}"
-  border_width=2
+  # border_width=2
   corner_radius=8
 )
 

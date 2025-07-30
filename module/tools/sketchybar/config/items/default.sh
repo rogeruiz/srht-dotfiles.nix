@@ -19,12 +19,17 @@
 config=(
   background.height="${altura}"
   drawing=on
-  icon.font="0xProto Nerd Font:Regular:17"
-  icon.padding_left="${margins}"
-  label.font="0xProto Nerd Font:Regular:17"
-  icon.padding_right=$((margins / 4))
-  label.padding_left=$((margins / 4))
-  label.padding_right="${margins}"
+  icon.font="0xProto Nerd Font:Regular:14"
+  label.font="0xProto Nerd Font:Regular:14"
+  icon.padding_left=$((margins / 2))
+  icon.padding_right=$((margins / 2))
+  label.padding_left=$((margins / 2))
+  label.padding_right=$((margins / 2))
+  background.padding_right=$((margins / 2))
+  background.padding_left=$((margins / 2))
+  background.height="${altura}"
+  icon.background.height="${altura}"
+  label.background.height="${altura}"
   updates=when_shown
 )
 
