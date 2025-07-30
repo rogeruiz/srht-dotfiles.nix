@@ -207,7 +207,7 @@ wifi_styles=(
 )
 battery_styles=(
   background.color=$(color base)
-  label.color=$(color overlay2)
+  label.color=$(color text)
 )
 clock_styles=(
   icon.color="$(color mantle)"
