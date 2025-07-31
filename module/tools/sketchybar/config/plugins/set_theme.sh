@@ -156,7 +156,7 @@ function color() {
 
 bar_styles=(
   # border_color="$(color mauve)"
-  color="$(color base 0)"
+  color="$(color crust 200)"
 )
 default_styles=(
   icon.color="$(color surface0)"
