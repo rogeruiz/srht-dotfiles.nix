@@ -4,16 +4,18 @@
 
 
 font-family = 0xProto Nerd Font
-font-size = 14
+font-size = 18
 theme = light:catppuccin-latte,dark:catppuccin-mocha
 background-opacity = 0.80
 background-blur = true
 
 # shell-integration = none
 shell-integration-features = no-cursor
-cursor-style = block_hollow
+cursor-style = block
 cursor-style-blink = true
 cursor-opacity = 1
+cursor-text = "#f5a9b8"
+cursor-color = "#5bcefa"
 
 mouse-hide-while-typing = true
 
