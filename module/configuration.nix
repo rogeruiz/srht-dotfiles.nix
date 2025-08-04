@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 # Nix Darwin configuration
 # Copyright (C) 2024 Roger Steve Ruiz
@@ -41,6 +46,10 @@
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
     ];
+    gc = {
+      automatic = lib.mkDefault true;
+      options = lib.mkDefault "--delete-older-than 7d";
+    };
   };
 
   nixpkgs.config = {
