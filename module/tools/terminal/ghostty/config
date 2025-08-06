@@ -1,4 +1,4 @@
-# custom-shader = ~/.config/ghostty/shaders/crt.glsl
+# custom-shader = ~/.config/ghostty/shaders/tft.glsl
 # Pa' desarollo y no más.
 # custom-shader-animation = always
 
@@ -6,7 +6,7 @@
 font-family = 0xProto Nerd Font
 font-size = 18
 theme = light:catppuccin-latte,dark:catppuccin-mocha
-background-opacity = 0.80
+background-opacity = 0.90
 background-blur = true
 
 # shell-integration = none

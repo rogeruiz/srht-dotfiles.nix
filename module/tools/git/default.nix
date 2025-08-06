@@ -54,14 +54,14 @@ in
 
     aliases = {
       all = "!git add . && git ci";
-      alt = "!alt() { nvim -p $(git files); }; alt";
+      alt = "!alt() { nnvim-dev -p $(git files); }; alt";
       amend = "ci --amend";
       br = "branch";
       ch = "diff --ws-error-highlight=all --cached --";
       ci = "commit -v";
       cin = "ci --no-verify";
       co = "checkout";
-      conflicts = "!con() { nvim -p $(git s | rg 'U[UAD]' | awk '{ print $2 }'); }; con";
+      conflicts = "!con() { nnvim-dev -p $(git s | rg 'U[UAD]' | awk '{ print $2 }'); }; con";
       continue = "!git add . && git rebase --continue";
       df = "diff --ws-error-highlight=all";
       discard = "restore";
