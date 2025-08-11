@@ -48,7 +48,15 @@
     in
     {
       darwinConfigurations = {
-        x86_64 = darwin-system "x86_64-darwin";
+        mbpro-16-1 = darwin-system "x86_64-darwin";
+      };
+      nixosConfigurations = {
+        mbpro-11-5 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./system/nixos.nix
+          ];
+        };
       };
     };
 }

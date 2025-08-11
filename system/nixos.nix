@@ -26,6 +26,8 @@
     };
   };
 
+  powerManagement.cpuFreqGovernor = "schedutil";
+
   boot = {
     loader = {
       systemd-boot.enable = true;
@@ -34,7 +36,7 @@
   };
 
   networking = {
-    hostName = "mb-pro-11,5";
+    hostName = "mbpro-11-5";
     networkmanager.enable = true;
   };
 
@@ -45,26 +47,28 @@
       _0xproto
       symbols-only
       recursive-mono
-      "m+"
     ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-  };
-
   services = {
     xserver = {
+      enable = true;
       videoDrivers = [ "amdgpu" ];
       xkb = {
         layout = "us";
         options = "ctrl:nocaps";
+      };
+      windowManager = {
+        hypr = {
+          enable = true;
+        };
+      };
+    };
+    displayManager = {
+      ly = {
+        enable = true;
       };
     };
     libinput.enable = true;
@@ -99,9 +103,6 @@
         enable = true;
       };
     };
-    steam = {
-      enable = true;
-    };
   };
   environment = {
     sessionVariables = {
@@ -121,9 +122,16 @@
       libnotify
       swww
       rofi-wayland
+      wayclip
     ];
   };
-  users = { };
+  users = {
+    users.yo = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+      packages = [];
+    };
+  };
 
   xdg = {
     portal = {
