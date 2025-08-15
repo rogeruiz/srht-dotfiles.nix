@@ -17,7 +17,7 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 SSID="$(
-  ipconfig getsummary en0 | awk -F ' SSID : ' '/ SSID : / {print $2}'
+system_profiler SPAirPortDataType | awk '/Current Network/ {getline;$1=$1;print $0 | "tr -d ':'";exit}'
 )"
 
 SIN_CONEXION="You are not associated with an AirPort network."
