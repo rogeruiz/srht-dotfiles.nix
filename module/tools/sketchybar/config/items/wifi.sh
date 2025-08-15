@@ -27,6 +27,7 @@ properties=(
 network_properties=(
   icon=󰛳
   label.drawing=off
+  display='1,2'
 )
 
 events=(

@@ -47,6 +47,7 @@
       _0xproto
       symbols-only
       recursive-mono
+      victor-mono
     ];
   };
 

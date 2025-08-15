@@ -18,6 +18,7 @@
 
 properties=(
   icon.drawing=on
+  display='1,2'
   label.font.style=italic
   script="$PLUGIN_DIR/front_app.sh"
   updates=when_shown

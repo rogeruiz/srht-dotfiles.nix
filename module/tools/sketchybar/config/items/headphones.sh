@@ -17,10 +17,10 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 properties=(
-  icon="󰋋"
+  display='1,2'
+  icon=󰋋
   script="$PLUGIN_DIR/ble_headset.sh"
-  updates=when_shown
-  drawing=off
+  updates=on
 )
 events=(
   bt_connect
