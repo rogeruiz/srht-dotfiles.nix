@@ -17,6 +17,7 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 properties=(
+  label.font.style=italic
   script="$PLUGIN_DIR/sound.sh"
 )
 events=(
