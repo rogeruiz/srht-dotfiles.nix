@@ -58,11 +58,9 @@ cambia_tema() {
     ~/.config/bottom/catppuccin/themes/$FLAVOR.toml \
     >~/.config/bottom/bottom.toml
 
-  # NOTE: Nvim
-  # Para Neovim, ya no se asi aquí pero en la configuración antes montar el
-  # complemento de Catppuccin con un commando de `io.popen()`.
-  # Vea cambios aquí:
-  # https://git.sr.ht/~rogeruiz/neovim.nix/commit/99ff497b6c40a83aaabc70be441344e9a609007c
+  # NOTE: Neovim
+  # Ya se maneja los cambios de tema usando codigo de Lua.
+  # fuente: https://git.sr.ht/~rogeruiz/neovim.nix/tree/main/item/lua/rstrz/tema.lua#L2-43
 
   # NOTE: LS_COLORS (exa, fd, rg)
   sed -E \

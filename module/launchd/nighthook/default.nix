@@ -24,22 +24,20 @@ with lib;
 let
   homeDir = "/Users/yo";
   rgBin = "${pkgs.ripgrep}/bin/rg";
-  # FIX:
-  # es: Este variable deber ser una derivación y no una referencia a mí guion directamente.
-  # en: This variable should be pointing to a derivation and not a script file reference.
-  # reloadTmuxCatppuccin = "${homeDir}/.local/bin/reload-catppuccin-tmux";
 in
 {
   launchd.user.agents.nighthook = {
     serviceConfig = {
       Label = "gr.rog.nighthook";
       WatchPaths = [ "${homeDir}/Library/Preferences/.GlobalPreferences.plist" ];
+      ProgramArguments = [
+        "${pkgs.writeShellScript "nighthook-action" (builtins.readFile ./nighthook.sh)}"
+      ];
       EnvironmentVariables = {
         PATH = (replaceStrings [ "$HOME" ] [ homeDir ] config.environment.systemPath);
         HOME = homeDir;
         RIPGREP_BIN = rgBin;
       };
-      Program = "${pkgs.writeShellScript "nighthook-action" (builtins.readFile ./nighthook.sh)}";
     };
   };
 }
