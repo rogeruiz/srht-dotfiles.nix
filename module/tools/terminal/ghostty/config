@@ -3,10 +3,10 @@
 # custom-shader-animation = always
 
 
-font-family = RecMonoCasual Nerd Font
-font-size = 12
+font-family = ZedMono Nerd Font
+font-size = 13
 theme = light:catppuccin-latte,dark:catppuccin-mocha
-background-opacity = 0.85
+background-opacity = 0.76
 background-blur = true
 
 # shell-integration = none

@@ -102,10 +102,22 @@
   fonts = {
     packages = with pkgs.nerd-fonts; [
       _0xproto
+      comic-shanns-mono
+      commit-mono
+      daddy-time-mono
+      departure-mono
+      fantasque-sans-mono
+      fira-code
       heavy-data
-      symbols-only
+      lilex
+      monofur
+      mononoki
       recursive-mono
+      sauce-code-pro
       shure-tech-mono
+      symbols-only
+      tinos
+      zed-mono
     ];
   };
 
