@@ -31,3 +31,6 @@ work/
 
 # Concourse files
 credentials.yml
+
+# Avante
+avante.md
