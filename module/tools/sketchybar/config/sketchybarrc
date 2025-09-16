@@ -34,10 +34,10 @@ source "${ITEM_DIR}/spaces.sh"
 source "${ITEM_DIR}/clock.sh"
 
 source "${ITEM_DIR}/battery.sh"
-# source "${ITEM_DIR}/wifi.sh"
+source "${ITEM_DIR}/wifi.sh"
 source "${ITEM_DIR}/sound.sh"
 
-# source "${ITEM_DIR}/mirrored.sh"
+source "${ITEM_DIR}/mirrored.sh"
 
 source "${ITEM_DIR}/headphones.sh"
 # source "${ITEM_DIR}/music.sh"

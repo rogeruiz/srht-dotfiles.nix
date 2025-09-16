@@ -19,7 +19,7 @@
 properties=(
   label.max_chars=30
   label.scroll_duration=720
-  # label.font.style=italic
+  label.font.style=italic
   script="$PLUGIN_DIR/wifi.sh"
   scroll_texts=on
   updates=on

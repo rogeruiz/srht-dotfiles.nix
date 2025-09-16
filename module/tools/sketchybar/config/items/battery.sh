@@ -18,7 +18,7 @@
 
 properties=(
   script="$PLUGIN_DIR/battery.sh"
-  # label.font.style=italic
+  label.font.style=italic
 )
 events=(
   system_woke
