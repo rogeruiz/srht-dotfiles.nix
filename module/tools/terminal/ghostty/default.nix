@@ -29,7 +29,7 @@ in
       source = builtins.fetchGit {
         url = "https://github.com/hackr-sh/ghostty-shaders";
         ref = "main";
-        rev = "a17573fb254e618f92a75afe80faa31fd5e09d6f";
+        rev = "3d7e56a3c46b2b6ba552ee338e35dc52b33042fa";
       };
     };
   };
