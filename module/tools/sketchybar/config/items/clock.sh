@@ -19,7 +19,7 @@
 properties=(
   update_freq=1
   icon=
-  label.font.style=italic
+  # label.font.style=italic
   script="$PLUGIN_DIR/clock.sh"
   background.padding_left=$margins
   background.padding_right=$margins
