@@ -25,68 +25,29 @@
   imports = [
     ./tools/yabai
     ./tools/skhd
+    ./common/system-shared.nix
   ];
 
-  # add more system settings here
-  nix = {
-    settings = {
-      auto-optimise-store = pkgs.stdenv.isLinux;
-      builders-use-substitutes = true;
-      experimental-features = [
-        "flakes"
-        "nix-command"
-      ];
-      substituters = [ "https://nix-community.cachix.org" ];
-      trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      ];
-      trusted-users = [ "@wheel" ];
-      warn-dirty = false;
-    };
-    nixPath = [
-      "nixpkgs=${inputs.nixpkgs}"
-    ];
-    gc = {
-      automatic = lib.mkDefault true;
-      options = lib.mkDefault "--delete-older-than 7d";
-    };
-  };
+  # Darwin-specific configuration
+  environment.etc."pam.d/sudo_local".text = ''
+    # Managed by Nix Darwin
+    auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
+    auth       sufficient     pam_tid.so
+  '';
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  environment.systemPackages = with pkgs; [
+    skhd
+    jankyborders
+    wireguard-tools
 
-  environment = {
-    etc."pam.d/sudo_local".text = ''
-      # Managed by Nix Darwin
-      auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
-      auth       sufficient     pam_tid.so
-    '';
-    systemPackages = with pkgs; [
-      git
-      alacritty
-      starship
-      coreutils
-      moreutils
-      jq
-      tmux
-      skhd
-      jankyborders
+    # NOTE: Nix Formatters
+    nixpkgs-fmt
+    nixfmt-rfc-style
+    alejandra
 
-      wireguard-tools
-
-      # NOTE: Nix Formatters
-      nixpkgs-fmt
-      nixfmt-rfc-style
-      alejandra
-
-      # NOTE: Nix LSP
-      nixd
-    ];
-  };
-
-  # environment.systemPath = [ "/usr/local/bin" ];
-  # environmentpathsToLink = [ "/Applications" ];
+    # NOTE: Nix LSP
+    nixd
+  ];
 
   programs.zsh = {
     enable = true;
@@ -99,35 +60,12 @@
   # *Home Manager*.
   services.sketchybar.enable = true;
 
-  fonts = {
-    packages = with pkgs.nerd-fonts; [
-      _0xproto
-      comic-shanns-mono
-      commit-mono
-      daddy-time-mono
-      departure-mono
-      fantasque-sans-mono
-      fira-code
-      heavy-data
-      lilex
-      monofur
-      mononoki
-      recursive-mono
-      sauce-code-pro
-      shure-tech-mono
-      symbols-only
-      tinos
-      zed-mono
-    ];
-  };
-
   system = {
     keyboard = {
       enableKeyMapping = true;
       remapCapsLockToControl = true;
     };
     defaults = {
-
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
@@ -135,16 +73,13 @@
         ShowPathbar = true;
         ShowStatusBar = true;
       };
-
       menuExtraClock.IsAnalog = true;
-
       NSGlobalDomain = {
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         ApplePressAndHoldEnabled = false;
         NSWindowShouldDragOnGesture = true;
       };
-
       dock = {
         appswitcher-all-displays = true;
         autohide = true;
@@ -169,7 +104,6 @@
     enable = true;
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    # masApps = {};
     casks = [
       "adobe-creative-cloud"
       "anki"
@@ -211,7 +145,6 @@
     ];
     taps = [
       # "sparkbox/commit-colors"
-
       # INFO: para `visual-studio` en `casks = [] de arriba`
       "homebrew/cask-versions"
     ];
@@ -221,5 +154,4 @@
   };
 
   ids.gids.nixbld = 30000;
-
 }

@@ -14,41 +14,14 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-{ pkgs, ... }:
-
 {
   imports = [
-    ./tools/terminal
-    ./tools/git
-    ./tools/editor
+    ./common/home-shared.nix
+    # These are included only on Darwin/macOS builds
+    # They should be conditionally imported in the main system config, not here
+    # ./tools/yabai
+    # ./tools/skhd
   ];
 
-  # add home-manager user settings here
-  home.packages = with pkgs; [
-    nushell
-    powershell
-
-    exercism
-
-    zstd
-
-    ffmpeg
-    imagemagick
-
-    irssi
-
-    fortune-kind
-
-    nnn
-  ];
-  home.stateVersion = "24.11";
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv = {
-      enable = true;
-    };
-  };
-
+  # Darwin-specific user settings can be added here
 }

@@ -18,34 +18,26 @@
 
 system:
 
-let
-  system-config = import ../module/configuration.nix;
-  home-manager-config = import ../module/home-manager.nix;
-  security-config = import ../module/security/pam.nix;
-  nighthook-config = import ../module/launchd/nighthook;
-  lorri-config = import ../module/launchd/lorri.nix;
-in
 inputs.darwin.lib.darwinSystem {
   inherit system inputs;
-  # modules: allows for reusable code
   modules = [
-    lorri-config
-    nighthook-config
+    ../module/launchd/lorri.nix
+    ../module/launchd/nighthook
     {
       users.users.${username}.home = "/Users/${username}";
       system.defaults.loginwindow.autoLoginUser = username;
     }
-    security-config
-    system-config
-
+    ../module/security/pam.nix
+    ../module/common/system-shared.nix
+    ../module/configuration.nix
     inputs.home-manager.darwinModules.home-manager
     {
-      # add home-manager settings here
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users."${username}" = home-manager-config;
+      home-manager.users."${username}".imports = [
+        ../module/common/home-shared.nix
+        ../module/home-manager.nix
+      ];
     }
-    # add more nix modules here
-
   ];
 }
