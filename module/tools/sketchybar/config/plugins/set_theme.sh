@@ -177,10 +177,6 @@ spaces_styles=(
   background.color=$(color teal 24)
 )
 
-mic_styles=(
-  icon.color="$(color red)"
-  icon.highlight_color="$(color green)"
-)
 headphones_styles=(
   icon.background.color=$(color green)
   icon.color=$(color mantle)
@@ -199,12 +195,6 @@ tick_styles=(
   icon.color="$(color mauve)"
   label.color="$(color subtext0)"
 )
-wifi_styles=(
-  icon.background.color="$(color lavender)"
-  icon.color="$(color mantle)"
-  label.color=$(color overlay1)
-  background.color=$(color yellow 24)
-)
 battery_styles=(
   background.color=$(color base)
   label.color=$(color text)
@@ -216,28 +206,6 @@ clock_styles=(
   background.color="$(color rosewater 24)"
 )
 
-keyboard_alias_styles=(
-  icon.background.color="$(color sky)"
-  icon.color="$(color mantle)"
-  alias.color="$(color overlay1)"
-  background.color=$(color green 25)
-)
-network_styles=(
-  icon.background.color="$(color lavender)"
-  icon.color="$(color base)"
-  background.color=$(color yellow 25)
-)
-# cpu_styles=(
-#   background.border_color="$(color overlay0 102)"
-#   background.color="$(color mantle)"
-#   icon.color="$(color overlay0)"
-# )
-# ram_styles=(
-#   background.border_color="$(color overlay0 102)"
-#   background.color="$(color mantle)"
-#   icon.color="$(color overlay0)"
-# )
-
 sketchybar \
   --bar "${bar_styles[@]}" \
   --default "${default_styles[@]}" \
@@ -247,23 +215,17 @@ sketchybar \
   --set headphones "${headphones_styles[@]}" \
   --set sound "${sound_styles[@]}" \
   --set time_keeping "${tick_styles[@]}" \
-  --set wifi "${wifi_styles[@]}" \
   --set battery "${battery_styles[@]}" \
-  --set clock "${clock_styles[@]}" \
-  --set "TextInputMenuAgent,Item-0" "${keyboard_alias_styles[@]}" \
-  --set "Stats,Network_network_chart" "${network_styles[@]}"
-# --set mic "${mic_styles[@]}" \
-# --set "Stats,CPU_mini" "${cpu_styles[@]}" \
-# --set "Stats,RAM_mini" "${ram_styles[@]}"
+  --set clock "${clock_styles[@]}"
 
 # set the yabai colors as well
 yabai \
   -m config insert_feedback_color "$(color blue)"
 
-# fijar los colores de los bordes usando JankyBorders
-borders \
-  active_color="$(color mauve)" \
-  inactive_color="$(color surface2)"
+# # fijar los colores de los bordes usando JankyBorders
+# borders \
+#   active_color="$(color mauve)" \
+#   inactive_color="$(color surface2)"
 
 # recargar el estado de Catppuccin Tmux
 tmux run /Users/yo/.local/bin/reload-catppuccin-tmux

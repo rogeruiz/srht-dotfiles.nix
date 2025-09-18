@@ -51,7 +51,4 @@ yabai -m rule --add app="^FaceTime" manage=off
 
 yabai -m rule --add app="^deno" title="^Peek preview" manage=on
 
-# Empezar JankyBorders con Yabai
-borders width=4 &
-
 # vi:set ft=sh

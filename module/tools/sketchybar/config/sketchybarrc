@@ -18,7 +18,6 @@
 
 
 CONFIG_DIR="${HOME}/.files.nix/module/tools/sketchybar/config"
-# CONFIG_DIR="${HOME}/.config/sketchybar"
 
 VARIABLES_DIR="${CONFIG_DIR}/variables"
 ITEM_DIR="${CONFIG_DIR}/items"
@@ -30,19 +29,17 @@ source "${VARIABLES_DIR}/app_icons.sh"
 source "${ITEM_DIR}/bar.sh"
 source "${ITEM_DIR}/default.sh"
 
+# La izquierda
 source "${ITEM_DIR}/spaces.sh"
 source "${ITEM_DIR}/clock.sh"
 
-source "${ITEM_DIR}/battery.sh"
-source "${ITEM_DIR}/wifi.sh"
-source "${ITEM_DIR}/sound.sh"
-
-source "${ITEM_DIR}/mirrored.sh"
-
+# El centro
 source "${ITEM_DIR}/headphones.sh"
-# source "${ITEM_DIR}/music.sh"
 source "${ITEM_DIR}/front_app.sh"
-# source "${ITEM_DIR}/time-keeping.sh"
+
+# La derecha
+source "${ITEM_DIR}/battery.sh"
+source "${ITEM_DIR}/sound.sh"
 
 source "${ITEM_DIR}/theme.sh"
 
