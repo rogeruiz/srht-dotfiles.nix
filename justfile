@@ -43,6 +43,12 @@ build:
     @echo "🛠️ Rebuilding x86_64 Linux"
     sudo nixos-rebuild switch --flake ".#mbpro-11-5" --fallback
 
+[doc('Apply Home Manager config for x86_64 Linux')]
+[linux]
+hm:
+    @echo "🌱 Rebuilding Home Manager config for x86_64 Linux with module/common"
+    home-manager switch --flake ".#mbpro-11-5" --fallback
+
 # Used internally to add files via Git for other scripts.
 [private]
 add-files tool:
