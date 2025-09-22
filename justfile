@@ -46,8 +46,8 @@ build:
 [doc('Apply Home Manager config for x86_64 Linux')]
 [linux]
 hm:
-    @echo "🌱 Rebuilding Home Manager config for x86_64 Linux with module/common"
-    home-manager switch --flake ".#mbpro-11-5" --fallback
+    @echo "🌱 Rebuilding Home Manager config using flake homeConfigurations for yo@mbpro-11-5"
+    home-manager switch --flake ".#yo@mbpro-11-5" --fallback
 
 # Used internally to add files via Git for other scripts.
 [private]

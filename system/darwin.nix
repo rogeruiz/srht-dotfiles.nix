@@ -35,7 +35,7 @@ inputs.darwin.lib.darwinSystem {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}".imports = [
-        ../module/common/home-shared.nix
+        # ../module/common/home-shared.nix
         ../module/home-manager.nix
       ];
     }

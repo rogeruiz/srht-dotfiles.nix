@@ -18,5 +18,5 @@
 
 export margins=18
 export gaps=10
-export altura=28
-export bar_yoffset=14
+export altura=18
+export bar_yoffset=24
