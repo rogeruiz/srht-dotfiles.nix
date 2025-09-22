@@ -26,10 +26,14 @@ in
     "ghostty/config".source = (link configFile);
 
     "ghostty/themes" = {
-      source = builtins.fetchGit {
-        url = "https://github.com/catppuccin/ghostty";
-        ref = "main";
-        rev = "10b3c5f56f2aa519b0e12255346a97d71a8bfeaf";
+      source = builtins.path {
+        path =
+          builtins.fetchGit {
+            url = "https://github.com/catppuccin/ghostty";
+            ref = "main";
+            rev = "10b3c5f56f2aa519b0e12255346a97d71a8bfeaf";
+          }
+          + "/themes";
       };
     };
     "ghostty/shaders" = {
