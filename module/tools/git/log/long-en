@@ -1,7 +1,7 @@
-%C(yellow)%C(yellow)%C(yellow)%C(yellow)%C(blue)%C(blue)%C(red)%C(red)%C(reset)
+%C(yellow)>%C(yellow)>%C(yellow)>%C(yellow)>%C(blue)>%C(blue)>%C(red)>%C(red)>%C(reset)
 
-   󱓏 hash: %C(green)<[1m%h>M%C(reset) ~= %C(yellow)[3m%HM
-  author: %C(yellow)<[1m%ar>M%C(reset) by %C(green)[3m%anM
-  commit: %C(magenta)<[1m%cE>M%C(reset) at %C(green)[3m%cDM
-󰍩 message: %B
-%C(yellow)%C(yellow)%C(yellow)%C(yellow)%C(blue)%C(blue)%C(red)%C(red)%C(reset)
+   hash: %C(green)<[1m%h>M%C(reset) ~= %C(yellow)[3m%HM
+ author: %C(yellow)<[1m%ar>M%C(reset) by %C(green)[3m%anM
+ commit: %C(magenta)<[1m%cE>M%C(reset) at %C(green)[3m%cDM
+message: %B
+%C(yellow)>%C(yellow)>%C(yellow)>%C(yellow)>%C(blue)>%C(blue)>%C(red)>%C(red)>%C(reset)

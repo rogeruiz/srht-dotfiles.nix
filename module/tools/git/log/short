@@ -1,3 +1,3 @@
-%C(red)󱓏 [1m%C(green)%dM %C(reset)
-%C(yellow) %C(reset) %C(green)<[3m%hM> %C(magenta)<[3m%aEM> %C(yellow)<%ar>
-%C(cyan)󰍩 %C(reset) %s
+%C(red)> [1m%C(green)%dM %C(reset)
+%C(yellow)> %C(reset) %C(green)<[3m%hM> %C(magenta)<[3m%aEM> %C(yellow)<%ar>
+%C(cyan)> %C(reset) %s
