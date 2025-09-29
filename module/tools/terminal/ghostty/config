@@ -1,8 +1,8 @@
 font-family = ZedMono Nerd Font
 font-size = 14
 theme = light:catppuccin-latte.conf,dark:catppuccin-mocha.conf
-background-opacity = 0.76
-background-blur = true
+background-opacity = 0.80
+background-blur = false
 
 shell-integration = zsh
 shell-integration-features = no-cursor
