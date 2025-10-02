@@ -21,8 +21,6 @@ format = '''$package$python$rust$nodejs$golang$terraform$ruby$nix_shell
 $battery$directory$git_branch${custom.git_color}$git_metrics$git_status$git_state
 $aws$jobs$cmd_duration$character$shell'''
 
-right_format = '''${custom.tick_icon}${custom.tick_name}${custom.tick_timer}'''
-
 palette = "dark"
 
 [character]
@@ -85,15 +83,16 @@ expiration_symbol = ""
 format = "[   ](bg:#ff9900 fg:base)[ $symbol](fg:#ff9900 bg:base)[ $profile ](bg:base fg:sapphire)[$region ](bg:base fg:sapphire) [$duration](italic fg:#ff9900)"
 
 [aws.region_aliases]
-us-gov-west-1 = "    us-gov-west-1"
-us-gov-east-1 = "    us-gov-east-1"
+us-gov-west-1 = "   us-gov-west-1"
+us-gov-east-1 = "   us-gov-east-1"
 
 [git_branch]
 symbol = "  "
 format = "[$symbol](fg:#f14e32)[$branch(:$remote_branch) ](italic fg:#f14e32)"
 
 [git_status]
-format = "([](#f14e32) [$all_status$ahead_behind]($style) )" # NOTE: This is Git orange
+# NOTE: This is Git orange
+format = "([](#f14e32) [$all_status$ahead_behind]($style) )"
 modified = "[](blue) "
 staged = "[](green) "
 deleted = "[](red) "
@@ -109,10 +108,10 @@ stashed = "[󰘓](magenta) "
 format = " ([ $added]($added_style) )([ $deleted]($deleted_style) )"
 disabled = false
 
-# [git_commit]
-# commit_hash_length = 6
-# only_detached = false
-# format = "[#](fg:rosewater)[$hash$tag ](italic fg:rosewater)"
+#  
+# ▓
+# ▒
+# ░
 
 [directory]
 truncation_length = 5
@@ -142,37 +141,12 @@ time_format = "%T"
 format = "[ 󰥔 ](fg:yellow)[$time ](italic fg:yellow)"
 utc_time_offset = "local"
 
-# [custom.git_spark]
-# command = "current_git_activity"
-# symbol = " "
-# when = ''' git rev-parse --is-inside-work-tree '''
-# style = "white dimmed"
-
-
 [custom.git_color]
 command = ''' perl -e 'foreach $a(@ARGV){print "\e[48;2;".join(";",unpack("C*",pack("H*",$a)))."m  \e[49m"}; print " #@ARGV";' $(git rev-parse HEAD | head -c 6) 2>/dev/null '''
 when = 'git rev-parse --is-inside-work-tree'
 description = "The current hexidecimal color based on the current Git SHA at HEAD."
 unsafe_no_escape = true
 style = "bold italic fg:subtext1"
-
-[custom.tick_icon]
-command = 'echo "󱫤 "'
-when = 'tick -v status | rg "NOW"'
-description ='Icon for the cuttent timer running with `tick`.'
-style = 'bg:mantle fg:subtext0'
-
-[custom.tick_name]
-command = 'tick -v status | rg "NOW" | rg "\[ ([a-zA-Z\-áéíóúüñÁÉÍÓÚÜÑ]+) \]" -or "\$1" && echo " "'
-when = 'tick -v status | rg "NOW"'
-description = "Name of the current timer running with `tick`."
-style = "italic fg:subtext0 bg:mantle"
-
-[custom.tick_timer]
-command = 'tick status | rg "\d{2}:?+" -o'
-when = 'tick -v status | rg "NOW"'
-description = "Value of the current timer running with `tick`."
-style = "italic underline bg:mantle fg:subtext0"
 
 [palettes.light]
 rosewater = "#dc8a78"
