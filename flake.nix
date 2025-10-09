@@ -63,9 +63,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [
             ./module/home-manager.nix
-            # ./module/common/home-shared.nix
           ];
-          # Optionally set username, homeDirectory, etc. here if not in module
         };
       };
     };

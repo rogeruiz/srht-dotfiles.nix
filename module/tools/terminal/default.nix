@@ -99,6 +99,7 @@ in
     shellAliases = {
       g = "git";
       j = "just";
+      tf = "terraform";
       nv = "nnvim-dev";
       ndf = "nnvim-dev -d";
       "-" = "cd -";
@@ -106,6 +107,7 @@ in
       "..." = "cd ../..";
       "...." = "cd ../../..";
       "....." = "cd ../../../..";
+      "......" = "cd ../../../../..";
       l = "eza -xa";
       ll = "eza -lah --git";
       lll = "eza -lah --git -T --git-ignore";
