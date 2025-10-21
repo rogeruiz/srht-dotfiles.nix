@@ -49,101 +49,83 @@ in
   programs.git = {
     enable = true;
 
-    userEmail = "hi@rog.gr";
-    userName = "Roger Steve Ruiz";
+    settings = {
+      user = {
+        name = "Roger Steve Ruiz";
+        email = "hi@rog.gr";
+      };
+      alias = {
+        all = "!git add . && git ci";
+        alt = "!alt() { nnvim-dev -p $(git files); }; alt";
+        amend = "ci --amend";
+        br = "branch";
+        ch = "diff --ws-error-highlight=all --cached --";
+        ci = "commit -v";
+        cin = "ci --no-verify";
+        co = "checkout";
+        conflicts = "!con() { nnvim-dev -p $(git s | rg 'U[UAD]' | awk '{ print $2 }'); }; con";
+        continue = "!git add . && git rebase --continue";
+        df = "diff --ws-error-highlight=all";
+        discard = "restore";
+        fall = "fetch --all";
+        files = "s | awk '{ print $2 }'";
+        local = "br --list";
+        ls = "stash list";
+        mr = "merge";
+        new = "!nu() { git co -b $1; }; nu";
+        out = "merge --out";
+        p = "add --patch";
+        pl = "pull";
+        pop = "stash pop";
+        ps = "push";
+        s = "status -s";
+        save = "stash save";
+        some = "!git add $@ && git ci";
+        st = "status";
+        unstage = "restore --staged";
+        up = "reset HEAD --patch";
+        url = "config --local --get-regexp remote\\.\\.\\*\\.url";
+        who = "!who() { git log --pretty='Author: %an <%ae>' | rg -i $1 | sort | uniq; }; who";
+        wtb = "symbolic-ref --short -q HEAD";
+        pen = "!pen() { git who $1 | sed 's/Author:/Co-Authored-By:/'; }; pen";
 
-    aliases = {
-      all = "!git add . && git ci";
-      alt = "!alt() { nnvim-dev -p $(git files); }; alt";
-      amend = "ci --amend";
-      br = "branch";
-      ch = "diff --ws-error-highlight=all --cached --";
-      ci = "commit -v";
-      cin = "ci --no-verify";
-      co = "checkout";
-      conflicts = "!con() { nnvim-dev -p $(git s | rg 'U[UAD]' | awk '{ print $2 }'); }; con";
-      continue = "!git add . && git rebase --continue";
-      df = "diff --ws-error-highlight=all";
-      discard = "restore";
-      fall = "fetch --all";
-      files = "s | awk '{ print $2 }'";
-      local = "br --list";
-      ls = "stash list";
-      mr = "merge";
-      new = "!nu() { git co -b $1; }; nu";
-      out = "merge --out";
-      p = "add --patch";
-      pl = "pull";
-      pop = "stash pop";
-      ps = "push";
-      s = "status -s";
-      save = "stash save";
-      some = "!git add $@ && git ci";
-      st = "status";
-      unstage = "restore --staged";
-      up = "reset HEAD --patch";
-      url = "config --local --get-regexp remote\\.\\.\\*\\.url";
-      who = "!who() { git log --pretty='Author: %an <%ae>' | rg -i $1 | sort | uniq; }; who";
-      wtb = "symbolic-ref --short -q HEAD";
-      pen = "!pen() { git who $1 | sed 's/Author:/Co-Authored-By:/'; }; pen";
+        # es: un ejemplo de usando una función pa' crear cadenas amenas de multiple lineas.
+        # en: an example of using a function to create readable strings on multiple lines.
+        catchup = builtins.concatStringsSep " " [
+          "log"
+          "FETCH_HEAD...HEAD"
+          "--reverse"
+          "--stat"
+          "--pretty=format:\"${(builtins.readFile ./log/long-es)}\""
+        ];
 
-      # es: un ejemplo de usando una función pa' crear cadenas amenas de multiple lineas.
-      # en: an example of using a function to create readable strings on multiple lines.
-      catchup = builtins.concatStringsSep " " [
-        "log"
-        "FETCH_HEAD...HEAD"
-        "--reverse"
-        "--stat"
-        "--pretty=format:\"${(builtins.readFile ./log/long-es)}\""
-      ];
+        gist = "log --graph --pretty=format:\"${(builtins.readFile ./log/short)}\"";
+        history = "log --reverse --stat --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
+        last = "log --patch -1 --stat --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
+        verbose = "log --stat --patch --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
 
-      gist = "log --graph --pretty=format:\"${(builtins.readFile ./log/short)}\"";
-      history = "log --reverse --stat --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
-      last = "log --patch -1 --stat --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
-      verbose = "log --stat --patch --pretty=format:\"${(builtins.readFile ./log/long-es)}\"";
+        # es: un ejemplo de usando una función pa' crear una cadenas amenas
+        # usando Bash para' aliases más complicados.
+        # en: an example of using a function to create readable strings with Bash
+        # for more complicated aliases
+        change-set = builtins.concatStringsSep " " [
+          "!chst() {"
+          # bash
+          ''
+            git log \
+               --reverse \
+               --pretty=format:"${(builtins.readFile ./log/change-set)}" \
+               origin/$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')..HEAD \
+               "$@"
+          ''
+          "}; chst"
+        ];
 
-      # es: un ejemplo de usando una función pa' crear una cadenas amenas
-      # usando Bash para' aliases más complicados.
-      # en: an example of using a function to create readable strings with Bash
-      # for more complicated aliases
-      change-set = builtins.concatStringsSep " " [
-        "!chst() {"
-        # bash
-        ''
-          git log \
-             --reverse \
-             --pretty=format:"${(builtins.readFile ./log/change-set)}" \
-             origin/$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')..HEAD \
-             "$@"
-        ''
-        "}; chst"
-      ];
+        # es: aun con las funciones de arriba, si la linea no es tan larga se puede escribir bien simple.
+        # en: if you have a short line you can write it simply without the functions above.
+        progress = "!progress() { ${(builtins.readFile ./scripts/progress.sh)} }; progress";
+      };
 
-      # es: aun con las funciones de arriba, si la linea no es tan larga se puede escribir bien simple.
-      # en: if you have a short line you can write it simply without the functions above.
-      progress = "!progress() { ${(builtins.readFile ./scripts/progress.sh)} }; progress";
-    };
-
-    attributes = [
-      "*.pdf diff=pdf"
-      "flake.lock -diff"
-      "package-lock.json -diff"
-      "yarn.lock -diff"
-      "workspace.json -diff"
-    ];
-
-    includes = [
-      {
-        path = "~/${skylight-include-file}";
-        condition = "gitdir:~/Developer/skylight/";
-      }
-      {
-        path = "~/${cdc-include-file}";
-        condition = "gitdir:~/Developer/skylight/1cdp/";
-      }
-    ];
-
-    extraConfig = {
       color = {
         ui = true;
       };
@@ -194,6 +176,25 @@ in
         smtpserverport = 465;
       };
     };
+
+    attributes = [
+      "*.pdf diff=pdf"
+      "flake.lock -diff"
+      "package-lock.json -diff"
+      "yarn.lock -diff"
+      "workspace.json -diff"
+    ];
+
+    includes = [
+      {
+        path = "~/${skylight-include-file}";
+        condition = "gitdir:~/Developer/skylight/";
+      }
+      {
+        path = "~/${cdc-include-file}";
+        condition = "gitdir:~/Developer/skylight/1cdp/";
+      }
+    ];
   };
 
 }
