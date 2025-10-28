@@ -114,9 +114,6 @@ in
       _ = "sudo";
       pls = "sudo";
       please = "sudo";
-      # TODO: Por ahora tengo un alias pero quiero poner estos fuentes adentro
-      # de la desviación de Figsay.
-      fs = "figsay -d ~/Developer/oss/figlet.js/fonts";
     };
     enableCompletion = true;
     autosuggestion.enable = true;
