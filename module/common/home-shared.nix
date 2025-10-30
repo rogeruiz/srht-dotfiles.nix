@@ -17,6 +17,7 @@
     irssi
     fortune-kind
     nnn
+    chawan
   ];
   home.stateVersion = "24.11";
 
