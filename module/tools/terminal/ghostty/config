@@ -1,4 +1,4 @@
-font-family = ZedMono Nerd Font
+font-family = RecMonoCasual Nerd Font
 font-size = 14
 theme = light:catppuccin-latte.conf,dark:catppuccin-mocha.conf
 background-opacity = 1
@@ -9,8 +9,6 @@ shell-integration-features = no-cursor, ssh-terminfo
 cursor-style = block
 cursor-style-blink = true
 cursor-opacity = 1
-# cursor-text = "#f5a9b8"
-# cursor-color = "#5bcefa"
 
 mouse-hide-while-typing = true
 
@@ -46,6 +44,6 @@ macos-option-as-alt = right
 macos-icon = custom-style
 macos-icon-frame = plastic
 macos-icon-ghost-color = #9c59d2
-macos-icon-screen-color = #fcf434,#fcfcfc,#9c59d2,#2c2c2c,#5bcefa,#f5a9b8,#fcfcfc,#f5a9b8,#5bcefa
+macos-icon-screen-color = #fcf434,#5bcefa
 
 # vim: set filetype=config :

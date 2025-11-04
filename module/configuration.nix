@@ -114,7 +114,7 @@
       "firefox"
       "flycast"
       "ghostty"
-      "handbrake"
+      "handbrake-app"
       "hot"
       "imageoptim"
       "iterm2"

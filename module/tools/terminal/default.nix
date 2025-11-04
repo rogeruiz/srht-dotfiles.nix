@@ -64,7 +64,7 @@ in
     # Herramientas que me gustan y remplazan las herramientas clasicas escritos
     # en Rust
     choose
-    du-dust
+    dust
     eza
     fd
     grex

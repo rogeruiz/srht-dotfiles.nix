@@ -43,12 +43,16 @@
   time.timeZone = "America/Chicago";
 
   fonts = {
-    packages = with pkgs.nerd-fonts; [
-      _0xproto
-      symbols-only
-      recursive-mono
-      victor-mono
-    ];
+    packages =
+      with pkgs;
+      with pkgs.nerd-fonts;
+      [
+        _0xproto
+        symbols-only
+        recursive-mono
+        victor-mono
+        maple-mono.NF-unhinted
+      ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -130,7 +134,7 @@
     users.yo = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
-      packages = [];
+      packages = [ ];
     };
   };
 
