@@ -18,37 +18,93 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 sudo yabai --load-sa
 
-yabai -m rule --add app="^Due" manage=off
-yabai -m rule --add app="^Música" manage=off
-yabai -m rule --add app="^Adobe Photoshop" manage=off
-yabai -m rule --add app="^Adobe Illustrator" manage=off
-yabai -m rule --add app="^Photo Booth" manage=off
-yabai -m rule --add app="^Configuración del Sistema" manage=off
-yabai -m rule --add app="^DiskImages UI Agent" manage=off
+yabai -m rule \
+  --add app="^Due" \
+  manage=off
 
-# NOTE: Desactivar la gestión de la ventana de Copiar del Finder porque es demasiado
-# pequeñia y efímera.
-yabai -m rule --add app="^Finder" title="Copiar" manage=off
-yabai -m rule --add app="^Finder" title="Configuración del Finder" manage=off
-yabai -m rule --add app="^Finder" title="Basurero" manage=off
+yabai -m rule \
+  --add app="^Música" \
+  manage=off
 
-yabai -m rule --add app="^Safari" title="^(General|Pestañas|Autorelleno|Contraseñas|Buscar|Seguridad|Privacidad|Sitios|Perfiles|Extensiones|Avanzado|Desarrollador|Interruptores de funciones)$" manage=off
+yabai -m rule \
+  --add app="^Adobe Photoshop" \
+  manage=off
 
-yabai -m rule --add app="^Mail" title="^(General|Cuentas|Correo no deseado|Tipos y colores|Visualización|Redacción|Firmas|Reglas|Extensiones|Privacidad)$" manage=off
+yabai -m rule \
+  --add app="^Adobe Illustrator" \
+  manage=off
 
-yabai -m rule --add app="^iA Writer" title="^(General|Cuentas|Documentos|Biblioteca|Editor|Autores|Plantillas|Markdown)$" manage=off
+yabai -m rule \
+  --add app="^Photo Booth" \
+  manage=off
 
-yabai -m rule --add app="^Marked 2" title="^(General|Preview|Style|Processor|Apps|Proofing|Export|Advanced)$" manage=off
+yabai -m rule \
+  --add app="^Configuración del Sistema" \
+  manage=off
 
-yabai -m rule --add app="^1Password" manage=off
-yabai -m rule --add app="^Mirror" manage=off
-yabai -m rule --add app="^Mensajes" manage=off
-yabai -m rule --add app="^The Archive" manage=off
-yabai -m rule --add app="^Equinox" manage=off
-yabai -m rule --add app="^Utilidad de Compresión" manage=off
-yabai -m rule --add app="^The Unarchiver" manage=off
-yabai -m rule --add app="^FaceTime" manage=off
+yabai -m rule \
+  --add app="^DiskImages UI Agent" \
+  manage=off
 
-yabai -m rule --add app="^deno" title="^Peek preview" manage=on
+# NOTE: Desactivar la gestión de la ventana de Copiar del Finder porque es
+# demasiado pequeñia y efímera.
+yabai -m rule \
+  --add app="^Finder" \
+  title="Copiar" \
+  manage=off
+
+yabai -m rule \
+  --add app="^Finder" \
+  title="Configuración del Finder" \
+  manage=off
+
+titulos_de_safari="^(General|Pestañas|Autorelleno|Contraseñas|Buscar|Seguridad|Privacidad|Sitios|Perfiles|Extensiones|Avanzado|Desarrollador|Interruptores de funciones)$"
+
+yabai -m rule --add app="^Safari" \
+  title="${titulos_de_safari}" \
+  manage=off
+
+titulos_de_mail="^(General|Cuentas|Correo no deseado|Tipos y colores|Visualización|Redacción|Firmas|Reglas|Extensiones|Privacidad)$"
+
+yabai -m rule --add app="^Mail" \
+  title="${titulos_de_mail}" \
+  manage=off
+
+titulos_de_iawriter="^(General|Cuentas|Documentos|Biblioteca|Editor|Autores|Plantillas|Markdown)$"
+
+yabai -m rule \
+  --add app="^iA Writer" \
+  title="${titulos_de_iawriter}" \
+  manage=off
+
+titulos_de_marked2="^(General|Preview|Style|Processor|Apps|Proofing|Export|Advanced)$"
+
+yabai -m rule --add app="^Marked 2" \
+  title="${titulos_de_marked2}" \
+  manage=off
+
+yabai -m rule --add app="^Calendario" \
+  title="^(General|Cuentas|Alertas|Avanzado)$" \
+  manage=off
+
+yabai -m rule \
+  --add app="^1Password" manage=off
+yabai -m rule \
+  --add app="^Mirror" manage=off
+yabai -m rule \
+  --add app="^Mensajes" manage=off
+yabai -m rule \
+  --add app="^The Archive" manage=off
+yabai -m rule \
+  --add app="^Equinox" manage=off
+yabai -m rule \
+  --add app="^Utilidad de Compresión" manage=off
+yabai -m rule \
+  --add app="^The Unarchiver" manage=off
+yabai -m rule \
+  --add app="^FaceTime" manage=off
+
+yabai -m rule \
+  --add app="^deno" title="^Peek preview" manage=on
 
 # vi:set ft=sh
