@@ -29,7 +29,7 @@ in
     # Pa' interactuar con GitHub en el ordenador
     gh
     gh-dash
-    # Pa' interactuar con sourceut en el ordenador
+    # Pa' interactuar con sourcehut en el ordenador
     hut
   ];
 
@@ -170,7 +170,7 @@ in
         gpgsign = true;
       };
       sendemail = {
-        smtpserver = "mail.gandi.net";
+        smtpserver = "smtp.forwardemail.net";
         smtpuser = "hi@rog.gr";
         smtpencryption = "ssl";
         smtpserverport = 465;
