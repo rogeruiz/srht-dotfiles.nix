@@ -1,5 +1,6 @@
 # shellcheck disable=SC2016
-printf 'Comparing `%s`:\n' "$1"
+printf 'Comparando `%s`:\n' "$1"
+# printf 'Comparing `%s`:\n' "$1"
 
 read -r -d '' tmpl_es <<TMPL
 \t🔙  detrás: %s compromiso(s)
