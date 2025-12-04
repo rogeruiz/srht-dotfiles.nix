@@ -223,9 +223,9 @@ yabai \
   -m config insert_feedback_color "$(color blue)"
 
 # # fijar los colores de los bordes usando JankyBorders
-# borders \
-#   active_color="$(color mauve)" \
-#   inactive_color="$(color surface2)"
+borders \
+  active_color="$(color mauve)" \
+  inactive_color="$(color surface2)"
 
 # recargar el estado de Catppuccin Tmux
 tmux run /Users/yo/.local/bin/reload-catppuccin-tmux
