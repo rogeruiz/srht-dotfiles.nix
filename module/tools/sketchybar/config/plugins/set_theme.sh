@@ -155,7 +155,7 @@ function color() {
 }
 
 bar_styles=(
-  # border_color="$(color mauve)"
+  border_color="$(color mauve)"
   color="$(color crust 200)"
 )
 default_styles=(

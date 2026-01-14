@@ -22,8 +22,8 @@ config=(
   y_offset=$((bar_yoffset))
   padding_left="${gaps}"
   padding_right="${gaps}"
-  # border_width=2
-  corner_radius=8
+  border_width=2
+  corner_radius=10
 )
 
 sketchybar --bar "${config[@]}"
