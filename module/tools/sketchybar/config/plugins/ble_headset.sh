@@ -28,7 +28,7 @@ if [[ -z "$DEVICES" ]]; then
   sketchybar --set "${NAME}" drawing=off
 else
   case "${DEVICES}" in
-  "Scissors" | "Scissors Pro" | "tijeras studio pro" | "tijeras Powerbeats Pro")
+  "Scissors" | "Scissors Pro" | "tijeras studio pro" | "Powerbeats Pro de Roger" | "tijeras Powerbeats Pro")
     DEVICES=$APPLE_LOGO
     ;;
   *)
